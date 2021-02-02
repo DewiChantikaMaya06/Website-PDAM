@@ -46,10 +46,9 @@
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>Kritik dan saran</h2>
-								<p>Kami menerima segala kritik dan saran untuk pelayanan yng lebih baik lagi</p>
-								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-									<input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
-										onblur="this.placeholder = 'Your email address'" required="" type="email">
+								<p>Kami menerima segala kritik dan saran untuk pelayanan yang lebih baik lagi</p>
+								<form action="" method="get" target="_blank" class="newsletter-inner">
+									<input name="address" type="text" placeholder="Kritik dan Saran">
 									<button class="button"><i class="icofont icofont-paper-plane"></i></button>
 								</form>
 							</div>
