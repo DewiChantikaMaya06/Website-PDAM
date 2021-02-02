@@ -11,7 +11,7 @@
     <title>PDAM TIRTA BALURAN SITUBONDO</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('guest/img/logo_pdam.png')}}">
+    <link rel="icon" type="image/gif" href="{{asset('guest/img/logo_pdam.png')}}">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
@@ -39,5 +39,6 @@
     <link rel="stylesheet" href="{{asset('guest/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('guest/style.css')}}">
     <link rel="stylesheet" href="{{asset('guest/css/responsive.css')}}">
+    <link href="{{url('https://fonts.googleapis.com/icon?family=Material+Icons')}}" rel="stylesheet">
     
 </head>

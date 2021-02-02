@@ -17,3 +17,18 @@ Route::get('/', function () {
 Route::get('/pengaduan', function () {
     return view('guest.pengaduan');
 });
+Route::get('/pendaftaran', function () {
+    return view('guest.pendaftaran');
+});
+Route::get('/tagihan', function () {
+    return view('guest.tagihan');
+});
+Route::get('/baliknama', function () {
+    return view('guest.baliknama');
+});
+Route::get('/detail', function () {
+    return view('guest.detailfoto');
+});
+Route::get('/detailberita', function () {
+    return view('guest.detailberita');
+});

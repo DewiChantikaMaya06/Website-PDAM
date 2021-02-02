@@ -23,21 +23,15 @@
                         <div class="main-menu">
                             <nav class="navigation">
                                 <ul class="nav menu">
-                                    <li class="active"><a href="#">BERANDA</a></li>
+                                    <li class="active"><a href="{{url('/')}}">BERANDA</a></li>
                                     <li><a href="#">PELANGGAN</a>
                                         <ul class="dropdown">
-                                            <li><a href="">CEK TAGIHAN</a></li>
-                                            <li><a href="">PENDAFTARAN BARU</a></li>
-                                            <li><a href="">PENDAFTARAN BALIK NAMA</a></li>
+                                            <li><a href="{{url('/')}}">CEK TAGIHAN</a></li>
+                                            <li><a href="{{url('/pendaftaran')}}">PENDAFTARAN BARU</a></li>
+                                            <li><a href="{{url('/baliknama')}}">PENDAFTARAN BALIK NAMA</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">INFO PDAM</a>
-                                        <ul class="dropdown">
-                                            <li><a href="404.html">SEJARAH</a></li>
-                                            <li><a href="">SUSUNAN PENGAWAS</a></li>
-                                            <li><a href="">STRUKTUR ORGANISASI</a> </li>
-                                            <li><a href="">FOTO KEGIATAN</a></li>
-                                        </ul>
+                                    <li><a href="#">STRUKTUR</a>
                                     </li>
                                     <li><a href="#">TENTANG KAMI</a></li>
                                     <li><a href="{{url('/pengaduan')}}">PENGADUAN</a></li>
@@ -47,7 +41,7 @@
                     </div>
                     <div class="col-lg-2 col-12">
                         <div class="get-quote">
-                            <a href="appointment.html" class="btn">MASUK</a>
+                            <a href="#" class="btn">MASUK</a>
                         </div>
                     </div>
                 </div>

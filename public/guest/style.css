@@ -54,6 +54,13 @@ body{
 	font-size:14px;
 	color:#888;
 }
+h2{
+	font-family: 'Gill Sans', sans-serif;
+	font-weight: 500;
+	color: rgb(95, 95, 95);
+	font-size: 20px;
+	margin-top: 5%;
+}
 .pro-features {
 	position: fixed;
 	right: -300px;
@@ -658,7 +665,7 @@ body{
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
 	transition: all 0.4s ease;
-	padding: 0;
+	padding: 6;
 	border-radius: 50%;
 }
 .slider .owl-carousel .owl-nav div:hover{
@@ -1031,6 +1038,7 @@ body{
 	font-size: 21px;
 	background: #1a76d1;
 	padding-left: 4px;
+	padding-top: 22px;
 }
 .why-choose .choose-right .video:hover{
 	transform:scale(1.1);
@@ -4002,7 +4010,7 @@ body{
 	text-align: center;
 	border: 1px solid #fff;
 	text-align: center;
-	padding: 0;
+	padding: 6;
 	border-radius: 100%;
 	display: block;
 	color:#fff;

@@ -9,8 +9,15 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="text">
-                            <h1>PDAM Tirta Baluran <br><span>Pelayananan</span> adalah<span> KUNCI UTAMA kami</span></h1>
-                            <p>Pelayanan kepada masyarakat merupakan kunci utama kami dalam mengembangankan kualitas PDAM Kabupaten Situbondo</p>
+                            <h1>Selamat Datang <br><span>Website PDAM</span><span> Tirta Baluran SItubondo</span></h1>
+                            <h2><span><b> Silahkan Cek Tagihan Anda..</b></span></h2>
+                            <br>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama/No. Sambungan/PIN.." data-rule="minlen:4" style="border: 30ch"/>
+                            <br>
+                            <div class="buttom">
+                                <a href="#" class="btn btn-rounded">Cari</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -23,36 +30,14 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="text">
-                            <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                            <div class="button">
-                                <a href="#" class="btn">Get Appointment</a>
-                                <a href="#" class="btn primary">About Us</a>
-                            </div>
+                            <h1>PDAM Tirta Baluran <br><span>Pelayananan</span> adalah<span> KUNCI UTAMA kami</span></h1>
+                            <p>Pelayanan kepada masyarakat merupakan kunci utama kami dalam mengembangankan kualitas PDAM Kabupaten Situbondo</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Start End Slider -->
-        <!-- Start Single Slider -->
-        <div class="single-slider" style="background-image:url('guest/img/slider3.jpg')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="text">
-                            <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-                            <div class="button">
-                                <a href="#" class="btn">Get Appointment</a>
-                                <a href="#" class="btn primary">Conatct Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Single Slider -->
     </div>
 </section>
 <!--/ End Slider Area -->
@@ -86,57 +71,6 @@
     </div>
 </section>
 <!--/End Start schedule Area -->
-
-<!-- Start Feautes -->
-{{-- <section class="Feautes section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>We Are Always Ready to Help You & Your Family</h2>
-                    <img src="guest/img/section-img.png" alt="#">
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-12">
-                <!-- Start Single features -->
-                <div class="single-features">
-                    <div class="signle-icon">
-                        <i class="icofont icofont-ambulance-cross"></i>
-                    </div>
-                    <h3>Emergency Help</h3>
-                    <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-                </div>
-                <!-- End Single features -->
-            </div>
-            <div class="col-lg-4 col-12">
-                <!-- Start Single features -->
-                <div class="single-features">
-                    <div class="signle-icon">
-                        <i class="icofont icofont-medical-sign-alt"></i>
-                    </div>
-                    <h3>Enriched Pharmecy</h3>
-                    <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-                </div>
-                <!-- End Single features -->
-            </div>
-            <div class="col-lg-4 col-12">
-                <!-- Start Single features -->
-                <div class="single-features last">
-                    <div class="signle-icon">
-                        <i class="icofont icofont-stethoscope"></i>
-                    </div>
-                    <h3>Medical Treatment</h3>
-                    <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-                </div>
-                <!-- End Single features -->
-            </div>
-        </div>
-    </div>
-</section> --}}
-<!--/ End Feautes -->
 
 <!-- Start Fun-facts -->
 <div id="fun-facts" class="fun-facts section overlay">
@@ -194,15 +128,6 @@
 <!-- Start Why choose -->
 <section class="why-choose section" >
     <div class="container">
-        {{-- <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>We Offer Different Services To Improve Your Health</h2>
-                    <img src="guest/img/section-img.png" alt="#">
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-                </div>
-            </div>
-        </div> --}}
         <div class="row">
             <div class="col-lg-6 col-12">
                 <!-- Start Choose Left -->
@@ -213,9 +138,10 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list">
-                                <li><i class="fa fa-caret-right"></i>Air Bersih</li>
-                                <li><i class="fa fa-caret-right"></i>Mengalir dari sumbernya</li>
-                                <li><i class="fa fa-caret-right"></i>Terpercaya</li>
+                                <li><i class="fa fa-caret-right"></i>Sumber Air Bersih dan Dalam</li>
+                                <li><i class="fa fa-caret-right"></i>Air Lebih Sehat Dibanding Sumur Bor Dangkal atau Sumur Resapan</li>
+                                <li><i class="fa fa-caret-right"></i>Pelayanan Optimal dan Fast Response</li>
+                                <li><i class="fa fa-caret-right"></i>Tekanan dan Debit Air yang Sangat Deras</li>
                             </ul>
                         </div>
                     </div>
@@ -251,11 +177,10 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
                 <div class="content">
-                    <h2>Do you need Emergency Medical Care? Call @ 1234 56789</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec gravida.</p>
+                    <h2>Anda butuh bantuan ? <br> Hubungi (0338) 672 022</h2>
+                    <p>Apabila anda membutuhkan bantuan terkait PDAM silahkan hubungi nomer diatas atau klik direct WhatsApp dibawah ini.</p>
                     <div class="button">
-                        <a href="#" class="btn">Contact Now</a>
-                        <a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
+                        <a href="{{url('https://wa.me/628113491444')}}" class="btn">Klik Disini   <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -281,35 +206,15 @@
                 <div class="owl-carousel portfolio-slider">
                     <div class="single-pf">
                         <img src="{{asset('guest/img/pf1.jpg')}}" alt="#">
-                        <a href="portfolio-details.html" class="btn">View Details</a>
+                        <a href="{{('/detail')}}" class="btn">View Details</a>
                     </div>
                     <div class="single-pf">
                         <img src="{{asset('guest/img/pf2.jpg')}}" alt="#">
-                        <a href="portfolio-details.html" class="btn">View Details</a>
+                        <a href="{{('/detail')}}" class="btn">View Details</a>
                     </div>
                     <div class="single-pf">
                         <img src="{{asset('guest/img/pf3.jpg')}}" alt="#">
-                        <a href="portfolio-details.html" class="btn">View Details</a>
-                    </div>
-                    <div class="single-pf">
-                        <img src="{{asset('guest/img/pf4.jpg')}}" alt="#">
-                        <a href="portfolio-details.html" class="btn">View Details</a>
-                    </div>
-                    <div class="single-pf">
-                        <img src="{{asset('guest/img/pf1.jpg')}}" alt="#">
-                        <a href="portfolio-details.html" class="btn">View Details</a>
-                    </div>
-                    <div class="single-pf">
-                        <img src="{{asset('guest/img/pf2.jpg')}}" alt="#">
-                        <a href="portfolio-details.html" class="btn">View Details</a>
-                    </div>
-                    <div class="single-pf">
-                        <img src="{{asset('guest/img/pf3.jpg')}}" alt="#">
-                        <a href="portfolio-details.html" class="btn">View Details</a>
-                    </div>
-                    <div class="single-pf">
-                        <img src="{{asset('guest/img/pf4.jpg')}}" alt="#">
-                        <a href="portfolio-details.html" class="btn">View Details</a>
+                        <a href="{{('/detail')}}" class="btn">View Details</a>
                     </div>
                 </div>
             </div>
@@ -442,34 +347,36 @@
     </div>
 </section>
 <!-- End Blog Area -->
-
-<!-- Start Appointment -->
-<!-- End Appointment -->
-
-<!-- Start Newsletter Area -->
-<section class="newsletter section">
+<section class="why-choose section" >
     <div class="container">
-        <div class="row ">
-            <div class="col-lg-6  col-12">
-                <!-- Start Newsletter Form -->
-                <div class="subscribe-text ">
-                    <h6>Sign up for newsletter</h6>
-                    <p class="">Cu qui soleat partiendo urbanitas. Eum aperiri indoctum eu,<br> homero alterum.</p>
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <!-- Start Choose Left -->
+                <div class="choose-left">
+                    <h3>INFO SMS CENTER</h3>
+                    <p>Anda dapat mengirimkan pesan singkat untuk melihat tagihan air anda ataupun melaporkan keluhan maupun saran anda. Untuk format SMS yang digunakan adalah sebagai berikut:</p>
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <ul class="list">
+                                <li><i class="fa fa-caret-right"></i>Untuk Pengecekan Tagihan :</li>
+                                <p> &#8226;&#8226;&#8226; Bagi pelanggan Telkomsel ketik pdamsit#tagihan#nomor pelanggan. <br> Contoh format sms <font style="color: red">pdamsit#tagihan#01000001. Kirim sms ke 9009.</font> <br> &#8226;&#8226;&#8226; Untuk pelanggan non Telkomsel ketik tagihan#nomor pelanggan. <br><font style="color: red">Contoh tagihan#01000001. Kirim sms ke 08113491444.</font></p>
+                                <li><i class="fa fa-caret-right"></i>Untuk Keluhan & Saran :</li>
+                                <p>&#8226;&#8226;&#8226; Bagi pelanggan Telkomsel ketik pdamsit#layanan#isi pesan. Contoh  <br><font style="color: red">pdamsit#layanan#Air Macet di jl. PB Sudirman. Kirim sms ke 9009.</font> <br>&#8226;&#8226;&#8226; Untuk pelanggan non Telkomsel ketik layanan#isi Pesan. <font style="color: red">Contoh layanan#Air Macet di jl. PB Sudirman. Kirim sms ke 08113491444.</font></p>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <!-- End Newsletter Form -->
+                <!-- End Choose Left -->
             </div>
-            <div class="col-lg-6  col-12">
-                <!-- Start Newsletter Form -->
-                <div class="subscribe-form ">
-                    <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-                        <input name="EMAIL" placeholder="Your email address" class="common-input" onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Your email address'" required="" type="email">
-                        <button class="btn">Subscribe</button>
-                    </form>
-                </div>
-                <!-- End Newsletter Form -->
+            <div class="col-lg-6 col-12">
+                <!-- Start Choose Rights -->
+                    <div class="video-image">
+                        <img src="{{asset('guest/img/message.png')}}" alt="">
+                    </div>
+                <!-- End Choose Rights -->
             </div>
         </div>
     </div>
 </section>
+<!--/ End Why choose -->
 @endsection
