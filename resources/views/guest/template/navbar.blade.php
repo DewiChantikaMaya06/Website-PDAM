@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-lg-2 col-12">
                         <div class="get-quote">
-                            <a href="#" class="btn">MASUK</a>
+                            <a href="/login" class="btn">MASUK</a>
                         </div>
                     </div>
                 </div>

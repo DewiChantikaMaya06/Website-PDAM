@@ -55,9 +55,9 @@
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
                             <label class="form-group" for="">Foto KTP :</label>
-                            <p>Max 5 mb.</p>
+                            <p style="color:red">Max 5 mb.</p>
                             <input type="file" class="form-control-file">
-                            <p>Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam</p>
+                            <p><font style="color: red">Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam</font></p>
                         </div>
                     </div>
                 </div>
