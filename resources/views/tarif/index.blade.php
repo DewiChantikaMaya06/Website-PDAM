@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section ('content')
+
 <div class="main">
     <div class="main-content">
         <div class="container-fluid">
@@ -8,50 +9,50 @@
                 <div class="col-md-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Data Siswa</h3>
+                            <h4>{{ $title }}</h4>
                             <div class="right">
                                 <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="lnr lnr-plus-circle"></i></button>
                             </div>
                         </div>
                         <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>NAMA DEPAN</th>
-                                        <th>NAMA BELAKANG</th>
-                                        <th>JENIS KELAMIN</th>
-                                        <th>AGAMA</th>
-                                        <th>ALAMAT</th>
-                                        <th>AKSI</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($data_siswa as $siswa)
-                                    <tr>
-                                        <td>{{$siswa->nama_depan}}</td>
-                                        <td>{{$siswa->nama_belakang}}</td>
-                                        <td>{{$siswa->jenis_kelamin}}</td>
-                                        <td>{{$siswa->agama}}</td>
-                                        <td>{{$siswa->alamat}}</td>
-                                        <td>
-                                            <a class="btn btn-warning btn-sm" href="/siswa/{{$siswa->id}}/edit">Edit</a>
-                                            <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin mau dihapus ?') " href="/siswa/{{$siswa->id}}/delete">Delete</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            <div class="pull-left">
-                                Showing
-                                {{ $data_siswa->firstItem() }}
-                                to
-                                {{ $data_siswa->lastItem() }}
-                                of
-                                {{ $data_siswa->total() }}
-                                entries
-                            </div>
-                            <div class="pull-right">
-                                {{ $data_siswa->links() }}
+                            <div class='table-responsive'>
+                                <table class='table myTable'>
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Klasifikasi</th>
+                                            <th>Kelompok</th>
+                                            <th>0-10 m3</th>
+                                            <th>>0-10 m3</th>
+                                            <th>Pemeliharaan</th>
+                                            <th>Admin</th>
+                                            <th>Denda</th>
+                                            <th>Edit</th>
+                                            <th>Hapus</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($data as $e=>$dt)
+                                        <tr>
+                                            <td>{{$e+1}}</td>
+                                            <td>{{$dt->klasifikasi}}</td>
+                                            <td>{{$dt->kelompok}}</td>
+                                            <td>{{$dt->pemakaian1}}</td>
+                                            <td>{{$dt->pemakaian2}}</td>
+                                            <td>{{$dt->pemeliharaan}}</td>
+                                            <td>{{$dt->admin}}</td>
+                                            <td>{{$dt->denda}}</td>
+                                            <td>
+                                                <a href='{{ url('tarif/'.$dt->id) }}' class="btn btn-warning btn-xs btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                            </td>
+                                            <td>
+                                                <button href='{{ url('tarif/'.$dt->id) }}' class="btn btn-danger btn-xs btn-hapus" id="delete"><i class="fa fa-trash-o"></i></button>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -68,7 +69,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Siswa</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Tarif Air Minum</h5>
             </div>
             <div class="modal-body">
                 <form action="/siswa/create" method="POST">
@@ -109,4 +110,4 @@
             </div>
         </div>
     </div>
-    @stop
+    @endsection
