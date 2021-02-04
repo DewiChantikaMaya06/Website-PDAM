@@ -72,8 +72,17 @@
                 <h5 class="modal-title" id="exampleModalLabel">Tambah Data Tarif Air Minum</h5>
             </div>
             <div class="modal-body">
-                <form action='{{'/tarif/store'}}' method="POST">
-                    @csrf
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                <form action="/tarif/create" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Klasifikasi</label>
                         <input name="klasifikasi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Klasifikasi">

@@ -24,7 +24,7 @@ class TarifController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function store()
     {
         //
     }
@@ -35,18 +35,8 @@ class TarifController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function create(Request $request)
     {
-        $this->validate($request, [
-            'klasifikasi' => 'required|max:30',
-            'kelompok' => 'required',
-            'pemakaian1' => 'required|min:1000',
-            'pemakaian2' => 'required|min:1000',
-            'pemeliharaan' => 'required|min:1000',
-            'admin' => 'required|min:1000',
-            'denda' => 'required|min:1000',
-        ]);
-
         $a['klasifikasi'] = $request->klasifikasi;
         $a['kelompok'] = $request->kelompok;
         $a['pemakaian1'] = $request->pemakaian1;
@@ -57,11 +47,19 @@ class TarifController extends Controller
         $a['created_at'] = date('Y-m-d H:1:s');
         $a['updated_at'] = date('Y-m-d H:1:s');
 
-        Tarif::store($request->all());
-        Tarif::insert($a);
 
-        \Session::flash('sukses', 'Data berhasil ditambah');
-        return redirect('/tarif');
+        Tarif::create($a);
+
+        $this->validate($request, [
+            'klasifikasi' => 'required|max:30',
+            'kelompok' => 'required',
+            'pemakaian1' => 'required|min:1000',
+            'pemakaian2' => 'required|min:1000',
+            'pemeliharaan' => 'required|min:1000',
+            'admin' => 'required|min:1000',
+            'denda' => 'required|min:1000',
+        ]);
+        return redirect('/tarif')->with('sukses', 'Data berhasil diinput!');
     }
 
     /**

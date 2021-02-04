@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Manage Data Tarif Air
     Route::get('/tarif', 'TarifController@index');
-    Route::post('/tarif/store', 'TarifController@store');
+    Route::post('/tarif/create', 'TarifController@create');
 });
 
 Route::get('/pengaduan', function () {
