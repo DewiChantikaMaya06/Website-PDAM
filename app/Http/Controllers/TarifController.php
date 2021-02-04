@@ -15,7 +15,7 @@ class TarifController extends Controller
     public function index()
     {
         $title = 'Data Tarif Air Minum';
-        $data = Tarif::orderby('klasifikasi', 'asc')->get();
+        $data = Tarif::orderby('kelompok', 'asc')->get();
         return view('tarif.index', compact('data', 'title'));
     }
 
@@ -37,7 +37,31 @@ class TarifController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'klasifikasi' => 'required|max:30',
+            'kelompok' => 'required',
+            'pemakaian1' => 'required|min:1000',
+            'pemakaian2' => 'required|min:1000',
+            'pemeliharaan' => 'required|min:1000',
+            'admin' => 'required|min:1000',
+            'denda' => 'required|min:1000',
+        ]);
+
+        $a['klasifikasi'] = $request->klasifikasi;
+        $a['kelompok'] = $request->kelompok;
+        $a['pemakaian1'] = $request->pemakaian1;
+        $a['pemakaian2'] = $request->pemakaian2;
+        $a['pemeliharaan'] = $request->pemeliharaan;
+        $a['admin'] = $request->admin;
+        $a['denda'] = $request->denda;
+        $a['created_at'] = date('Y-m-d H:1:s');
+        $a['updated_at'] = date('Y-m-d H:1:s');
+
+        Tarif::store($request->all());
+        Tarif::insert($a);
+
+        \Session::flash('sukses', 'Data berhasil ditambah');
+        return redirect('/tarif');
     }
 
     /**

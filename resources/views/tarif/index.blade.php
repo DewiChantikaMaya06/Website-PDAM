@@ -72,42 +72,54 @@
                 <h5 class="modal-title" id="exampleModalLabel">Tambah Data Tarif Air Minum</h5>
             </div>
             <div class="modal-body">
-                <form action="/siswa/create" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <form action='{{'/tarif/store'}}' method="POST">
+                    @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Nama Depan</label>
-                        <input name="nama_depan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Depan">
+                        <label for="exampleInputEmail1">Klasifikasi</label>
+                        <input name="klasifikasi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Klasifikasi">
                     </div>
-
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Nama Belakang</label>
-                        <input name="nama_belakang" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Belakang">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Pilih Jenis Kelamin</label>
-                        <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
-                            <option value="L">Laki-laki</option>
-                            <option value="P">Perempuan</option>
+                        <label for="exampleFormControlSelect1">Pilih Kelompok</label>
+                        <select name="kelompok" class="form-control" id="exampleFormControlSelect1">
+                            <option value="A1">A1 (Sosial Umum)</option>
+                            <option value="A2">A2 (Sosial Umum)</option>
+                            <option value="A3">A3 (Sosial Rumah Tangga)</option>
+                            <option value="B1">B1 (Rumah Tangga)</option>
+                            <option value="B2">B2 (Rumah Tangga)</option>
+                            <option value="B3">B3 (Instansi Pemerintah)</option>
+                            <option value="C1">C1 (Niaga Kecil)</option>
+                            <option value="C2">C2 (Niaga Besar)</option>
+                            <option value="D1">D1 (Industri Kecil)</option>
+                            <option value="D2">D2 (Industri Besar)</option>
+                            <option value="E1">E1 (Non Komersial)</option>
+                            <option value="E2">E2 (Komersail)</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Agama</label>
-                        <input name="agama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Agama">
+                        <label for="exampleInputEmail1">Pemakaian (0-10 m³)</label>
+                        <input name="pemakaian1" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0-10 m³">
                     </div>
-
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Alamat</label>
-                        <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="exampleInputEmail1">Pemakaian (>10 m³)</label>
+                        <input name="pemakaian2" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=">10 m³">
                     </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Pemeliharaan</label>
+                        <input name="pemeliharaan" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="pemeliharaan">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Admin</label>
+                        <input name="admin" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Admin">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Denda</label>
+                        <input name="denda" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Denda">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
-    </div>
-    @endsection
+        @endsection

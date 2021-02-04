@@ -15,13 +15,13 @@ class CreateTarifTable extends Migration
     {
         Schema::create('tarif', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('klasifikasi');
+            $table->string('klasifikasi', 30);
             $table->enum('kelompok', ['A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C1', 'C2', 'D1', 'D2', 'E1', 'E2',]);
-            $table->string('pemakaian1'); //0-10m2
-            $table->string('pemakaian2'); //>0-10m2
-            $table->string('pemeliharaan');
-            $table->string('admin');
-            $table->string('denda');
+            $table->integer('pemakaian1'); //0-10m2
+            $table->integer('pemakaian2'); //>0-10m2
+            $table->integer('pemeliharaan');
+            $table->integer('admin');
+            $table->integer('denda');
             $table->timestamps();
         });
     }
