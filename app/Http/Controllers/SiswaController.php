@@ -20,6 +20,13 @@ class SiswaController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request,[
+            'nama_depan' => 'required|min:5',
+            'nama_belakang' => 'required|min:5',
+            'jenis_kelamin' => 'required',
+            'agama' => 'required',
+        ]);
+
         \App\Siswa::create($request->all());
         return redirect('/siswa')->with('sukses','Data berhasil diinput!');
     }
