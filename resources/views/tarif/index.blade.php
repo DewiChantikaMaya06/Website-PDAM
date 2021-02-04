@@ -83,11 +83,14 @@
                 @endif
                 <form action="/tarif/create" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('klasifikasi') ? 'has-error' : ''}}">
                         <label for="exampleInputEmail1">Klasifikasi</label>
                         <input name="klasifikasi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Klasifikasi">
+                        @if($errors->has('klasifikasi'))
+                        <span class="help-block">{{$errors->first('klasifikasi')}}</span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('kelompok') ? 'has-error' : ''}}">
                         <label for="exampleFormControlSelect1">Pilih Kelompok</label>
                         <select name="kelompok" class="form-control" id="exampleFormControlSelect1">
                             <option value="A1">A1 (Sosial Umum)</option>
@@ -103,26 +106,44 @@
                             <option value="E1">E1 (Non Komersial)</option>
                             <option value="E2">E2 (Komersail)</option>
                         </select>
+                        @if($errors->has('kelompok'))
+                        <span class="help-block">{{$errors->first('kelompok')}}</span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('pemakaian1') ? 'has-error' : ''}}">
                         <label for="exampleInputEmail1">Pemakaian (0-10 m³)</label>
                         <input name="pemakaian1" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0-10 m³">
+                        @if($errors->has('pemakaian1'))
+                        <span class="help-block">{{$errors->first('pemakaian1')}}</span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('pemakaian2') ? 'has-error' : ''}}">
                         <label for="exampleInputEmail1">Pemakaian (>10 m³)</label>
                         <input name="pemakaian2" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=">10 m³">
+                        @if($errors->has('pemakaian2'))
+                        <span class="help-block">{{$errors->first('pemakaian2')}}</span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('pemeliharaan') ? 'has-error' : ''}}">
                         <label for="exampleInputEmail1">Pemeliharaan</label>
                         <input name="pemeliharaan" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="pemeliharaan">
+                        @if($errors->has('pemeliharaan'))
+                        <span class="help-block">{{$errors->first('pemeliharaan')}}</span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('admin') ? 'has-error' : ''}}">
                         <label for="exampleInputEmail1">Admin</label>
                         <input name="admin" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Admin">
+                        @if($errors->has('admin'))
+                        <span class="help-block">{{$errors->first('admin')}}</span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('denda') ? 'has-error' : ''}}">
                         <label for="exampleInputEmail1">Denda</label>
                         <input name="denda" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Denda">
+                        @if($errors->has('denda'))
+                        <span class="help-block">{{$errors->first('denda')}}</span>
+                        @endif
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

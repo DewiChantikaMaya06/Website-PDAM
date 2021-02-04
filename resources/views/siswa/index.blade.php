@@ -15,8 +15,8 @@
                         </div>
                         @if(session('sukses'))
                         <div class="alert alert-success alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <i class="fa fa-check-circle"></i> Data berhasil diinput !
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <i class="fa fa-check-circle"></i> Data berhasil diinput !
                         </div>
                         @endif
                         <div class="panel-body">
@@ -81,45 +81,45 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group {{$errors->has('nama_depan') ? 'has-error' : ''}}">
                         <label for="exampleInputEmail1">Nama Depan</label>
-                        <input name="nama_depan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Depan"
-                        value="{{old('nama_depan')}}">
+                        <input name="nama_depan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Depan" value="{{old('nama_depan')}}">
                         @if($errors->has('nama_depan'))
-                            <span class="help-block">{{$errors->first('nama_depan')}}</span>
+                        <span class="help-block">{{$errors->first('nama_depan')}}</span>
                         @endif
                     </div>
 
                     <div class="form-group {{$errors->has('nama_belakang') ? 'has-error' : ''}}">
                         <label for="exampleInputEmail1">Nama Belakang</label>
-                        <input name="nama_belakang" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Belakang"
-                        value="{{old('nama_belakang')}}">
+                        <input name="nama_belakang" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Belakang" value="{{old('nama_belakang')}}">
                         @if($errors->has('nama_belakang'))
-                            <span class="help-block">{{$errors->first('nama_belakang')}}</span>
+                        <span class="help-block">{{$errors->first('nama_belakang')}}</span>
                         @endif
                     </div>
 
                     <div class="form-group {{$errors->has('jenis_kelamin') ? 'has-error' : ''}}">
                         <label for="exampleFormControlSelect1">Pilih Jenis Kelamin</label>
                         <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
-                            <option value="L"{{(old('jenis_kelamin') == 'L') ? ' selected' : ''}}>Laki-laki</option>
-                            <option value="P"{{(old('jenis_kelamin') == 'P') ? ' selected' : ''}}>Perempuan</option>
+                            <option value="L" {{(old('jenis_kelamin') == 'L') ? ' selected' : ''}}>Laki-laki</option>
+                            <option value="P" {{(old('jenis_kelamin') == 'P') ? ' selected' : ''}}>Perempuan</option>
                         </select>
                         @if($errors->has('jenis_kelamin'))
-                            <span class="help-block">{{$errors->first('jenis_kelamin')}}</span>
+                        <span class="help-block">{{$errors->first('jenis_kelamin')}}</span>
                         @endif
                     </div>
 
                     <div class="form-group {{$errors->has('agama') ? 'has-error' : ''}}">
                         <label for="exampleInputEmail1">Agama</label>
-                        <input name="agama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Agama"
-                        value="{{old('agama')}}">
+                        <input name="agama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Agama" value="{{old('agama')}}">
                         @if($errors->has('agama'))
-                            <span class="help-block">{{$errors->first('agama')}}</span>
+                        <span class="help-block">{{$errors->first('agama')}}</span>
                         @endif
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('alamat') ? 'has-error' : ''}}">
                         <label for="exampleFormControlTextarea1">Alamat</label>
-                        <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3">{{old('alamat')}}</textarea>
+                        <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Alamat">{{old('alamat')}}</textarea>
+                        @if($errors->has('alamat'))
+                        <span class="help-block">{{$errors->first('alamat')}}</span>
+                        @endif
                     </div>
 
             </div>
