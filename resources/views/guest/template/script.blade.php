@@ -38,3 +38,5 @@
 		<script src="{{asset('guest/js/bootstrap.min.js')}}"></script>
 		<!-- Main JS -->
 		<script src="{{asset('guest/js/main.js')}}"></script>
+		<script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>           
+

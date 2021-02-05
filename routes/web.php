@@ -53,3 +53,6 @@ Route::get('/detail', function () {
 Route::get('/detailberita', function () {
     return view('guest.detailberita');
 });
+Route::get('/struktur', function () {
+    return view('guest.struktur');
+});

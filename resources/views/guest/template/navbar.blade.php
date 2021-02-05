@@ -31,7 +31,7 @@
                                             <li><a href="{{url('/baliknama')}}">PENDAFTARAN BALIK NAMA</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">STRUKTUR</a>
+                                    <li><a href="{{url('/struktur')}}">STRUKTUR</a>
                                     </li>
                                     <li><a href="#">TENTANG KAMI</a></li>
                                     <li><a href="{{url('/pengaduan')}}">PENGADUAN</a></li>
