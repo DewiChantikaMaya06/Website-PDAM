@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('guest.index');
-});
+
+
+//Manage data Tarif Guest
+Route::get('/', 'GuestController@index');
 
 Route::get('/login', 'AuthController@login')->name('login');
 Route::post('/postlogin', 'AuthController@postlogin');
@@ -32,9 +33,17 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Manage Data Tarif Air
     Route::get('/tarif', 'TarifController@index');
-    Route::post('/tarif/create', 'TarifController@create');
+    Route::get('/tarif/detail/{id}', 'TarifController@detail');
+    Route::get('/tarif/add', 'TarifController@add');
+    Route::post('/tarif/add', 'TarifController@store');
+    Route::get('/tarif/{id}', 'TarifController@edit');
+    Route::put('/tarif/{id}', 'TarifController@update');
+    Route::delete('/deletedata/{id}', 'TarifController@destroy');
 });
 
+
+
+//Manage Template Guest
 Route::get('/pengaduan', function () {
     return view('guest.pengaduan');
 });

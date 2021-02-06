@@ -11,9 +11,25 @@
                         <div class="panel-heading">
                             <h4>{{ $title }}</h4>
                             <div class="right">
-                                <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><i class="lnr lnr-plus-circle"></i></button>
+                                <a href="{{ url('tarif/add') }}" type="button" class="btn"><i class="lnr lnr-plus-circle"></i></a>
                             </div>
                         </div>
+                        @if(session('sukses'))
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <i class="fa fa-check-circle"></i> Data berhasil di input...
+                        </div>
+                        @elseif(session('suksesUpdate'))
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <i class="fa fa-check-circle"></i> Data berhasil di Update!
+                        </div>
+                        @else(session('suksesHapus'))
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <i class="fa fa-trash-o"></i> Data berhasil di Hapus.
+                        </div>
+                        @endif
                         <div class="panel-body">
                             <div class='table-responsive'>
                                 <table class='table myTable'>
@@ -44,10 +60,14 @@
                                             <td>{{$dt->admin}}</td>
                                             <td>{{$dt->denda}}</td>
                                             <td>
-                                                <a href='{{ url('tarif/'.$dt->id) }}' class="btn btn-warning btn-xs btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                <a href='{{ url('tarif/'.$dt->id) }}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
                                             </td>
                                             <td>
-                                                <button href='{{ url('tarif/'.$dt->id) }}' class="btn btn-danger btn-xs btn-hapus" id="delete"><i class="fa fa-trash-o"></i></button>
+                                                <form method='post' action='{{url('deletedata/'.$dt->id)}}'>
+                                                    @csrf
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -62,94 +82,4 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Tarif Air Minum</h5>
-            </div>
-            <div class="modal-body">
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-                <form action="/tarif/create" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <div class="form-group {{$errors->has('klasifikasi') ? 'has-error' : ''}}">
-                        <label for="exampleInputEmail1">Klasifikasi</label>
-                        <input name="klasifikasi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Klasifikasi">
-                        @if($errors->has('klasifikasi'))
-                        <span class="help-block">{{$errors->first('klasifikasi')}}</span>
-                        @endif
-                    </div>
-                    <div class="form-group {{$errors->has('kelompok') ? 'has-error' : ''}}">
-                        <label for="exampleFormControlSelect1">Pilih Kelompok</label>
-                        <select name="kelompok" class="form-control" id="exampleFormControlSelect1">
-                            <option value="A1">A1 (Sosial Umum)</option>
-                            <option value="A2">A2 (Sosial Umum)</option>
-                            <option value="A3">A3 (Sosial Rumah Tangga)</option>
-                            <option value="B1">B1 (Rumah Tangga)</option>
-                            <option value="B2">B2 (Rumah Tangga)</option>
-                            <option value="B3">B3 (Instansi Pemerintah)</option>
-                            <option value="C1">C1 (Niaga Kecil)</option>
-                            <option value="C2">C2 (Niaga Besar)</option>
-                            <option value="D1">D1 (Industri Kecil)</option>
-                            <option value="D2">D2 (Industri Besar)</option>
-                            <option value="E1">E1 (Non Komersial)</option>
-                            <option value="E2">E2 (Komersail)</option>
-                        </select>
-                        @if($errors->has('kelompok'))
-                        <span class="help-block">{{$errors->first('kelompok')}}</span>
-                        @endif
-                    </div>
-                    <div class="form-group {{$errors->has('pemakaian1') ? 'has-error' : ''}}">
-                        <label for="exampleInputEmail1">Pemakaian (0-10 m³)</label>
-                        <input name="pemakaian1" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0-10 m³">
-                        @if($errors->has('pemakaian1'))
-                        <span class="help-block">{{$errors->first('pemakaian1')}}</span>
-                        @endif
-                    </div>
-                    <div class="form-group {{$errors->has('pemakaian2') ? 'has-error' : ''}}">
-                        <label for="exampleInputEmail1">Pemakaian (>10 m³)</label>
-                        <input name="pemakaian2" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=">10 m³">
-                        @if($errors->has('pemakaian2'))
-                        <span class="help-block">{{$errors->first('pemakaian2')}}</span>
-                        @endif
-                    </div>
-                    <div class="form-group {{$errors->has('pemeliharaan') ? 'has-error' : ''}}">
-                        <label for="exampleInputEmail1">Pemeliharaan</label>
-                        <input name="pemeliharaan" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="pemeliharaan">
-                        @if($errors->has('pemeliharaan'))
-                        <span class="help-block">{{$errors->first('pemeliharaan')}}</span>
-                        @endif
-                    </div>
-                    <div class="form-group {{$errors->has('admin') ? 'has-error' : ''}}">
-                        <label for="exampleInputEmail1">Admin</label>
-                        <input name="admin" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Admin">
-                        @if($errors->has('admin'))
-                        <span class="help-block">{{$errors->first('admin')}}</span>
-                        @endif
-                    </div>
-                    <div class="form-group {{$errors->has('denda') ? 'has-error' : ''}}">
-                        <label for="exampleInputEmail1">Denda</label>
-                        <input name="denda" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Denda">
-                        @if($errors->has('denda'))
-                        <span class="help-block">{{$errors->first('denda')}}</span>
-                        @endif
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        @endsection
+@endsection

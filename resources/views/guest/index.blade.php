@@ -12,7 +12,7 @@
                             <h1>Selamat Datang <br><span>Website PDAM</span><span> Tirta Baluran SItubondo</span></h1>
                             <h2><span><b> Silahkan Cek Tagihan Anda..</b></span></h2>
                             <br>
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama/No. Sambungan/PIN.." data-rule="minlen:4" style="border: 30ch"/>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama/No. Sambungan/PIN.." data-rule="minlen:4" style="border: 30ch" />
                             <br>
                             <div class="buttom">
                                 <a href="#" class="btn btn-rounded">Cari</a>
@@ -126,7 +126,7 @@
 <!--/ End Fun-facts -->
 
 <!-- Start Why choose -->
-<section class="why-choose section" >
+<section class="why-choose section">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
@@ -180,7 +180,7 @@
                     <h2>Anda butuh bantuan ? <br> Hubungi (0338) 672 022</h2>
                     <p>Apabila anda membutuhkan bantuan terkait PDAM silahkan hubungi nomer diatas atau klik direct WhatsApp dibawah ini.</p>
                     <div class="button">
-                        <a href="{{url('https://wa.me/628113491444')}}" class="btn">Klik Disini   <i class="fa fa-long-arrow-right"></i></a>
+                        <a href="{{url('https://wa.me/628113491444')}}" class="btn">Klik Disini <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -190,7 +190,7 @@
 <!--/ End Call to action -->
 
 <!-- Start portfolio -->
-<section class="portfolio section" >
+<section class="portfolio section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -239,7 +239,7 @@
                 <div class="table100">
                     <table>
                         <thead>
-                            <tr class="table100-head " >
+                            <tr class="table100-head ">
                                 <th class="column1" rowspan="2">Klasifikasi Tarif</th>
                                 <th class="column6" rowspan="2">Kelompok</th>
                                 <th class="column6" colspan="2">Pemakaian</th>
@@ -254,31 +254,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                                <tr>
-                                    <td class="column1">2017-09-29 01:22</td>
-                                    <td class="column6">A</td>
-                                    <td class="column2">200398</td>
-                                    <td class="column3">iPhone X 64Gb Grey</td>
-                                    <td class="column4">$999.00</td>
-                                    <td class="column5">1</td>
-                                    <td class="column6">$999.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="column1">2017-09-29 01:22</td>
-                                    <td class="column6">A</td>
-                                    <td class="column2">200398</td>
-                                    <td class="column3">iPhone X 64Gb Grey</td>
-                                    <td class="column4">$999.00</td>
-                                    <td class="column5">1</td>
-                                    <td class="column6">$999.00</td>
-                                </tr>                                        
+                            @foreach($data as $dt)
+                            <tr>
+                                <td class="column1">{{$dt->klasifikasi}}</td>
+                                <td class="column6">{{$dt->kelompok}}</td>
+                                <td class="column2">{{$dt->pemakaian1}}</td>
+                                <td class="column3">{{$dt->pemakaian2}}</td>
+                                <td class="column4">{{$dt->pemeliharaan}}</td>
+                                <td class="column5">{{$dt->admin}}</td>
+                                <td class="column6">{{$dt->denda}}</td>
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>	
-    </div>	
-</section>	
+        </div>
+    </div>
+</section>
 <!--/ End Pricing Table -->
 
 
@@ -347,7 +340,7 @@
     </div>
 </section>
 <!-- End Blog Area -->
-<section class="why-choose section" >
+<section class="why-choose section">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
@@ -359,9 +352,13 @@
                         <div class="col-lg-10">
                             <ul class="list">
                                 <li><i class="fa fa-caret-right"></i>Untuk Pengecekan Tagihan :</li>
-                                <p> &#8226;&#8226;&#8226; Bagi pelanggan Telkomsel ketik pdamsit#tagihan#nomor pelanggan. <br> Contoh format sms <font style="color: red">pdamsit#tagihan#01000001. Kirim sms ke 9009.</font> <br> &#8226;&#8226;&#8226; Untuk pelanggan non Telkomsel ketik tagihan#nomor pelanggan. <br><font style="color: red">Contoh tagihan#01000001. Kirim sms ke 08113491444.</font></p>
+                                <p> &#8226;&#8226;&#8226; Bagi pelanggan Telkomsel ketik pdamsit#tagihan#nomor pelanggan. <br> Contoh format sms <font style="color: red">pdamsit#tagihan#01000001. Kirim sms ke 9009.</font> <br> &#8226;&#8226;&#8226; Untuk pelanggan non Telkomsel ketik tagihan#nomor pelanggan. <br>
+                                    <font style="color: red">Contoh tagihan#01000001. Kirim sms ke 08113491444.</font>
+                                </p>
                                 <li><i class="fa fa-caret-right"></i>Untuk Keluhan & Saran :</li>
-                                <p>&#8226;&#8226;&#8226; Bagi pelanggan Telkomsel ketik pdamsit#layanan#isi pesan. Contoh  <br><font style="color: red">pdamsit#layanan#Air Macet di jl. PB Sudirman. Kirim sms ke 9009.</font> <br>&#8226;&#8226;&#8226; Untuk pelanggan non Telkomsel ketik layanan#isi Pesan. <font style="color: red">Contoh layanan#Air Macet di jl. PB Sudirman. Kirim sms ke 08113491444.</font></p>
+                                <p>&#8226;&#8226;&#8226; Bagi pelanggan Telkomsel ketik pdamsit#layanan#isi pesan. Contoh <br>
+                                    <font style="color: red">pdamsit#layanan#Air Macet di jl. PB Sudirman. Kirim sms ke 9009.</font> <br>&#8226;&#8226;&#8226; Untuk pelanggan non Telkomsel ketik layanan#isi Pesan. <font style="color: red">Contoh layanan#Air Macet di jl. PB Sudirman. Kirim sms ke 08113491444.</font>
+                                </p>
                             </ul>
                         </div>
                     </div>
@@ -370,9 +367,9 @@
             </div>
             <div class="col-lg-6 col-12">
                 <!-- Start Choose Rights -->
-                    <div class="video-image">
-                        <img src="{{asset('guest/img/message.png')}}" alt="">
-                    </div>
+                <div class="video-image">
+                    <img src="{{asset('guest/img/message.png')}}" alt="">
+                </div>
                 <!-- End Choose Rights -->
             </div>
         </div>
