@@ -204,10 +204,12 @@
         <div class="row">
             <div class="col-lg-12 col-12">
                 <div class="owl-carousel portfolio-slider">
+                    @foreach($data_kegiatan as $dt)
                     <div class="single-pf">
-                        <img src="{{asset('guest/img/pf1.jpg')}}" alt="#">
+                        <img src="{{asset('storage/'.$dt->gambar_kegiatan)}}" alt="#" style="height: 255px;">
                         <a href="{{('/detail')}}" class="btn">View Details</a>
                     </div>
+                    @endforeach
                     <div class="single-pf">
                         <img src="{{asset('guest/img/pf2.jpg')}}" alt="#">
                         <a href="{{('/detail')}}" class="btn">View Details</a>
@@ -254,7 +256,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($data as $dt)
+                            @foreach($data_tarif as $dt)
                             <tr>
                                 <td class="column1">{{$dt->klasifikasi}}</td>
                                 <td class="column6">{{$dt->kelompok}}</td>

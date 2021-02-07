@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Kegiatan;
 use App\Tarif;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class GuestController extends Controller
      */
     public function index()
     {
-        $data = Tarif::get();
-        return view('guest.index', compact('data'));
+        $data_kegiatan = Kegiatan::orderby('judul', 'asc')->get();
+        $data_tarif = Tarif::orderby('kelompok', 'asc')->get();
+        return view('guest.index', compact('data_tarif', 'data_kegiatan'));
     }
 
     /**

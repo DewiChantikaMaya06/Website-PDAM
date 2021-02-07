@@ -13,14 +13,15 @@
 
 
 
-//Manage data Tarif Guest
+//Manage Data Guest
 Route::get('/', 'GuestController@index');
 
+//Manage Authentification
 Route::get('/login', 'AuthController@login')->name('login');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
 
-
+//Data Midleware
 Route::group(['middleware' => 'auth'], function () {
 
     //Manage Data siswa
@@ -38,7 +39,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/tarif/add', 'TarifController@store');
     Route::get('/tarif/{id}', 'TarifController@edit');
     Route::put('/tarif/{id}', 'TarifController@update');
-    Route::delete('/deletedata/{id}', 'TarifController@destroy');
+    Route::delete('/deleteTarif/{id}', 'TarifController@destroy');
+
+    //Manage Data Galeri Kegiatan
+    Route::get('/kegiatan', 'KegiatanController@index');
+    Route::get('/kegiatan/detail/{id}', 'KegiatanController@detail');
+    Route::get('/kegiatan/add', 'KegiatanController@add');
+    Route::post('/kegiatan/add', 'KegiatanController@store');
+    Route::get('/kegiatan/{id}', 'KegiatanController@edit');
+    Route::put('/kegiatan/{id}', 'KegiatanController@update');
+    Route::delete('/deleteKegiatan/{id}', 'KegiatanController@destroy');
 });
 
 
