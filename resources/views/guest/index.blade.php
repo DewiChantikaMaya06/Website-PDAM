@@ -260,6 +260,21 @@
                             </tr>
                             @endforeach
                         </tbody>
+                        <tfoot class="table100-head bg-primary">
+                            <tr bgcolor="#979797">
+                                <td class="column1" style="color: rgb(255, 255, 255)">Non Komersial</td>
+                                <td class="column6" style="color: rgb(255, 255, 255)">E1</td>
+                                <td class="column2" rowspan="2" colspan="5" style="color: rgb(255, 255, 255)"><center> Besaran Tarif Berdasarkan Kesepakatan Bersama antara PDAM dan Pihak Pelanggan  </center></td>
+                            </tr>
+
+                            <tr bgcolor="#979797">
+                                <td class="column1" style="color: white">Komersial</td>
+                                <td class="column6" style="color: #ffffff">E2</td>
+                            </tr>
+                            <tr>
+                                <td class="column6" colspan="7" style="color: white">ADMINISTRASI/BUKA SEGEL : Rp. 25.000</td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>
