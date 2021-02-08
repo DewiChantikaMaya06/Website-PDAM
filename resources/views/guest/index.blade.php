@@ -264,9 +264,7 @@
                             <tr bgcolor="#979797">
                                 <td class="column1" style="color: rgb(255, 255, 255)">Non Komersial</td>
                                 <td class="column6" style="color: rgb(255, 255, 255)">E1</td>
-                                <td class="column2" rowspan="2" colspan="5" style="color: rgb(255, 255, 255)">
-                                    <center> Besaran Tarif Berdasarkan Kesepakatan Bersama antara PDAM dan Pihak Pelanggan </center>
-                                </td>
+                                <td class="column2" rowspan="2" colspan="5" style="color: rgb(255, 255, 255)"><center> Besaran Tarif Berdasarkan Kesepakatan Bersama antara PDAM dan Pihak Pelanggan  </center></td>
                             </tr>
 
                             <tr bgcolor="#979797">
@@ -299,106 +297,67 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
-                <!-- Single Blog -->
-                <div class="single-news">
-                    <div class="news-head">
-                        <img src="guest/img/blog1.jpg" alt="#">
-                    </div>
-                    <div class="news-body">
-                        <div class="news-content">
-                            <div class="date">22 Aug, 2020</div>
-                            <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
-                            <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
+            <div class="col-lg-12 col-12">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="single-news">
+                            <div class="news-head">
+                                <img src="guest/img/blog2.jpg" alt="#">
+                            </div>
+                            <div class="news-body">
+                                <div class="news-content">
+                                    <div class="date">22 Aug, 2020</div>
+                                    <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
+                                    <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Single Blog -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <!-- Single Blog -->
-                <div class="single-news">
-                    <div class="news-head">
-                        <img src="guest/img/blog2.jpg" alt="#">
-                    </div>
-                    <div class="news-body">
-                        <div class="news-content">
-                            <div class="date">15 Jul, 2020</div>
-                            <h2><a href="blog-single.html">Top five way for solving teeth problems.</a></h2>
-                            <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
+                    <div class="carousel-item">
+                        <div class="single-news">
+                            <div class="news-head">
+                                <img src="guest/img/blog2.jpg" alt="#">
+                            </div>
+                            <div class="news-body">
+                                <div class="news-content">
+                                    <div class="date">22 Aug, 2020</div>
+                                    <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
+                                    <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Single Blog -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <!-- Single Blog -->
-                <div class="single-news">
-                    <div class="news-head">
-                        <img src="guest/img/blog3.jpg" alt="#">
-                    </div>
-                    <div class="news-body">
-                        <div class="news-content">
-                            <div class="date">05 Jan, 2020</div>
-                            <h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
-                            <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
+                    <div class="carousel-item">
+                        <div class="single-news">
+                            <div class="news-head">
+                                <img src="guest/img/blog2.jpg" alt="#">
+                            </div>
+                            <div class="news-body">
+                                <div class="news-content">
+                                    <div class="date">22 Aug, 2020</div>
+                                    <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
+                                    <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Single Blog -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <!-- Single Blog -->
-                <div class="single-news">
-                    <div class="news-head">
-                        <img src="guest/img/blog3.jpg" alt="#">
                     </div>
-                    <div class="news-body">
-                        <div class="news-content">
-                            <div class="date">05 Jan, 2020</div>
-                            <h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
-                            <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Blog -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <!-- Single Blog -->
-                <div class="single-news">
-                    <div class="news-head">
-                        <img src="guest/img/blog3.jpg" alt="#">
-                    </div>
-                    <div class="news-body">
-                        <div class="news-content">
-                            <div class="date">05 Jan, 2020</div>
-                            <h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
-                            <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Blog -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <!-- Single Blog -->
-                <div class="single-news">
-                    <div class="news-head">
-                        <img src="guest/img/blog3.jpg" alt="#">
-                    </div>
-                    <div class="news-body">
-                        <div class="news-content">
-                            <div class="date">05 Jan, 2020</div>
-                            <h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
-                            <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Blog -->
-            </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </div>  
+            </div>          
         </div>
     </div>
 </section>
 <!-- End Blog Area -->
+
 <section class="why-choose section">
     <div class="container">
         <div class="row">
