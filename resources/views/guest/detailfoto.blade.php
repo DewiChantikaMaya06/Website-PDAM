@@ -5,22 +5,16 @@
         <div class="row">
             <div class="col-12">
                 <div class="inner-content">
-                    <img src="{{asset('guest/img/call-bg.jpg')}}" alt="#">
-
-                    {{-- <div class="pf-details-slider">
-                        <img src="{{asset('guest/img/call-bg.jpg')}}" alt="#">
-                    </div> --}}
-                    {{-- <div class="date">
+                    <img src="{{asset('storage/'.$detail_kegiatan->gambar_kegiatan)}}" alt="#">
+                    <div class="date">
                         <ul>
-                            <li><span>Category :</span> Heart Surgery</li>
-                            <li><span>Date :</span> April 20, 2019</li>
-                            <li><span>Client :</span> Suke Agency</li>
-                            <li><span>Ags :</span> Typo</li>
+                            <li><span>Date :</span>{{$detail_kegiatan->created_at}}</li>
+                            <li><span>By :</span> Admin IT PDAM Tirta Baluran</li>
                         </ul>
-                    </div> --}}
+                    </div>
                     <div class="body-text">
-                        <h3>JUDUL KEGIATAN</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor a ti incididunt ut labore et dolore to in magna aliqua. Ut enim ad minim veniam, quis to the in nostrud.abore et dolore magna aliqua uis nostrud.Lorem ipsum dolor sit amet, in a in to in a consectetur.ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis to the in nostrud.abore et dolore magna in a aliqua uis nostrud.Lorem ipsum dolor sit amet, in aed do eiusmod</p>
+                        <h3>{{$detail_kegiatan->judul}}</h3>
+                        <p>{{$detail_kegiatan->deskripsi}}</p>
                     </div>
                 </div>
             </div>

@@ -207,17 +207,9 @@
                     @foreach($data_kegiatan as $dt)
                     <div class="single-pf">
                         <img src="{{asset('storage/'.$dt->gambar_kegiatan)}}" alt="#" style="height: 255px;">
-                        <a href="{{('/detail')}}" class="btn">View Details</a>
+                        <a href="{{url('detailfoto/'.$dt->id)}}" class="btn">View Details</a>
                     </div>
                     @endforeach
-                    <div class="single-pf">
-                        <img src="{{asset('guest/img/pf2.jpg')}}" alt="#">
-                        <a href="{{('/detail')}}" class="btn">View Details</a>
-                    </div>
-                    <div class="single-pf">
-                        <img src="{{asset('guest/img/pf3.jpg')}}" alt="#">
-                        <a href="{{('/detail')}}" class="btn">View Details</a>
-                    </div>
                 </div>
             </div>
         </div>

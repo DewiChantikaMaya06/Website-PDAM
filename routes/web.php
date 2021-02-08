@@ -15,6 +15,7 @@
 
 //Manage Data Guest
 Route::get('/', 'GuestController@index');
+Route::get('/detailfoto/{id}', 'GuestController@show');
 
 //Manage Authentification
 Route::get('/login', 'AuthController@login')->name('login');
@@ -65,9 +66,6 @@ Route::get('/tagihan', function () {
 });
 Route::get('/baliknama', function () {
     return view('guest.baliknama');
-});
-Route::get('/detail', function () {
-    return view('guest.detailfoto');
 });
 Route::get('/detailberita', function () {
     return view('guest.detailberita');

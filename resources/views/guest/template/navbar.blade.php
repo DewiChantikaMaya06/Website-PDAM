@@ -3,19 +3,19 @@
         <div class="loader-outter"></div>
         <div class="loader-inner"></div>
 
-        <div class="indicator"> 
-            <a href=""><img src="guest/img/logo_pdam.png" alt=""></a>
+        <div class="indicator">
+            <a href=""><img src="{{asset('storage/logo_pdam.png')}}" alt=""></a>
         </div>
     </div>
 </div>
-<header class="header" >
+<header class="header">
     <div class="header-inner">
         <div class="container">
             <div class="inner">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-12">
                         <div class="logo">
-                            <a href="index.html"><img src="guest/img/logo_pdam2.png" alt="#"></a>
+                            <a href="index.html"><img src="{{asset('storage/logo_pdam2.png')}}" alt="#"></a>
                         </div>
                         <div class="mobile-nav"></div>
                     </div>
@@ -49,4 +49,3 @@
         </div>
     </div>
 </header>
-

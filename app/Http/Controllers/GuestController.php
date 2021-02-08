@@ -49,7 +49,8 @@ class GuestController extends Controller
      */
     public function show($id)
     {
-        //
+        $detail_kegiatan = Kegiatan::find($id);
+        return view('guest.detailfoto', compact('detail_kegiatan'));
     }
 
     /**
