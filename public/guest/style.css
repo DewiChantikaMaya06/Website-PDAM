@@ -578,7 +578,7 @@ h2{
 }
 /* Header Sticky */
 .header.sticky .header-inner{
-	position:fixed;
+	position:relative;
 	z-index:999;
 	top:0;
 	left:0;
