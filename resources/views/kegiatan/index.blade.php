@@ -50,7 +50,7 @@
                                                 <h4><strong>{{ $dt->judul }}</strong></h4> <br>
                                                 <img src="{{asset('storage/'.$dt->gambar_kegiatan)}}" height="150px"><br>
                                             </td>
-                                            <td>{{$dt->deskripsi}}</td>
+                                            <td>{!!$dt->deskripsi!!}</td>
                                             <td>
                                                 <a href='{{ url('kegiatan/'.$dt->id) }}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
                                             </td>

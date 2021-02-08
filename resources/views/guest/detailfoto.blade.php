@@ -13,8 +13,8 @@
                         </ul>
                     </div>
                     <div class="body-text">
-                        <h3>{{$detail_kegiatan->judul}}</h3>
-                        <p>{{$detail_kegiatan->deskripsi}}</p>
+                        <h3 style="margin-left: 40%;">{{$detail_kegiatan->judul}}</h3>
+                        <p>{!!$detail_kegiatan->deskripsi!!}</p>
                     </div>
                 </div>
             </div>

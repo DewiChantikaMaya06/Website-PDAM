@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="form-group {{$errors->has('deskripsi') ? 'has-error' : ''}}">
                                         <label for="exampleInputEmail1">Deskripsi</label>
-                                        <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Deskripsi" value="{{old('deskripsi')}}" rows="10"></textarea>
+                                        <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="10">{{old('deskripsi')}}</textarea>
                                         @if($errors->has('deskripsi'))
                                         <span class="help-block">{{$errors->first('deskripsi')}}</span>
                                         @endif
@@ -48,5 +48,8 @@
         </div>
     </div>
 </div>
-
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('deskripsi');
+</script>
 @endsection
