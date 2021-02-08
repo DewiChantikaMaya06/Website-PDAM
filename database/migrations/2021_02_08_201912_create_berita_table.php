@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKegiatanTable extends Migration
+class CreateBeritaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateKegiatanTable extends Migration
      */
     public function up()
     {
-        Schema::create('kegiatan', function (Blueprint $table) {
+        Schema::create('berita', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul', 30);
-            $table->string('gambar_kegiatan');
-            $table->text('deskripsi', 225);
+            $table->string('sumber', 100);
+            $table->string('gambar_berita');
+            $table->date('tanggal');
+            $table->text('isi_berita', 5000);
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateKegiatanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kegiatan');
+        Schema::dropIfExists('berita');
     }
 }
