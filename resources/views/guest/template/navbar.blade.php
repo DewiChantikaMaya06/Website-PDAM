@@ -25,18 +25,18 @@
                         <div class="main-menu">
                             <nav class="navigation">
                                 <ul class="nav menu">
-                                    <li class="active"><a href="{{url('/')}}">BERANDA</a></li>
+                                    <li><a href="{{url('/')}}">BERANDA</a></li>
                                     <li><a href="#">PELANGGAN</a>
                                         <ul class="dropdown">
                                             <li><a href="{{url('/')}}">CEK TAGIHAN</a></li>
                                             <li><a href="{{url('/pendaftaran')}}">PENDAFTARAN BARU</a></li>
-                                            <li><a href="{{url('/baliknama')}}">PENDAFTARAN BALIK NAMA</a></li>
+                                            <li><a href="{{url('/baliknama')}}">PENGAJUAN BALIK NAMA</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="{{url('/struktur')}}">STRUKTUR</a>
                                     </li>
-                                    <li><a href="#">TENTANG KAMI</a></li>
                                     <li><a href="{{url('/pengaduan')}}">PENGADUAN</a></li>
+                                    <li><a href="{{url('/about')}}">TENTANG KAMI</a></li>
                                 </ul>
                             </nav>
                         </div>

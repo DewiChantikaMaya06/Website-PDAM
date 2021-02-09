@@ -54,8 +54,7 @@
                         </div>
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
-                            <label class="form-group" for="">Foto KTP :</label>
-                            <p style="color:red">Max 5 mb.</p>
+                            <label class="form-group" for="">Foto KTP : <font style="color: crimson">(Max. 5 mb)</font> </label>
                             <input type="file" class="form-control-file">
                             <p><font style="color: red">Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam</font></p>
                         </div>
@@ -74,7 +73,7 @@
             </div>
             <div class="col-lg-6 col-md-12 ">
                 <div class="appointment-image">
-                    <img src="guest/img/register.png" alt="">
+                    <img src="{{('guest/img/register.png')}}" alt="">
                 </div>
             </div>
         </div>

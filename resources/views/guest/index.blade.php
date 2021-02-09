@@ -9,13 +9,11 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="text">
-                            <h1>Selamat Datang <br><span>Website PDAM</span><span> Tirta Baluran SItubondo</span></h1>
+                            <h1>Selamat Datang <br><span>Website PDAM</span><span> Tirta Baluran Situbondo</span></h1>
                             <h2><span><b> Silahkan Cek Tagihan Anda..</b></span></h2>
                             <br>
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama/No. Sambungan/PIN.." data-rule="minlen:4" style="border: 30ch" />
-                            <br>
                             <div class="buttom">
-                                <a href="#" class="btn btn-rounded">Cari</a>
+                                <a href="{{url('/tagihan')}}" class="btn btn-rounded">Cek Tagihan</a>
                             </div>
 
                         </div>

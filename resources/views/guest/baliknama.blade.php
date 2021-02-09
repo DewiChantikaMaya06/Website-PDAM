@@ -59,7 +59,7 @@
             </div>
             <div class="col-lg-6 col-md-12 ">
                 <div class="appointment-image">
-                    <img src="guest/img/balik_nama.jpg" alt="">
+                    <img src="{{('guest/img/balik_nama.jpg')}}" alt="">
                 </div>
             </div>
         </div>

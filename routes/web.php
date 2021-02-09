@@ -73,3 +73,6 @@ Route::get('/detailberita', function () {
 Route::get('/struktur', function () {
     return view('guest.struktur');
 });
+Route::get('/about', function () {
+    return view('guest.about');
+});
