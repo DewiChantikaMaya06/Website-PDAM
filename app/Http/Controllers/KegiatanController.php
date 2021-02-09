@@ -40,13 +40,12 @@ class KegiatanController extends Controller
     {
         $this->validate($request, [
             'judul' => 'required|max:30',
-            'gambar_kegiatan' => 'required|image|mimes:jpeg,png,jpg',
+            'gambar_kegiatan' => 'required|mimes:jpg,png,jpeg,gif,svg',
             'deskripsi' => 'required',
         ], [
             'judul.required' => 'Judul harus diisi',
             'gambar_kegiatan.required' => 'Gambar harus diisi',
-            'gambar_kegiatan.image' => 'File harus berupa gambar',
-            'gambar_kegiatan.mimes' => 'Type gambar harus .jpeg, .png, atau .jpg',
+            'gambar_kegiatan.mimes' => 'File Harus berupa gambar. Type jpg,png,jpeg,giv,svg',
             'deskripsi.required' => 'Deskripsi harus diisi',
         ]);
 
@@ -97,13 +96,12 @@ class KegiatanController extends Controller
     {
         $this->validate($request, [
             'judul' => 'required|max:30',
-            'gambar_kegiatan' => 'required|image|mimes:jpeg,png,jpg',
+            'gambar_kegiatan' => 'required|mimes:jpg,png,jpeg,gif,svg',
             'deskripsi' => 'required',
         ], [
             'judul.required' => 'Judul harus diisi',
             'gambar_kegiatan.required' => 'Gambar harus diisi',
-            'gambar_kegiatan.image' => 'File harus berupa gambar',
-            'gambar_kegiatan.mimes' => 'Type gambar harus .jpeg, .png, atau .jpg',
+            'gambar_kegiatan.mimes' => 'File Harus berupa gambar. Type jpg,png,jpeg,giv,svg',
             'deskripsi.required' => 'Deskripsi harus diisi',
         ]);
 
