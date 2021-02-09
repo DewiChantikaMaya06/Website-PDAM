@@ -74,7 +74,7 @@
             </div>
             <div class="col-lg-6 col-md-12 ">
                 <div class="appointment-image">
-                    <img src="guest/img/contact-img.png" alt="">
+                    <img src="guest/img/register.png" alt="">
                 </div>
             </div>
         </div>
