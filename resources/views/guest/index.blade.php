@@ -297,7 +297,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-10 col-10" style="margin-left: 8%;">
+            <div class="col-lg-12 col-12">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -328,24 +328,8 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="carousel-item">
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="guest/img/blog2.jpg" alt="#">
-                                </div>
-                                <div class="news-body">
-                                    <div class="news-content">
-                                        <div class="date">22 Aug, 2020</div>
-                                        <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
-                                        <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do eiusmod tempor incididunt sed do incididunt sed.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
                     </div>
+
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>

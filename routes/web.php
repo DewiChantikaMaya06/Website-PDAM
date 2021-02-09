@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/tarif/add', 'TarifController@store');
     Route::get('/tarif/{id}', 'TarifController@edit');
     Route::put('/tarif/{id}', 'TarifController@update');
-    Route::delete('/deleteTarif/{id}', 'TarifController@destroy');
+    Route::delete('/tarif/delete/{id}', 'TarifController@destroy');
 
     //Manage Data Galeri Kegiatan
     Route::get('/kegiatan', 'KegiatanController@index');
@@ -49,7 +49,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/kegiatan/add', 'KegiatanController@store');
     Route::get('/kegiatan/{id}', 'KegiatanController@edit');
     Route::put('/kegiatan/{id}', 'KegiatanController@update');
-    Route::delete('/deleteKegiatan/{id}', 'KegiatanController@destroy');
+    Route::delete('/kegiatan/delete/{id}', 'KegiatanController@destroy');
+
+    //Manage Data Berita
+    Route::get('/berita', 'BeritaController@index');
+    Route::get('/berita/add', 'BeritaController@add');
+    Route::post('/berita/add', 'BeritaController@store');
+    Route::get('/berita/{id}', 'BeritaController@edit');
+    Route::put('/berita/{id}', 'BeritaController@update');
+    Route::delete('/berita/delete/{id}', 'BeritaController@destroy');
 });
 
 

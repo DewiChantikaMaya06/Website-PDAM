@@ -63,7 +63,7 @@
                                                 <a href='{{ url('tarif/'.$dt->id) }}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
                                             </td>
                                             <td>
-                                                <form method='post' action='{{url('deleteTarif/'.$dt->id)}}'>
+                                                <form method='post' action='{{url('tarif/delete/'.$dt->id)}}'>
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>

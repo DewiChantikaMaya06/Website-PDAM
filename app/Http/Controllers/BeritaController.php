@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Berita;
 
 class BeritaController extends Controller
 {
@@ -13,7 +14,9 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        //
+        $title = 'Data Berita PDAM';
+        $data = Berita::orderby('judul', 'asc')->get();
+        return view('berita.index', compact('data', 'title'));
     }
 
     /**
@@ -21,9 +24,10 @@ class BeritaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add()
     {
-        //
+        $title = 'Tambah Informasi / Berita';
+        return view('berita.add', compact('title'));
     }
 
     /**
@@ -34,7 +38,32 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'judul' => 'required|max:30',
+            'sumber' => 'required|max:100',
+            'gambar_berita' => 'required|mimes:jpg,png,jpeg,gif,svg',
+            'isi_berita' => 'required|max:5000',
+        ], [
+            'judul.required' => 'Judul harus diisi',
+            'judul.max' => 'Maksimal menggunakan 30 karakter',
+            'sumber.required' => 'sumber harus diisi',
+            'sumber.max' => 'Maksimal menggunakan 100 karakter',
+            'gambar_berita.required' => 'Gambar harus diisi',
+            'gambar_berita.mimes' => 'File Harus berupa gambar. Type jpg,png,jpeg,giv,svg',
+            'isi_berita.required' => 'Berita harus diisi',
+            'isi_berita.max' => 'Maksimal menggunakan 5000 karakter',
+        ]);
+
+        $data['judul'] = $request->judul;
+        $data['sumber'] = $request->sumber;
+        $data['gambar_berita'] = $request->gambar_berita->store('berita');
+        $data['isi_berita'] = $request->isi_berita;
+        $data['created_at'] = date('Y-m-d H:1:s');
+        $data['updated_at'] = date('Y-m-d H:1:s');
+
+        Berita::insert($data);
+
+        return redirect('berita')->with('sukses', 'isi kata sukses ditambah');
     }
 
     /**
@@ -56,7 +85,10 @@ class BeritaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = 'Edit Data Berita';
+        $data = Berita::find($id);
+
+        return view('berita.edit', compact('title', 'data'));
     }
 
     /**
@@ -68,7 +100,32 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'judul' => 'required|max:30',
+            'sumber' => 'required|max:100',
+            'gambar_berita' => 'required|mimes:jpg,png,jpeg,gif,svg',
+            'isi_berita' => 'required|max:5000',
+        ], [
+            'judul.required' => 'Judul harus diisi',
+            'judul.max' => 'Maksimal menggunakan 30 karakter',
+            'sumber.required' => 'sumber harus diisi',
+            'sumber.max' => 'Maksimal menggunakan 100 karakter',
+            'gambar_berita.required' => 'Gambar harus diisi',
+            'gambar_berita.mimes' => 'File Harus berupa gambar. Type jpg,png,jpeg,giv,svg',
+            'isi_berita.required' => 'Berita harus diisi',
+            'isi_berita.max' => 'Maksimal menggunakan 5000 karakter',
+        ]);
+
+        $data['judul'] = $request->judul;
+        $data['sumber'] = $request->sumber;
+        $data['gambar_berita'] = $request->gambar_berita->store('berita');
+        $data['isi_berita'] = $request->isi_berita;
+        $data['created_at'] = date('Y-m-d H:1:s');
+        $data['updated_at'] = date('Y-m-d H:1:s');
+
+        Berita::where('id', $id)->update($data);
+
+        return redirect('berita')->with('suksesUpdate', 'isi kata sukses diupdate');
     }
 
     /**
@@ -79,6 +136,8 @@ class BeritaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Berita::find($id);
+        $data->delete();
+        return redirect('berita')->with('suksesHapus', 'isi kata sukses dihapus');
     }
 }

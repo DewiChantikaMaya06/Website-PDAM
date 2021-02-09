@@ -18,7 +18,6 @@ class CreateBeritaTable extends Migration
             $table->string('judul', 30);
             $table->string('sumber', 100);
             $table->string('gambar_berita');
-            $table->date('tanggal');
             $table->text('isi_berita', 5000);
             $table->timestamps();
         });

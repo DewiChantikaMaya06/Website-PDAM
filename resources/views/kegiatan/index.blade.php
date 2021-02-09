@@ -55,7 +55,7 @@
                                                 <a href='{{ url('kegiatan/'.$dt->id) }}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
                                             </td>
                                             <td>
-                                                <form method='post' action='{{url('deleteKegiatan/'.$dt->id)}}'>
+                                                <form method='post' action='{{url('kegiatan/delete/'.$dt->id)}}'>
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>
