@@ -1,11 +1,11 @@
 		<!-- jquery Min JS -->
-        <script src="{{asset('guest/js/jquery.min.js')}}"></script>
+		<script src="{{asset('guest/js/jquery.min.js')}}"></script>
 		<!-- jquery Migrate JS -->
 		<script src="{{asset('guest/js/jquery-migrate-3.0.0.js')}}"></script>
 		<!-- jquery Ui JS -->
 		<script src="{{asset('guest/js/jquery-ui.min.js')}}"></script>
 		<!-- Easing JS -->
-        <script src="{{asset('guest/js/easing.js')}}"></script>
+		<script src="{{asset('guest/js/easing.js')}}"></script>
 		<!-- Color JS -->
 		<script src="{{asset('guest/js/colors.js')}}"></script>
 		<!-- Popper JS -->
@@ -13,17 +13,17 @@
 		<!-- Bootstrap Datepicker JS -->
 		<script src="{{asset('guest/js/bootstrap-datepicker.js')}}"></script>
 		<!-- Jquery Nav JS -->
-        <script src="{{asset('guest/js/jquery.nav.js')}}"></script>
+		<script src="{{asset('guest/js/jquery.nav.js')}}"></script>
 		<!-- Slicknav JS -->
 		<script src="{{asset('guest/js/slicknav.min.js')}}"></script>
 		<!-- ScrollUp JS -->
-        <script src="{{asset('guest/js/jquery.scrollUp.min.js')}}"></script>
+		<script src="{{asset('guest/js/jquery.scrollUp.min.js')}}"></script>
 		<!-- Niceselect JS -->
 		<script src="{{asset('guest/js/niceselect.js')}}"></script>
 		<!-- Tilt Jquery JS -->
 		<script src="{{asset('guest/js/tilt.jquery.min.js')}}"></script>
 		<!-- Owl Carousel JS -->
-        <script src="{{asset('guest/js/owl-carousel.js')}}"></script>
+		<script src="{{asset('guest/js/owl-carousel.js')}}"></script>
 		<!-- counterup JS -->
 		<script src="{{asset('guest/js/jquery.counterup.min.js')}}"></script>
 		<!-- Steller JS -->
@@ -38,5 +38,28 @@
 		<script src="{{asset('guest/js/bootstrap.min.js')}}"></script>
 		<!-- Main JS -->
 		<script src="{{asset('guest/js/main.js')}}"></script>
-		<script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>           
+		<script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>
 
+		<script>
+			var slideIndex = 1;
+			showDivs(slideIndex);
+
+			function plusDivs(n) {
+				showDivs(slideIndex += n);
+			}
+
+			function showDivs(n) {
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				if (n > x.length) {
+					slideIndex = 1
+				}
+				if (n < 1) {
+					slideIndex = x.length
+				}
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				x[slideIndex - 1].style.display = "block";
+			}
+		</script>
