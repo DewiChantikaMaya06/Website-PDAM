@@ -74,13 +74,14 @@
 <div id="fun-facts" class="fun-facts section overlay">
     <div class="container">
         <div class="row">
+            @foreach($data_info as $dt)
             <div class="col-lg-3 col-md-6 col-12">
                 <!-- Start Single Fun -->
                 <div class="single-fun">
                     <i class="icofont icofont-home"></i>
                     <div class="content">
-                        <span class="counter">3468</span>
-                        <p>Hospital Rooms</p>
+                        <span class="counter">{{$dt->pegawai}}</span>
+                        <p>UNIT</p>
                     </div>
                 </div>
                 <!-- End Single Fun -->
@@ -90,8 +91,8 @@
                 <div class="single-fun">
                     <i class="icofont icofont-user-alt-3"></i>
                     <div class="content">
-                        <span class="counter">557</span>
-                        <p>Specialist Doctors</p>
+                        <span class="counter">{{$dt->pegawai}}</span>
+                        <p>PEGAWAI</p>
                     </div>
                 </div>
                 <!-- End Single Fun -->
@@ -101,8 +102,8 @@
                 <div class="single-fun">
                     <i class="icofont-simple-smile"></i>
                     <div class="content">
-                        <span class="counter">4379</span>
-                        <p>Happy Patients</p>
+                        <span class="counter">{{$dt->pengguna}}</span>
+                        <p>PELANGGAN</p>
                     </div>
                 </div>
                 <!-- End Single Fun -->
@@ -112,12 +113,13 @@
                 <div class="single-fun">
                     <i class="icofont icofont-table"></i>
                     <div class="content">
-                        <span class="counter">32</span>
-                        <p>Years of Experience</p>
+                        <span class="counter">1991</span>
+                        <p>TAHUN BERDIRI</p>
                     </div>
                 </div>
                 <!-- End Single Fun -->
             </div>
+            @endforeach
         </div>
     </div>
 </div>

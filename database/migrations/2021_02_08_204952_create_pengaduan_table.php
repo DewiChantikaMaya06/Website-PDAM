@@ -17,7 +17,7 @@ class CreatePengaduanTable extends Migration
             $table->increments('id');
             $table->string('nama', 50);
             $table->string('alamat', 150);
-            $table->string('no_hp', 12);
+            $table->string('no_hp', 13);
             $table->string('no_pelanggan', 30);
             $table->enum('jenis', ['ringan', 'sedang', 'berat']);
             $table->date('kerusakan');

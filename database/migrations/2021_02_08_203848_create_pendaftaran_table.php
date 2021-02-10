@@ -20,7 +20,7 @@ class CreatePendaftaranTable extends Migration
             $table->string('alamat', 100);
             $table->string('rt', 5);
             $table->string('rw', 5);
-            $table->string('no_hp', 12);
+            $table->string('no_hp', 13);
             $table->string('gambar_ktp');
             $table->timestamps();
         });

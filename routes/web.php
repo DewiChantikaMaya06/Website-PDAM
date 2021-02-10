@@ -60,6 +60,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/berita/{id}', 'BeritaController@edit');
     Route::put('/berita/{id}', 'BeritaController@update');
     Route::delete('/berita/delete/{id}', 'BeritaController@destroy');
+
+    //Manage Data info
+    Route::get('/info', 'InfoController@index');
+    Route::get('/info/add', 'InfoController@add');
+    Route::post('/info/add', 'InfoController@store');
+    Route::get('/info/{id}', 'InfoController@edit');
+    Route::put('/info/{id}', 'InfoController@update');
+    Route::delete('/info/delete/{id}', 'InfoController@destroy');
 });
 
 

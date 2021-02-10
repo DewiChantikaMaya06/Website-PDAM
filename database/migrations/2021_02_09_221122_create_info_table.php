@@ -17,7 +17,7 @@ class CreateInfoTable extends Migration
             $table->increments('id');
             $table->integer('unit');
             $table->integer('pegawai');
-            $table->integer('pengunjung');
+            $table->integer('pengguna');
             $table->timestamps();
         });
     }

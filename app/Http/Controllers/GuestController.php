@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Kegiatan;
 use App\Tarif;
 use App\Berita;
+use App\Info;
 
 class GuestController extends Controller
 {
@@ -19,7 +20,8 @@ class GuestController extends Controller
         $data_kegiatan = Kegiatan::orderby('judul', 'asc')->get();
         $data_tarif = Tarif::orderby('kelompok', 'asc')->get();
         $data_berita = Berita::orderby('judul', 'asc')->get();
-        return view('guest.index', compact('data_tarif', 'data_kegiatan', 'data_berita'));
+        $data_info = Info::get();
+        return view('guest.index', compact('data_tarif', 'data_kegiatan', 'data_berita', 'data_info'));
     }
 
     /**
@@ -59,7 +61,7 @@ class GuestController extends Controller
     {
         $detail_berita = Berita::find($id);
         $data_berita = Berita::get();
-        return view('guest.detailberita', compact('detail_berita','data_berita'));
+        return view('guest.detailberita', compact('detail_berita', 'data_berita'));
     }
 
     /**
