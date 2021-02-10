@@ -58,7 +58,8 @@ class GuestController extends Controller
     public function ShowBerita($id)
     {
         $detail_berita = Berita::find($id);
-        return view('guest.detailberita', compact('detail_berita'));
+        $data_berita = Berita::get();
+        return view('guest.detailberita', compact('detail_berita','data_berita'));
     }
 
     /**

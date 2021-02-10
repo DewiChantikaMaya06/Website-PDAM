@@ -5,7 +5,7 @@
 <section class="news-single section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-12">
+            <div class="col-lg-8 col-12">
                 <div class="row">
                     <div class="col-12">
                         <div class="single-main">
@@ -46,6 +46,26 @@
                                 <!--/ End Single Comments -->
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="main-sidebar">
+                    <div class="single-widget recent-post">
+                        <h3 class="title">Berita Lainnya</h3>
+                        @foreach($data_berita as $dt)
+                        <div class="single-post">
+                            <div class="image">
+                                <img src="{{asset('storage/'.$dt->gambar_berita)}}" href="{{url('/detailberita'.$dt->id)}}">
+                            </div>
+                            <div class="content">
+                                <h5><a href="{{url('/detailberita'.$dt->id)}}">{{$dt->judul}}</a></h5>
+                                <ul class="comment">
+                                    <li><i class="fa fa-calendar" aria-hidden="true"></i>{{$dt->created_at}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

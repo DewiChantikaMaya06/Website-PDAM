@@ -34,7 +34,18 @@ class PengaduanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required|max:50',
+            'alamat' => 'required|max:150',
+            'no_hp' => 'required|max:12',
+            'no_pelanggan' => 'required|max:30',
+            'jenis' => 'required',
+            'kerusakan' => 'required',
+            'isi_pengaduan' => 'required',
+        ],[
+            'judul'
+        ]
+    );
     }
 
     /**
