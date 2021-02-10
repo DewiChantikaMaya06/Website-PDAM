@@ -204,7 +204,7 @@
                 <div class="owl-carousel portfolio-slider">
                     @foreach($data_kegiatan as $dt)
                     <div class="single-pf">
-                        <img src="{{asset('storage/'.$dt->gambar_kegiatan)}}" alt="#" style="height: 255px;">
+                        <img src="{{asset('storage/'.$dt->gambar_kegiatan)}}" alt="#" style="height: 220px;">
                         <a href="{{url('detailfoto/'.$dt->id)}}" class="btn">View Details</a>
                     </div>
                     @endforeach
@@ -298,24 +298,31 @@
         </div>
         <div class="row">
             <div class="col-lg-12 col-12">
-                @foreach($data_berita as $dt)
-                <div class="w3-content w3-display-container">
-                    <div class="mySlides">
-                        <div class="news-head">
-                            <img src="{{asset('storage/'.$dt->gambar_berita)}}" style="width:100%">
-                        </div>
-                        <div class="news-body">
-                            <div class="news-content">
-                                <div class="date">{{$dt->created_at}}</div>
-                                <h2><a href="blog-single.html">{{$dt->judul}}</a></h2>
-                                <p class="text">{!!$dt->isi_berita!!}</p>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="w3-content w3-display-container">
+                            @foreach($data_berita as $dt)
+                            <div class="mySlides">
+                                <div class="single-news">
+                                    <div class="news-head">
+                                        <img src="{{asset('storage/'.$dt->gambar_berita)}}" style="width:100%">
+                                    </div>
+                                    <div class="news-body">
+                                        <div class="news-content">
+                                            <h1 class="text-black"><strong>{{$dt->judul}}</strong></h1>
+                                            <div class="date">{{$dt->created_at}}</div>
+                                            <p>{{str_limit(strip_tags(html_entity_decode($dt->isi_berita)), 200, '.....')}}<a href="{{url('detailberita/'.$dt->id)}}" class="btn-sm bg-primary text-white">Lanjutkan baca >></a></p>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            @endforeach
+                            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
                         </div>
                     </div>
-                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
                 </div>
-                @foreach
             </div>
         </div>
 </section>

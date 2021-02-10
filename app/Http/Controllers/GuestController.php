@@ -55,6 +55,12 @@ class GuestController extends Controller
         return view('guest.detailfoto', compact('detail_kegiatan'));
     }
 
+    public function ShowBerita($id)
+    {
+        $detail_berita = Berita::find($id);
+        return view('guest.detailberita', compact('detail_berita'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

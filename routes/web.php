@@ -16,6 +16,7 @@
 //Manage Data Guest
 Route::get('/', 'GuestController@index');
 Route::get('/detailfoto/{id}', 'GuestController@show');
+Route::get('/detailberita/{id}', 'GuestController@ShowBerita');
 
 //Manage Authentification
 Route::get('/login', 'AuthController@login')->name('login');
@@ -25,9 +26,10 @@ Route::get('/logout', 'AuthController@logout');
 //Data Midleware
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::get('/dashboard', 'DashboardController@index');
+
     //Manage Data siswa
     Route::get('/siswa', 'SiswaController@index');
-    Route::get('/dashboard', 'DashboardController@index');
     Route::post('/siswa/create', 'SiswaController@create');
     Route::get('/siswa/{id}/edit', 'SiswaController@edit');
     Route::post('/siswa/{id}/update', 'SiswaController@update');
