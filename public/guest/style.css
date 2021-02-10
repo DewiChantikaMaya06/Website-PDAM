@@ -2668,6 +2668,15 @@ h2 {
     font-weight: 600;
 }
 
+.single-main .news-text .news-title h1 {
+    color: #26547c;
+    font-weight: bold;
+    font-family: "Heebo", sans-serif;
+    font-size: 40px;
+    letter-spacing: .8px;
+    padding-bottom: 35px;
+}
+
 .news-single .news-title a:hover {
     color: #1A76D1;
 }
@@ -2764,7 +2773,7 @@ h2 {
 
 /* Blockqoute */
 .news-single blockquote {
-    background-image: url('img/blockqoute-bg.jpg');
+    background-image: url('img/slider.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2773,14 +2782,15 @@ h2 {
 }
 
 .news-single blockquote::before {
-    opacity: 0.9;
+    opacity: 0.6;
 }
 
 .news-single .news-text blockquote p {
     color: #fff;
-    margin: 0;
+    margin: 25px 50px;
     line-height: 26px;
-    font-size: 15px;
+    font-size: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     position: relative;
 }
 

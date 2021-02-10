@@ -10,8 +10,8 @@
 								<p>Kami adalah Perusahaan Daerah yang mengelola penyediaan air bersih untuk wilayah Kabupaten Situbondo. Berdiri sejak tahun 1991 hingga kini kami terus berusaha memberikan pelayanan optimal bagi masyarakat pelanggan maupun non-pelanggan.</p>
 								<!-- Social -->
 								<ul class="social">
-									<li><a href="#"><i class="icofont-facebook"></i></a></li>
-									<li><a href="#"><i class="icofont-google-plus"></i></a></li>
+									<li><a href="{{url('https://m.facebook.com/funbike.tirtabaluran.3?tsid=0.9136297381321135&source=result')}}"><i class="icofont-facebook"></i></a></li>
+									<li><a href="{{url('https://www.instagram.com/pdamtirtabaluran/')}}"><i class="icofont-instagram"></i></a></li>
 								</ul>
 								<!-- End Social -->
 							</div>
@@ -22,11 +22,10 @@
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Tentang Kami</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Info PDAM</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Pelanggan</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Pengaduan</a></li>	
+											<li><a href="{{url('/')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Beranda</a></li>
+											<li><a href="{{url('/pendaftaran')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Pendaftaran</a></li>
+											<li><a href="{{url('/baliknama')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Balik Nama</a></li>
+											<li><a href="{{url('/pengaduan')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Pengaduan</a></li>	
 										</ul>
 									</div>
 								</div>
