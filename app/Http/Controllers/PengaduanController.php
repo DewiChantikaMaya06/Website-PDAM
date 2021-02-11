@@ -82,7 +82,9 @@ class PengaduanController extends Controller
      */
     public function show($id)
     {
-        //
+        $title = 'Detail Data Pengaduan';
+        $detail = Pengaduan::find($id);
+        return view('pengaduan.detail', compact('detail','title'));
     }
 
     /**
@@ -114,9 +116,10 @@ class PengaduanController extends Controller
             'status.required'=>'Status belum berubah',
         ]);
 
+        $data['status'] = $request->status;
+
         Pengaduan::where('id', $id)->update($data);
         return redirect('pengaduan')->with('suksesUpdate', 'isi data sukses diupdate');
-
     }
 
     /**

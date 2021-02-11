@@ -71,12 +71,12 @@
                             <div class="form-group {{$errors->has('jenis') ? 'has-error' : ''}}">
                                 <label for="exampleFormControlSelect1">Pilih Jenis</label>
                                 <select name="jenis" class="form-control" id="exampleFormControlSelect1" value="{{old('jenis')}}">
-                                    <option value="air_keruh" {{(old('jenis') == 'air_keruh') ? ' selected' : ''}}>Air Keruh</option>
-                                    <option value="kebocoran" {{(old('jenis') == 'kebocoran') ? ' selected' : ''}}>Kebocoran</option>
-                                    <option value="meter" {{(old('jenis') == 'meter') ? ' selected' : ''}}>Meter</option>
-                                    <option value="pemakaian" {{(old('jenis') == 'pemakaian') ? ' selected' : ''}}>Pemakaian</option>
-                                    <option value="tda" {{(old('jenis') == 'tda') ? ' selected' : ''}}>Tidak dapat air</option>
-                                    <option value="lain_lain" {{(old('jenis') == 'lain_lain') ? ' selected' : ''}}>lain - lain</option>
+                                    <option value="Air Keruh" {{(old('jenis') == 'Air Keruh') ? ' selected' : ''}}>Air Keruh</option>
+                                    <option value="Kebocoran" {{(old('jenis') == 'Kebocoran') ? ' selected' : ''}}>Kebocoran</option>
+                                    <option value="Meter" {{(old('jenis') == 'Meter') ? ' selected' : ''}}>Meter</option>
+                                    <option value="Pemakaian" {{(old('jenis') == 'Pemakaian') ? ' selected' : ''}}>Pemakaian</option>
+                                    <option value="Tidak Dapat Air" {{(old('jenis') == 'Tidak Dapat Air') ? ' selected' : ''}}>TDA(Tidak dapat air)</option>
+                                    <option value="Lain-ain" {{(old('jenis') == 'Lain-lain') ? ' selected' : ''}}>lain - lain</option>
                                 </select>
                                 @if($errors->has('jenis'))
                                 <span class="help-block text-danger">{{$errors->first('jenis')}}</span>

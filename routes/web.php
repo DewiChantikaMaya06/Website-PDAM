@@ -77,6 +77,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pengaduan', 'PengaduanController@index');
     Route::get('/pengaduan/{id}','PengaduanController@edit');
     Route::put('/pengaduan/{id}','PengaduanController@update');
+    Route::get('/detail/{id}','PengaduanController@show');
 
 
 });
