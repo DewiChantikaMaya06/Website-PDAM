@@ -47,11 +47,11 @@
                                         <label for="exampleInputEmail1">Status :</label>
                                         <select name="status" class="form-control" id="exampleFormControlSelect1" value="{{old('status')}}">
                                             <option value="selesai" {{(old('status') == 'selesai') ? ' selected' : ''}}>Selesai</option>
-                                            <option value="belum" {{(old('status') == 'belum') ? ' selected' : ''}}>Belum Penanganan</option>   
-                                        </select>         
+                                            <option value="belum" {{(old('status') == 'belum') ? ' selected' : ''}}>Belum Penanganan</option>
+                                        </select>
                                         @if($errors->has('status'))
                                         <span class="help-block">{{$errors->first('status')}}</span>
-                                        @endif       
+                                        @endif
                                     </div>
                                     <div class="box-footer">
                                         <button type="submit" class="btn btn-primary">Submit</button>

@@ -23,6 +23,10 @@ Route::get('/login', 'AuthController@login')->name('login');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
 
+//Manage Data Pengaduan
+Route::get('/pengaduan/add', 'PengaduanController@add');
+Route::post('/pengaduan/add', 'PengaduanController@store');
+
 //Data Midleware
 Route::group(['middleware' => 'auth'], function () {
 
@@ -73,9 +77,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pengaduan', 'PengaduanController@index');
 });
 
-//Manage Create Pengaduan
-Route::get('/pengaduan/add', 'PengaduanController@add');
-Route::post ('/Pengaduan/add', 'PengaduanController@store');
 
 
 

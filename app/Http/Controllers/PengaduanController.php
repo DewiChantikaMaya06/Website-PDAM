@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Pengaduan;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,9 @@ class PengaduanController extends Controller
      */
     public function index()
     {
-        $title  ='Data Pengaduan';
-        $data   = Pengaduan::orderby('created_at','asc')->get();
-        return view('pengaduan.index', compact('data','title'));
+        $title  = 'Data Pengaduan';
+        $data   = Pengaduan::orderby('created_at', 'asc')->get();
+        return view('pengaduan.index', compact('data', 'title'));
     }
     /**
      * Show the form for creating a new resource.
@@ -36,7 +37,7 @@ class PengaduanController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'nama' => 'required|max:50',
             'alamat' => 'required|max:150',
             'no_hp' => 'required|max:13',
@@ -44,19 +45,19 @@ class PengaduanController extends Controller
             'jenis' => 'required',
             'kerusakan' => 'required',
             'isi_pengaduan' => 'required|max:500',
-        ],[
-            'nama.required'=>'Nama lengkap harus diisi',
-            'nama.max'=> 'Maksimal menggunakan 50 Karakter',
+        ], [
+            'nama.required' => 'Nama lengkap harus diisi',
+            'nama.max' => 'Maksimal menggunakan 50 Karakter',
             'alamat.required' => 'Alamat harus diisi',
-            'alamat.max'=>'Maksimal 150 karakter',
-            'no_hp.required'=> 'No Handphone harus diisi',
-            'no_hp.max'=> 'Maksimal menggunakan 13 Karakter',
-            'no_pelanggan.required'=> 'No Handphone harus diisi',
-            'no_pelanggan.max'=> 'Maksimal menggunakan 30 Karakter',
-            'jenis.required'=>'Jenis harus diisi',
-            'kerusakan.required'=>'kerusakan harus diisi',
-            'isi_pengaduan.required'=>'Isi harus diisi',
-            'isi_pengaduan.max'=> 'Maksimal menggunakan 500 Karakter',
+            'alamat.max' => 'Maksimal 150 karakter',
+            'no_hp.required' => 'No Handphone harus diisi',
+            'no_hp.max' => 'Maksimal menggunakan 13 Karakter',
+            'no_pelanggan.required' => 'No Handphone harus diisi',
+            'no_pelanggan.max' => 'Maksimal menggunakan 30 Karakter',
+            'jenis.required' => 'Jenis harus diisi',
+            'kerusakan.required' => 'Tanggal kerusakan harus diisi',
+            'isi_pengaduan.required' => 'Isi pengaduan harus diisi',
+            'isi_pengaduan.max' => 'Maksimal menggunakan 500 Karakter',
         ]);
 
         $data['nama'] = $request->nama;
@@ -66,12 +67,11 @@ class PengaduanController extends Controller
         $data['jenis'] = $request->jenis;
         $data['kerusakan'] = $request->kerusakan;
         $data['isi_pengaduan'] = $request->isi_pengaduan;
-        $data['status'] =   $request->status;
         $data['created_at'] = date('Y-m-d');
         $data['updated_at'] = date('Y-m-d');
 
         Pengaduan::insert($data);
-        return redirect('guest.pengaduan')->with('sukses','isi data sukses ditambah');
+        return redirect('pengaduan/add')->with('sukses', 'isi data sukses ditambah');
     }
 
     /**
