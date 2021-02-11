@@ -35,7 +35,7 @@
                                     </li>
                                     <li><a href="{{url('/struktur')}}">STRUKTUR</a>
                                     </li>
-                                    <li><a href="{{url('/pengaduan')}}">PENGADUAN</a></li>
+                                    <li><a href="{{url('/pengaduan/add')}}">PENGADUAN</a></li>
                                     <li><a href="{{url('/about')}}">TENTANG KAMI</a></li>
                                 </ul>
                             </nav>

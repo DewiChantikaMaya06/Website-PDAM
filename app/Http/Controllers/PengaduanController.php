@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Pengaduan;
 use Illuminate\Http\Request;
 
 class PengaduanController extends Controller
@@ -13,18 +13,20 @@ class PengaduanController extends Controller
      */
     public function index()
     {
-        //
+        $title  ='Data Pengaduan';
+        $data   = Pengaduan::orderby('created_at','asc')->get();
+        return view('pengaduan.index', compact('data','title'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add()
     {
-        //
+        return view('guest.pengaduan');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,15 +39,39 @@ class PengaduanController extends Controller
         $this->validate($request,[
             'nama' => 'required|max:50',
             'alamat' => 'required|max:150',
-            'no_hp' => 'required|max:12',
+            'no_hp' => 'required|max:13',
             'no_pelanggan' => 'required|max:30',
             'jenis' => 'required',
             'kerusakan' => 'required',
-            'isi_pengaduan' => 'required',
+            'isi_pengaduan' => 'required|max:500',
         ],[
-            'judul'
-        ]
-    );
+            'nama.required'=>'Nama lengkap harus diisi',
+            'nama.max'=> 'Maksimal menggunakan 50 Karakter',
+            'alamat.required' => 'Alamat harus diisi',
+            'alamat.max'=>'Maksimal 150 karakter',
+            'no_hp.required'=> 'No Handphone harus diisi',
+            'no_hp.max'=> 'Maksimal menggunakan 13 Karakter',
+            'no_pelanggan.required'=> 'No Handphone harus diisi',
+            'no_pelanggan.max'=> 'Maksimal menggunakan 30 Karakter',
+            'jenis.required'=>'Jenis harus diisi',
+            'kerusakan.required'=>'kerusakan harus diisi',
+            'isi_pengaduan.required'=>'Isi harus diisi',
+            'isi_pengaduan.max'=> 'Maksimal menggunakan 500 Karakter',
+        ]);
+
+        $data['nama'] = $request->nama;
+        $data['alamat'] = $request->alamat;
+        $data['no_hp'] = $request->no_hp;
+        $data['no_pelanggan'] = $request->no_pelanggan;
+        $data['jenis'] = $request->jenis;
+        $data['kerusakan'] = $request->kerusakan;
+        $data['isi_pengaduan'] = $request->isi_pengaduan;
+        $data['status'] =   $request->status;
+        $data['created_at'] = date('Y-m-d');
+        $data['updated_at'] = date('Y-m-d');
+
+        Pengaduan::insert($data);
+        return redirect('guest.pengaduan')->with('sukses','isi data sukses ditambah');
     }
 
     /**

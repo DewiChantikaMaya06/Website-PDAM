@@ -19,9 +19,10 @@ class CreatePengaduanTable extends Migration
             $table->string('alamat', 150);
             $table->string('no_hp', 13);
             $table->string('no_pelanggan', 30);
-            $table->enum('jenis', ['ringan', 'sedang', 'berat']);
+            $table->enum('jenis', ['air_keruh', 'kebocoran', 'meter','pemakaian','tda','lain_lain']);
             $table->date('kerusakan');
             $table->text('isi_pengaduan', 500);
+            $table->enum('status',['selesai','belum']);
             $table->timestamps();
         });
     }

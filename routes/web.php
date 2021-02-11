@@ -68,14 +68,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/info/{id}', 'InfoController@edit');
     Route::put('/info/{id}', 'InfoController@update');
     Route::delete('/info/delete/{id}', 'InfoController@destroy');
+
+    //Manage Data pengaduan
+    Route::get('/pengaduan', 'PengaduanController@index');
 });
+
+//Manage Create Pengaduan
+Route::get('/pengaduan/add', 'PengaduanController@add');
+Route::post ('/Pengaduan/add', 'PengaduanController@store');
 
 
 
 //Manage Template Guest
-Route::get('/pengaduan', function () {
-    return view('guest.pengaduan');
-});
 Route::get('/pendaftaran', function () {
     return view('guest.pendaftaran');
 });

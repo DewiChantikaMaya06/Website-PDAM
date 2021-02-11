@@ -17,8 +17,8 @@
 						</ul>
 					</div>
 				</li>
+				<li><a href="/pengaduan" class=""><i class="lnr lnr-user"></i> <span>Pengaduan</span></a></li>
 				<li><a href="/siswa" class=""><i class="lnr lnr-user"></i> <span>Siswa*</span></a></li>
-				<li><a href="#" class=""><i class="lnr lnr-user"></i> <span>Daftar Tarif Air Minum*</span></a></li>
 				<li><a href="#" class=""><i class="lnr lnr-user"></i> <span>Berita*</span></a></li>
 				<li><a href="#" class=""><i class="lnr lnr-user"></i> <span>Pengaduan dan Keluhan*</span></a></li>
 			</ul>
