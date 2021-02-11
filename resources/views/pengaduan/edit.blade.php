@@ -17,31 +17,31 @@
                                     {{ method_field('put') }}
                                     <div class="form-group">
                                         <label or="exampleInputEmail1">Nama Lengkap :</label>
-                                        <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="{{$data->nama}}">
+                                        <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" value="{{$data->nama}}" disabled>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Alamat :</label>
-                                        <input name="judul" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gambar Kegiatan" value="{{$data->alamat}}">
+                                        <input name="alamat" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alamat" value="{{$data->alamat}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">No. Handphone :</label>
-                                        <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="{{$data->no_hp}}">
+                                        <input name="no_hp" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No. Handphone" value="{{$data->no_hp}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">No. Pelanggan :</label>
-                                        <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Deskripsi" value="" rows="10">{{$data->no_pelanggan}}</textarea>
+                                        <input name="no_pelanggan" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No. Pelanggan" value="{{$data->no_pelanggan}}" rows="10"></input>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Jenis :</label>
-                                        <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Deskripsi" value="" rows="10">{{$data->jenis}}</textarea>
+                                        <input name="jenis" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="{{$data->jenis}}" rows="10"></input>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Tanggal Kerusakan :</label>
-                                        <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Deskripsi" value="" rows="10">{{$data->kerusakan}}</textarea>
+                                        <input name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Deskripsi" value="{{$data->kerusakan}}" rows="10"></input>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Isi Pengaduan :</label>
-                                        <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Deskripsi" value="" rows="10">{!!$data->isi_pengaduan!!}</textarea>
+                                        <textarea name="isi_pengaduan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" rows="10">{!!$data->isi_pengaduan!!}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Status :</label>
@@ -67,6 +67,6 @@
 </div>
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('deskripsi');
+    CKEDITOR.replace('isi_pengaduan');
 </script>
 @endsection

@@ -57,7 +57,7 @@
                                                 <h4>{{$dt->status}}</h4>
                                             </td>
                                             <td>
-                                                <a href='{{ url('pengaduan/'.$dt->id) }}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                <a href='{{ url('pengaduan/'.$dt->id)}}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

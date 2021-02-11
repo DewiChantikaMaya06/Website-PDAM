@@ -93,7 +93,10 @@ class PengaduanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = 'Edit Data Pengaduan';
+        $data = Pengaduan::find($id);
+
+        return view('pengaduan.edit', compact('title', 'data'));
     }
 
     /**
@@ -105,7 +108,15 @@ class PengaduanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'status'=>'required',
+        ],[
+            'status.required'=>'Status belum berubah',
+        ]);
+
+        Pengaduan::where('id', $id)->update($data);
+        return redirect('pengaduan')->with('suksesUpdate', 'isi data sukses diupdate');
+
     }
 
     /**
