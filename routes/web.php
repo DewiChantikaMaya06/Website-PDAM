@@ -27,6 +27,10 @@ Route::get('/logout', 'AuthController@logout');
 Route::get('/pengaduan/add', 'PengaduanController@add');
 Route::post('/pengaduan/add', 'PengaduanController@store');
 
+Route::post('/cek_tagihan', 'TagihanController@store');
+Route::get('/tagihan', 'TagihanController@index');
+Route::get('/tagihan/{id}', 'TagihanController@show');
+
 //Data Midleware
 Route::group(['middleware' => 'auth'], function () {
 
@@ -75,11 +79,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Manage Data pengaduan
     Route::get('/pengaduan', 'PengaduanController@index');
-    Route::get('/pengaduan/{id}','PengaduanController@edit');
-    Route::put('/pengaduan/{id}','PengaduanController@update');
-    Route::get('/detail/{id}','PengaduanController@show');
-
-
+    Route::get('/pengaduan/{id}', 'PengaduanController@edit');
+    Route::put('/pengaduan/{id}', 'PengaduanController@update');
+    Route::get('/detail/{id}', 'PengaduanController@show');
 });
 
 
@@ -89,9 +91,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/pendaftaran', function () {
     return view('guest.pendaftaran');
 });
-Route::get('/tagihan', function () {
-    return view('guest.tagihan');
-});
+
 Route::get('/baliknama', function () {
     return view('guest.baliknama');
 });

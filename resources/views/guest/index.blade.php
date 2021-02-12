@@ -11,11 +11,25 @@
                         <div class="text">
                             <h1>Selamat Datang <br><span>Website PDAM</span><span> Tirta Baluran Situbondo</span></h1>
                             <h2><span><b> Silahkan Cek Tagihan Anda..</b></span></h2>
-                            <br>
-                            <div class="buttom">
-                                <a href="{{url('/tagihan')}}" class="btn btn-rounded">Cek Tagihan</a>
-                            </div>
-
+                            <form class="form" method="post" action="{{'/cek_tagihan/'}}">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <input name="no_pelanggan" type="number" placeholder="Nomor Pelanggan">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <div class="button">
+                                                <button type="submit" class="btn">Cek Tagihan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

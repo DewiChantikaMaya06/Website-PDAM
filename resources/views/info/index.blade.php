@@ -11,7 +11,8 @@
                         <div class="panel-heading">
                             <h4>{{ $title }}</h4>
                             <div class="right">
-                                <a href="{{ url('info/add') }}" type="button" class="btn"><i class="lnr lnr-plus-circle"></i></a>
+                                @if(count($data)<1) <a href="{{ url('info/add') }}" type="button" class="btn"><i class="lnr lnr-plus-circle"></i></a>
+                                    @endif
                             </div>
                         </div>
                         @if(session('sukses'))
@@ -51,13 +52,13 @@
                                             <td>
                                                 <a href='{{ url('info/'.$dt->id) }}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
                                             </td>
-                                            <!-- <td>
+                                            <td>
                                                 <form method='post' action='{{url('info/delete/'.$dt->id)}}'>
                                                     @csrf
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>
                                                 </form>
-                                            </td> -->
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

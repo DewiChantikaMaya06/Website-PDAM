@@ -16,7 +16,8 @@ class InfoController extends Controller
     {
         $title = 'Data Info PDAM';
         $data = Info::get();
-        return view('info.index', compact('data', 'title'));
+        $flag = false;
+        return view('info.index', compact('data', 'title', 'flag'));
     }
 
     /**
@@ -137,6 +138,7 @@ class InfoController extends Controller
     {
         $data = Info::find($id);
         $data->delete();
-        return redirect('info')->with('suksesHapus', 'isi kata sukses dihapus');
+        $flag = false;
+        return redirect('info')->with(['flag' => $flag]);
     }
 }

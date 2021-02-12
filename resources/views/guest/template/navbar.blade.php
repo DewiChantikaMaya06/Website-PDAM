@@ -28,7 +28,7 @@
                                     <li><a href="{{url('/')}}">BERANDA</a></li>
                                     <li><a href="#">PELANGGAN</a>
                                         <ul class="dropdown">
-                                            <li><a href="{{url('/')}}">CEK TAGIHAN</a></li>
+                                            <li><a href="{{url('/tagihan')}}">CEK TAGIHAN</a></li>
                                             <li><a href="{{url('/pendaftaran')}}">PENDAFTARAN BARU</a></li>
                                             <li><a href="{{url('/baliknama')}}">PENGAJUAN BALIK NAMA</a></li>
                                         </ul>
