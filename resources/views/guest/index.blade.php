@@ -14,7 +14,7 @@
                             <form class="form" method="post" action="{{'/cek_tagihan/'}}">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="col-lg-16 col-md-16 col-16">
                                         <div class="form-group">
                                             <input name="no_pelanggan" type="number" placeholder="Nomor Pelanggan">
                                         </div>
@@ -274,20 +274,19 @@
                             </tr>
                             @endforeach
                         </tbody>
-                        <tfoot class="table100-head bg-primary">
-                            <tr bgcolor="#979797">
+                        <tfoot class="table100-foot">
+                            <tr class="table100-head bg-secondary" bgcolor="#979797">
                                 <td class="column1" style="color: rgb(255, 255, 255)">Non Komersial</td>
                                 <td class="column6" style="color: rgb(255, 255, 255)">E1</td>
                                 <td class="column2" rowspan="2" colspan="5" style="color: rgb(255, 255, 255)">
                                     <center> Besaran Tarif Berdasarkan Kesepakatan Bersama antara PDAM dan Pihak Pelanggan </center>
                                 </td>
                             </tr>
-
-                            <tr bgcolor="#979797">
+                            <tr class="table100-head bg-secondary" bgcolor="#979797">
                                 <td class="column1" style="color: white">Komersial</td>
                                 <td class="column6" style="color: #ffffff">E2</td>
                             </tr>
-                            <tr>
+                            <tr class="table100-head bg-primary">
                                 <td class="column6" colspan="7" style="color: white">ADMINISTRASI/BUKA SEGEL : Rp. 25.000</td>
                             </tr>
                         </tfoot>

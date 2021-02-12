@@ -26,18 +26,19 @@
                         <div class="col-lg-5 col-md-4 col-12">
                             <div class="form-group">
                                 <div class="button">
-                                    <button type="submit" class="btn">Kirim</button>
+                                    <button type="submit" class="btn">Cek tagihan</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </form>
-                <br>
-                <br>
-
-
+              
                 @if ($pelanggan != null)
                 <form class="form" action="">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <i class="fa fa-check-circle"></i> Data berhasil ditemukan !
+                    </div>        
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
@@ -113,8 +114,9 @@
             </div>
             </form>
             @elseif($pelanggan == null && $pencarian)
-            <div>
-                Maaf nama yang anda cari tidak ada !!!
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <i class="fa fa-check-circle"></i> Data tidak ditemukan, inputkan kembali !
             </div>
             @endif
             <div class="col-lg-6 col-md-12 ">
