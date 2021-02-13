@@ -15,8 +15,8 @@
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-16 col-md-16 col-16">
-                                        <div class="form-group">
-                                            <input name="no_pelanggan" type="number" placeholder="Nomor Pelanggan">
+                                        <div class="form-group ">
+                                            <input name="no_pelanggan" type="number" placeholder="Masukan No.Pelanggan.....">
                                         </div>
                                     </div>
                                 </div>

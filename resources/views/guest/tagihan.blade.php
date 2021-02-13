@@ -18,7 +18,7 @@
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">Identitas Rekening :</label>
-                                <input name="no_pelanggan" type="number" placeholder="No. Pelanggan">
+                                <input name="no_pelanggan" type="number" placeholder="No. Pelanggan" @if ($pelanggan !=null) value="{{$pelanggan->no_pelanggan}}" @else value="" @endif>
                             </div>
                         </div>
                     </div>
@@ -32,13 +32,13 @@
                         </div>
                     </div>
                 </form>
-              
+
                 @if ($pelanggan != null)
                 <form class="form" action="">
                     <div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <i class="fa fa-check-circle"></i> Data berhasil ditemukan !
-                    </div>        
+                    </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
