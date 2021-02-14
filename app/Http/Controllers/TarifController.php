@@ -15,9 +15,17 @@ class TarifController extends Controller
     public function index()
     {
         $title = 'Data Tarif Air Minum';
-        $data = Tarif::orderby('kelompok', 'asc')->get();
+        $data = Tarif::orderby('kelompok', 'asc')->paginate(10);
         return view('tarif.index', compact('data', 'title'));
     }
+
+    public function backup()
+    {
+        $title = 'Data Backup Tarif';
+        $data = Tarif::onlyTrashed()->get();
+        return view('tarif.backup', compact('data', 'title'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -160,5 +168,19 @@ class TarifController extends Controller
         $data = Tarif::find($id);
         $data->delete();
         return redirect('tarif')->with('suksesHapus', 'isi kata sukses dihapus');
+    }
+
+    public function restore($id)
+    {
+        $data = Tarif::onlyTrashed()->where('id', $id);
+        $data->restore();
+        return redirect('tarif/backup')->with('suksesRestore', 'isi kata sukses direstore');
+    }
+
+    public function deletePermanen($id)
+    {
+        $data = Tarif::onlyTrashed()->where('id', $id);
+        $data->forceDelete();
+        return redirect('tarif/backup')->with('suksesDelete', 'isi kata sukses didelete');
     }
 }

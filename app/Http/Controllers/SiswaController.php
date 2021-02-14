@@ -37,11 +37,7 @@ class SiswaController extends Controller
         ]);
 
         \App\Siswa::create($request->all());
-        if (any(errors)) {
-            return back()->withInput();
-        } else {
-            return redirect('/siswa')->with('sukses', 'Data berhasil diinput!');
-        };
+        return redirect('/siswa')->with('sukses', 'Data berhasil diinput!');
     }
 
     public function edit($id)

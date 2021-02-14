@@ -31,6 +31,7 @@ Route::post('/pengaduan/add', 'PengaduanController@store');
 Route::get('/pendaftaran/tambah', 'PendaftaranController@tambah');
 Route::post('/pendaftaran/tambah', 'PendaftaranController@store');
 
+//Manage Data cek tagihan
 Route::post('/cek_tagihan', 'TagihanController@store');
 Route::get('/tagihan', 'TagihanController@index');
 Route::get('/tagihan/{id}', 'TagihanController@show');
@@ -50,11 +51,14 @@ Route::group(['middleware' => 'auth'], function () {
     //Manage Data Tarif Air
     Route::get('/tarif', 'TarifController@index');
     Route::get('/tarif/detail/{id}', 'TarifController@detail');
+    Route::get('/tarif/backup', 'TarifController@backup');
     Route::get('/tarif/add', 'TarifController@add');
     Route::post('/tarif/add', 'TarifController@store');
     Route::get('/tarif/{id}', 'TarifController@edit');
     Route::put('/tarif/{id}', 'TarifController@update');
     Route::delete('/tarif/delete/{id}', 'TarifController@destroy');
+    Route::get('/tarif/restore/{id}', 'TarifController@restore');
+    Route::get('/tarif/deletePermanen/{id}', 'TarifController@deletePermanen');
 
     //Manage Data Galeri Kegiatan
     Route::get('/kegiatan', 'KegiatanController@index');
@@ -79,7 +83,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/info/add', 'InfoController@store');
     Route::get('/info/{id}', 'InfoController@edit');
     Route::put('/info/{id}', 'InfoController@update');
-    Route::delete('/info/delete/{id}', 'InfoController@destroy');
 
     //Manage Data pengaduan
     Route::get('/pengaduan', 'PengaduanController@index');
@@ -88,8 +91,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/detail/{id}', 'PengaduanController@show');
 
     //Manage Data Pendaftaran 
-    Route::get('/pendaftaran','PendaftaranController@index');
-    Route::get('/pendaftaran/{$id}','PendaftaranController@edit');
+    Route::get('/pendaftaran', 'PendaftaranController@index');
+    Route::get('/pendaftaran/{$id}', 'PendaftaranController@edit');
 });
 
 

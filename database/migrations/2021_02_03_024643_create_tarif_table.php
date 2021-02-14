@@ -23,6 +23,7 @@ class CreateTarifTable extends Migration
             $table->integer('admin');
             $table->integer('denda');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

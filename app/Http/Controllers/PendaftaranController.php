@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Pendaftaran;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,8 @@ class PendaftaranController extends Controller
     {
         $title  =   'Data Pendaftaran Sambung Kilat';
         $data   =   Pendaftaran::get();
-       
-        return view('pendaftaran.index',compact('data','title'));
+
+        return view('pendaftaran.index', compact('data', 'title'));
     }
 
     public function tambah()
@@ -30,7 +31,7 @@ class PendaftaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  
+
     /**
      * Store a newly created resource in storage.
      *
@@ -40,7 +41,7 @@ class PendaftaranController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $this->validate($request,[
+        $this->validate($request, [
             'nama'  =>  'required|max:30',
             'no_ktp'    =>  'required|max:16',
             'alamat'  =>  'required|max:100',
@@ -71,12 +72,12 @@ class PendaftaranController extends Controller
         $data['rt']   =   $request->rt;
         $data['rw']   =   $request->rw;
         $data['no_hp']   =   $request->no_hp;
-        $data['gambar_ktp']   =   $request->gambar_ktp;
+        $data['gambar_ktp']   =   $request->gambar_ktp->store('ktp');
         $data['created_at'] = date('Y-m-d');
         $data['updated_at'] = date('Y-m-d');
 
         Pendaftaran::insert($data);
-        return redirect('pendaftaran/tambah')->with('sukses','isi data berhasil');
+        return redirect('pendaftaran/tambah')->with('sukses', 'isi data berhasil');
     }
 
     /**
@@ -89,7 +90,7 @@ class PendaftaranController extends Controller
     {
         $title  =   'Detail Data Pendaftaran';
         $detail =   Pendaftaran::find($id);
-        return view('pendaftaran.detail', compact('detail','title'));
+        return view('pendaftaran.detail', compact('detail', 'title'));
     }
 
     /**
@@ -115,10 +116,10 @@ class PendaftaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'status'=>'required',
-        ],[
-            'status.required'=>'Status belum berubah',
+        $this->validate($request, [
+            'status' => 'required',
+        ], [
+            'status.required' => 'Status belum berubah',
         ]);
 
         $data['status'] = $request->status;

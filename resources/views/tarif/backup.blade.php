@@ -10,24 +10,16 @@
                     <div class="panel">
                         <div class="panel-heading">
                             <h4>{{ $title }}</h4>
-                            <div class="right">
-                                <a href="{{ url('tarif/add') }}" type="button" class="btn"><i class="lnr lnr-plus-circle"></i></a>
-                            </div>
                         </div>
                         @if(session('sukses'))
                         <div class="alert alert-success alert-dismissible" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <i class="fa fa-check-circle"></i> Data berhasil di input...
+                            <i class="fa fa-check-circle"></i> Data berhasil di pulihkan...
                         </div>
-                        @elseif(session('suksesUpdate'))
+                        @elseif(session('suksesDelete'))
                         <div class="alert alert-success alert-dismissible" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <i class="fa fa-check-circle"></i> Data berhasil di Update!
-                        </div>
-                        @elseif(session('suksesHapus'))
-                        <div class="alert alert-success alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <i class="fa fa-trash-o"></i> Data berhasil di Hapus.
+                            <i class="fa fa-trash-o"></i> Data di Hapus selamanya.
                         </div>
                         @endif
                         <div class="panel-body">
@@ -43,9 +35,8 @@
                                             <th>Pemeliharaan</th>
                                             <th>Admin</th>
                                             <th>Denda</th>
-                                            <th>Edit</th>
-                                            <th>Hapus</th>
-
+                                            <th>Pulihkan</th>
+                                            <th>Hapus Permanen</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -60,31 +51,24 @@
                                             <td>{{$dt->admin}}</td>
                                             <td>{{$dt->denda}}</td>
                                             <td>
-                                                <a href='{{ url('tarif/'.$dt->id) }}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                <form method='get' action='{{url('tarif/restore/'.$dt->id)}}'>
+                                                    @method('restore')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-success" onclick="return confirm('Data akan dipulihkan?') "><i class="fa fa-pencil-square-o"></i></button>
+                                                </form>
                                             </td>
                                             <td>
-                                                <form method='post' action='{{url('tarif/delete/'.$dt->id)}}'>
+                                                <form method='get' action='{{url('tarif/deletePermanen/'.$dt->id)}}'>
+                                                    @method('forceDelete')
                                                     @csrf
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin data akan dihapus permanen?') "><i class="fa fa-trash-o"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <div class="pull-left">
-                                    Showing
-                                    {{ $data->firstItem() }}
-                                    to
-                                    {{ $data->lastItem() }}
-                                    of
-                                    {{ $data->total() }}
-                                    entries
-                                </div>
-                                <div class="pull-right">
-                                    {{ $data->links() }}
-                                </div>
+
                             </div>
                         </div>
                     </div>
