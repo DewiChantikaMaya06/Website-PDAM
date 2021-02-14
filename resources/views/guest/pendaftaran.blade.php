@@ -12,12 +12,12 @@
         @if(session('sukses'))
         <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <i class="fa fa-check-circle"></i> Data berhasil di input...
+            <i class="fa fa-check-circle"></i> Petugas akan menghubungi dalam 1x24 jam
         </div>
         @endif
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
-                <form role="form" class="form" method='post' action='{{url('pendaftaran/tambah/')}}'>
+                <form role="form" class="form" method='post' action='{{url('pendaftaran/tambah')}}' enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
@@ -48,7 +48,6 @@
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
-                            <form>
                                 <div class="row">
                                     <div class="col {{$errors->has('rt') ? 'has-error' : ''}}">
                                         <label for="form-group" for="">RT :</label>
@@ -65,13 +64,12 @@
                                         @endif
                                     </div>
                                 </div>
-                            </form>
                         </div>
                         <br>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group {{$errors->has('no_hp') ? 'has-error' : ''}}">
                                 <label class="form-group" for="">No. Handphone :</label>
-                                <input name="phone" type="number" placeholder="Masukkan nomer handphone" value="{{old('no_hp')}}">
+                                <input name="no_hp" type="number" placeholder="Masukkan nomer handphone" value="{{old('no_hp')}}">
                                 @if($errors->has('no_hp'))
                                     <span class="help-block text-danger">{{$errors->first('no_hp')}}</span>
                                 @endif
@@ -80,8 +78,8 @@
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group {{$errors->has('gambar_ktp') ? 'has-error' : ''}}">
                                 <label class="form-group" for="">Foto KTP : </label>
-                                <input type="file" class="form-control-file" value="{{old('gambar_ktp')}}">
-                                <p><font style="color: red">Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam</font></p>
+                                <input name="gambar_ktp" type="file" class="form-control-file" value="{{old('gambar_ktp')}}">
+                                {{-- <p><font style="color: red">Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam</font></p> --}}
                                 @if($errors->has('gambar_ktp'))
                                     <span class="help-block text-danger">{{$errors->first('gambar_ktp')}}</span>
                                 @endif

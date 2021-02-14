@@ -12,7 +12,7 @@
 					<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pendaftaran</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 					<div id="subPages" class="collapse ">
 						<ul class="nav">
-							<li><a href="#" class="">Daftar Pelanggan Baru</a></li>
+							<li><a href="{{url('/pendaftaran')}}" class="">Daftar Pelanggan Baru</a></li>
 							<li><a href="#" class="">Daftar Balik Nama</a></li>
 						</ul>
 					</div>

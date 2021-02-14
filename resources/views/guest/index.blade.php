@@ -16,7 +16,7 @@
                                 <div class="row">
                                     <div class="col-lg-16 col-md-16 col-16">
                                         <div class="form-group ">
-                                            <input name="no_pelanggan" type="number" placeholder="Masukan No.Pelanggan.....">
+                                            <input name="no_pelanggan" type="number" placeholder="No.Pelanggan..." >
                                         </div>
                                     </div>
                                 </div>
@@ -44,6 +44,26 @@
                         <div class="text">
                             <h1>PDAM Tirta Baluran <br><span>Pelayananan</span> adalah<span> KUNCI UTAMA kami</span></h1>
                             <p>Pelayanan kepada masyarakat merupakan kunci utama kami dalam mengembangankan kualitas PDAM Kabupaten Situbondo</p>
+                            <br>
+                            <form class="form" method="post" action="{{'/cek_tagihan/'}}">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-lg-16 col-md-16 col-16">
+                                        <div class="form-group ">
+                                            <input name="no_pelanggan" type="number" placeholder="No.Pelanggan...">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <div class="button">
+                                                <button type="submit" class="btn">Cek Tagihan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

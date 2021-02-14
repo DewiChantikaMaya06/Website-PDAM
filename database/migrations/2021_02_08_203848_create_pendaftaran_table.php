@@ -22,7 +22,7 @@ class CreatePendaftaranTable extends Migration
             $table->string('rw', 5);
             $table->string('no_hp', 13);
             $table->string('gambar_ktp');
-            $table->enum('status',['Verifikasi','Belum verifikasi'])->default('Belum verifikasi');
+            $table->enum('status',['Verifikasi','Belum verifikasi'])->default('Belum verifikasi')->nullable;
             $table->timestamps();
         });
     }

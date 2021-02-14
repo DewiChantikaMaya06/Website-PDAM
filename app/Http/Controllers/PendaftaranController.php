@@ -39,6 +39,7 @@ class PendaftaranController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $this->validate($request,[
             'nama'  =>  'required|max:30',
             'no_ktp'    =>  'required|max:16',
@@ -71,7 +72,6 @@ class PendaftaranController extends Controller
         $data['rw']   =   $request->rw;
         $data['no_hp']   =   $request->no_hp;
         $data['gambar_ktp']   =   $request->gambar_ktp;
-        $data['status'] =   $request->status;
         $data['created_at'] = date('Y-m-d');
         $data['updated_at'] = date('Y-m-d');
 
