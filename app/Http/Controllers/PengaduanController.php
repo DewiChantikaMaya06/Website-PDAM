@@ -25,7 +25,8 @@ class PengaduanController extends Controller
      */
     public function add()
     {
-        return view('guest.pengaduan');
+        $data   =   Pengaduan::get();
+        return view('guest.pengaduan',compact('data'));
     }
 
 

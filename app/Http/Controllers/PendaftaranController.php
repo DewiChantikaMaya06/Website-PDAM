@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Pendaftaran;
 use Illuminate\Http\Request;
 
 class PendaftaranController extends Controller
@@ -13,7 +13,16 @@ class PendaftaranController extends Controller
      */
     public function index()
     {
-        //
+        $title  =   'Data Pendaftaran Sambung Kilat';
+        $data   =   Pendaftaran::get();
+       
+        return view('pendaftaran.index',compact('data','title'));
+    }
+
+    public function tambah()
+    {
+        // $data   =   Pendaftaran::get();
+        return view('guest.pendaftaran');
     }
 
     /**
@@ -21,11 +30,7 @@ class PendaftaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
+  
     /**
      * Store a newly created resource in storage.
      *
@@ -34,7 +39,44 @@ class PendaftaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama'  =>  'required|max:30',
+            'no_ktp'    =>  'required|max:16',
+            'alamat'  =>  'required|max:100',
+            'rt'  =>  'required|max:5',
+            'rw'  =>  'required|max:5',
+            'no_hp'  =>  'required|max:13',
+            'gambar_ktp'  =>  'required|mimes:jpg,png,jpeg,gif,svg',
+        ], [
+            'nama.required' =>  'Nama harus diisi',
+            'nama.max'  =>  'Maksimal 30 karakter',
+            'no_ktp.required'   =>  'No. KTP harus diisi',
+            'no_ktp.max'    =>  'Maksimal 16 karakter',
+            'alamat.required'   =>  'Alamat harus diisi',
+            'alamat.max'    =>  'Maksimal 100 karakter',
+            'rt.required'   =>  'RT wajib diisi',
+            'rw.required'   =>  'RW wajib diisi',
+            'rt.max'    =>  'Maksimal 5 karakter',
+            'rw.max'    =>  'Maksimal 5 karakter',
+            'no_hp.required'    =>  'No. Handphone harus diisi',
+            'no_hp.max' =>  'Maksimal 13 karakter',
+            'gambar_ktp.required'   =>  'Gambar KTP harus diisi',
+            'gambar_ktp.mimes' => 'File Harus berupa gambar. Type jpg,png,jpeg,giv,svg',
+        ]);
+
+        $data['nama']   =   $request->nama;
+        $data['no_ktp']   =   $request->no_ktp;
+        $data['alamat']   =   $request->alamat;
+        $data['rt']   =   $request->rt;
+        $data['rw']   =   $request->rw;
+        $data['no_hp']   =   $request->no_hp;
+        $data['gambar_ktp']   =   $request->gambar_ktp;
+        $data['status'] =   $request->status;
+        $data['created_at'] = date('Y-m-d');
+        $data['updated_at'] = date('Y-m-d');
+
+        Pendaftaran::insert($data);
+        return redirect('pendaftaran/tambah')->with('sukses','isi data berhasil');
     }
 
     /**
@@ -45,7 +87,9 @@ class PendaftaranController extends Controller
      */
     public function show($id)
     {
-        //
+        $title  =   'Detail Data Pendaftaran';
+        $detail =   Pendaftaran::find($id);
+        return view('pendaftaran.detail', compact('detail','title'));
     }
 
     /**
@@ -56,7 +100,10 @@ class PendaftaranController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = 'Edit Data Pendaftaran';
+        $data = Pendaftaran::find($id);
+
+        return view('pendaftaran.edit', compact('title', 'data'));
     }
 
     /**
@@ -68,7 +115,16 @@ class PendaftaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'status'=>'required',
+        ],[
+            'status.required'=>'Status belum berubah',
+        ]);
+
+        $data['status'] = $request->status;
+
+        Pendaftaran::where('id', $id)->update($data);
+        return redirect('pendaftaran')->with('suksesUpdate', 'isi data sukses diupdate');
     }
 
     /**

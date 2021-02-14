@@ -27,6 +27,10 @@ Route::get('/logout', 'AuthController@logout');
 Route::get('/pengaduan/add', 'PengaduanController@add');
 Route::post('/pengaduan/add', 'PengaduanController@store');
 
+//Manage Data Pendaftaran Sambung Kilat
+Route::get('/pendaftaran/tambah', 'PendaftaranController@tambah');
+Route::post('/pendaftaran/tambah', 'PendaftaranController@store');
+
 Route::post('/cek_tagihan', 'TagihanController@store');
 Route::get('/tagihan', 'TagihanController@index');
 Route::get('/tagihan/{id}', 'TagihanController@show');
@@ -88,15 +92,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 //Manage Template Guest
-Route::get('/pendaftaran', function () {
-    return view('guest.pendaftaran');
-});
 
 Route::get('/baliknama', function () {
     return view('guest.baliknama');
-});
-Route::get('/detailberita', function () {
-    return view('guest.detailberita');
 });
 Route::get('/struktur', function () {
     return view('guest.struktur');

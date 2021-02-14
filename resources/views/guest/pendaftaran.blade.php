@@ -9,57 +9,85 @@
                 </div>
             </div>
         </div>
+        @if(session('sukses'))
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <i class="fa fa-check-circle"></i> Data berhasil di input...
+        </div>
+        @endif
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
-                <form class="form" action="#">
+                <form role="form" class="form" method='post' action='{{url('pendaftaran/tambah/')}}'>
+                    @csrf
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
+                            <div class="form-group {{$errors->has('nama') ? 'has-error' : ''}} ">
                                 <label class="form-group" for="">Nama Pelanggan :</label>
-                                <input name="name" type="text" placeholder="Isi dengan nama lengkap anda">
+                                <input name="nama" type="text" placeholder="Isi dengan nama lengkap anda" value="{{old('nama')}}">
+                                @if($errors->has('nama'))
+                                    <span class="help-block text-danger">{{$errors->first('nama')}}</span>
+                                @endif
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
+                            <div class="form-group {{$errors->has('no_ktp') ? 'has-error' : ''}}">
                                 <label class="form-group" for="">No. KTP :</label>
-                                <input name="address" type="text" placeholder="Alamat Lengkap anda">
+                                <input name="no_ktp" type="number" placeholder="No. KTP anda" value="{{old('no_ktp')}}">
+                                @if($errors->has('no_ktp'))
+                                    <span class="help-block text-danger">{{$errors->first('no_ktp')}}</span>
+                                @endif
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
+                            <div class="form-group {{$errors->has('alamat') ? 'has-error' : ''}}">
                                 <label class="form-group" for="">Alamat :</label>
-                                <input name="phone" type="text" placeholder="Nomer Telphone">
+                                <input name="alamat" type="text" placeholder="Alamat" value="{{old('alamat')}}">
+                                @if($errors->has('alamat'))
+                                    <span class="help-block text-danger">{{$errors->first('alamat')}}</span>
+                                @endif
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <form>
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col {{$errors->has('rt') ? 'has-error' : ''}}">
                                         <label for="form-group" for="">RT :</label>
-                                        <input type="text" class="form-control" placeholder="RT">
+                                        <input name="rt" type="number" class="form-control" placeholder="RT" value="{{old('rt')}}">
+                                        @if($errors->has('rt'))
+                                            <span class="help-block text-danger">{{$errors->first('rt')}}</span>
+                                        @endif
                                     </div>
-                                    <div class="col">
+                                    <div class="col {{$errors->has('rw') ? 'has-error' : ''}}">
                                         <label for="form-group" for="">RW :</label>
-                                        <input type="text" class="form-control" placeholder="RW">
+                                        <input name="rw" type="number" class="form-control" placeholder="RW" value="{{old('rw')}}">
+                                        @if($errors->has('rw'))
+                                            <span class="help-block text-danger">{{$errors->first('rw')}}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <br>
                         <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
+                            <div class="form-group {{$errors->has('no_hp') ? 'has-error' : ''}}">
                                 <label class="form-group" for="">No. Handphone :</label>
-                                <input name="phone" type="text" placeholder="Masukkan nomer handphone">
+                                <input name="phone" type="number" placeholder="Masukkan nomer handphone" value="{{old('no_hp')}}">
+                                @if($errors->has('no_hp'))
+                                    <span class="help-block text-danger">{{$errors->first('no_hp')}}</span>
+                                @endif
                             </div>
                         </div>
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label class="form-group" for="">Foto KTP : <font style="color: crimson">(Max. 5 mb)</font> </label>
-                            <input type="file" class="form-control-file">
-                            <p><font style="color: red">Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam</font></p>
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group {{$errors->has('gambar_ktp') ? 'has-error' : ''}}">
+                                <label class="form-group" for="">Foto KTP : </label>
+                                <input type="file" class="form-control-file" value="{{old('gambar_ktp')}}">
+                                <p><font style="color: red">Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam</font></p>
+                                @if($errors->has('gambar_ktp'))
+                                    <span class="help-block text-danger">{{$errors->first('gambar_ktp')}}</span>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                </div>
                     <div class="row">
                         <div class="col-lg-5 col-md-4 col-12">
                             <div class="form-group">
@@ -73,7 +101,7 @@
             </div>
             <div class="col-lg-6 col-md-12 ">
                 <div class="appointment-image">
-                    <img src="{{('guest/img/register.png')}}" alt="">
+                    <img src="{{asset('guest/img/register.png')}}" alt="">
                 </div>
             </div>
         </div>
