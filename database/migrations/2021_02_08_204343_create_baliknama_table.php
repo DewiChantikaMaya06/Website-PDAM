@@ -15,12 +15,14 @@ class CreateBaliknamaTable extends Migration
     {
         Schema::create('baliknama', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_sebelumnya', 30);
-            $table->string('nama_pengaju', 30);
-            $table->string('no_ktp', 30);
+            $table->string('nama_sebelumnya', 50);
+            $table->string('nama_pengaju', 50);
+            $table->string('no_ktp', 17);
             $table->string('alamat', 100);
+            $table->string('no_hp',13);
             $table->string('gambar_ktp');
             $table->string('gambar_rekening');
+            $table->enum('status',['Belum verifikasi','Verifikasi'])->default('Belum verifikasi')->nullable;
             $table->timestamps();
         });
     }

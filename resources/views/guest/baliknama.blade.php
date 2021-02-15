@@ -41,7 +41,7 @@
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group {{$errors->has('no_ktp') ? 'has-error' : ''}}">
                                 <label class="form-group" for="">No. KTP :</label>
-                                <input name="no_ktp" type="text" placeholder="Nomer KTP" value="{{old('no_ktp')}}">
+                                <input name="no_ktp" type="number" placeholder="Nomer KTP" value="{{old('no_ktp')}}">
                                 @if($errors->has('no_ktp'))
                                 <span class="help-block text-danger">{{$errors->first('no_ktp')}}</span>
                                 @endif
@@ -53,6 +53,15 @@
                                 <input name="alamat" type="text" placeholder="Alamat Lengkap" value="{{old('alamat')}}">
                                 @if($errors->has('alamat'))
                                 <span class="help-block text-danger">{{$errors->first('alamat')}}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-6 col-12">
+                            <div class="form-group {{$errors->has('no_hp') ? 'has-error' : ''}}">
+                                <label class="form-group" for="">No. Handphone :</label>
+                                <input name="no_hp" type="number" placeholder="Nomer Handphone" value="{{old('no_hp')}}">
+                                @if($errors->has('no_hp'))
+                                <span class="help-block text-danger">{{$errors->first('no_ktp')}}</span>
                                 @endif
                             </div>
                         </div>

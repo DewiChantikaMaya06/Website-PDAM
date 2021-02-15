@@ -32,17 +32,19 @@
                                 <table class='table myTable'>
                                     <thead>
                                         <tr>
+                                            <th>No.</th>
                                             <th>Nama Sebelumnya</th>
                                             <th>Nama Pengaju</th>
                                             <th>No.KTP</th>
-                                            <th>Alamat</th>
-                                            <th>Foto KTP</th>
-                                            <th>Foto Rekening Air</th>
+                                            <th>No. Handphone</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($data as $e=>$dt)
                                         <tr>
+                                            <td>{{$e+1}}</td>
                                             <td>
                                                 <h4><strong>{{ $dt->nama_sebelumnya }}</strong></h4><br>
                                             </td>
@@ -53,19 +55,28 @@
                                                 <h4><strong>{{$dt->no_ktp}}</strong></h4>
                                             </td>
                                             <td>
-                                                <h4><strong>{{$dt->alamat}}</strong></h4>
+                                                <h4><strong>{{$dt->no_hp}}</strong></h4>
                                             </td>
                                             <td>
-                                                <img src="{{asset('storage/'.$dt->gambar_ktp)}}" height="150px"><br>
+                                                @if($dt->status != 'Verifikasi')
+                                                <button type="button" class="btn btn-danger">{{$dt->status}}</button>   
+                                                @elseif($dt->status != 'Belum verifikasi')
+                                                <button type="button" class="btn btn-success">{{$dt->status}}</button>
+                                                @endif
                                             </td>
                                             <td>
-                                                <img src="{{asset('storage/'.$dt->gambar_rekening)}}" height="150px"><br>
-                                            </td>
-                                            <td>
-                                                <a href='{{ url('detail/'.$dt->id)}}' class="btn btn-success btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>
-                                            </td>
-                                            <td>
-                                                <a href='{{ url('pengaduan/'.$dt->id)}}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                <a href='{{ url('detail/baliknama/'.$dt->id)}}' class="btn btn-primary btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>
+                                                <br>
+                                                <br>
+                                                <a href='{{ url('baliknama/'.$dt->id)}}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                <br>
+                                                <br>
+                                                <form method='post' action='{{url('baliknama/delete/'.$dt->id)}}'>
+                                                    @csrf
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>
+                                                </form>
+
                                             </td>
                                         </tr>
                                         @endforeach
@@ -77,6 +88,75 @@
                 </div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4>{{ $title2 }}</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class='table-responsive'>
+                                <table class='table myTable'>
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Nama Sebelumnya</th>
+                                            <th>Nama Pengaju</th>
+                                            <th>No.KTP</th>
+                                            <th>No. Handphone</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($data2 as $e=>$dt)
+                                        <tr>
+                                            <td>{{$e+1}}</td>
+                                            <td>
+                                                <h4><strong>{{ $dt->nama_sebelumnya }}</strong></h4><br>
+                                            </td>
+                                            <td>
+                                                <h4><strong>{{ $dt->nama_pengaju }}</strong></h4><br>
+                                            </td>
+                                            <td>
+                                                <h4><strong>{{$dt->no_ktp}}</strong></h4>
+                                            </td>
+                                            <td>
+                                                <h4><strong>{{$dt->no_hp}}</strong></h4>
+                                            </td>
+                                            <td>
+                                                @if($dt->status != 'Verifikasi')
+                                                <button type="button" class="btn btn-danger">{{$dt->status}}</button>   
+                                                @elseif($dt->status != 'Belum verifikasi')
+                                                <button type="button" class="btn btn-success">{{$dt->status}}</button>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href='{{ url('detail/baliknama/'.$dt->id)}}' class="btn btn-primary btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>
+                                                <br>
+                                                <br>
+                                                <a href='{{ url('baliknama/'.$dt->id)}}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                <br>
+                                                <br>
+                                                <form method='post' action='{{url('baliknama/delete/'.$dt->id)}}'>
+                                                    @csrf
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>
+                                                </form>
+
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

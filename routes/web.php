@@ -109,6 +109,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/baliknama/{id}', 'BaliknamaController@edit');
     Route::put('/baliknama/{id}', 'BaliknamaController@update');
     Route::get('/detail/baliknama/{id}', 'BaliknamaController@show');
+    Route::delete('/baliknama/delete/{id}', 'BalikanamaController@destroy');
 });
 
 

@@ -15,9 +15,11 @@ class BaliknamaController extends Controller
     public function index()
     {
         $title  = 'Data Balik Nama';
-        $data   = Baliknama::orderby('created_at', 'asc')->get();
+        $title2  = 'Data Balik Nama Selesai';
+        $data   = Baliknama::orderby('created_at', 'asc')->where('status','=','Belum verifikasi')->get();
+        $data2   = Baliknama::where('status','=','Verifikasi')->get();
 
-        return view('baliknama.index', compact('data', 'title'));
+        return view('baliknama.index', compact('data', 'title', 'data2', 'title2'));
     }
 
     /**
@@ -43,6 +45,7 @@ class BaliknamaController extends Controller
             'nama_pengaju' => 'required|max:30',
             'no_ktp' => 'required|max:30',
             'alamat' => 'required|max:100',
+            'no_hp' =>  'required|max:13',
             'gambar_ktp' => 'required|mimes:jpg,png,jpeg,gif,svg',
             'gambar_rekening' => 'required|mimes:jpg,png,jpeg,gif,svg',
         ], [
@@ -50,10 +53,12 @@ class BaliknamaController extends Controller
             'nama_sebelumnya.max' => 'Maksimal menggunakan 30 Karakter',
             'nama_pengaju.required' => 'Nama lengkap harus diisi',
             'nama_pengaju.max' => 'Maksimal menggunakan 30 Karakter',
-            'no_ktp.required' => 'No Handphone harus diisi',
+            'no_ktp.required' => 'No KTP harus diisi',
             'no_ktp.max' => 'Maksimal menggunakan 16 Karakter',
             'alamat.required' => 'Alamat harus diisi',
             'alamat.max' => 'Maksimal 150 karakter',
+            'no_hp.required'  =>  'No Handphone wajib diisi',
+            'no_hp.max' =>  'Maksimal 13 karakter',  
             'gambar_ktp.required' => 'Gambar harus diisi',
             'gambar_ktp.mimes' => 'File Harus berupa gambar. Type jpg,png,jpeg,giv,svg',
             'gambar_rekening.required' => 'Gambar harus diisi',
@@ -64,6 +69,7 @@ class BaliknamaController extends Controller
         $data['nama_pengaju'] = $request->nama_pengaju;
         $data['no_ktp'] = $request->no_ktp;
         $data['alamat'] = $request->alamat;
+        $data['no_hp']  =   $request->no_hp;
         $data['gambar_ktp'] = $request->gambar_ktp->store('ktp_baliknama');
         $data['gambar_rekening'] = $request->gambar_rekening->store('rekening');
         $data['created_at'] = date('Y-m-d');
