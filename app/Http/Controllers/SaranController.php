@@ -14,9 +14,9 @@ class SaranController extends Controller
      */
     public function index()
     {
-        $title  = 'Data Saran dan Kritik';
+        $title  = 'Data Kritik dan Saran';
 
-        $data   = Saran::orderby('created_at', 'desc')->get();
+        $data   = Saran::orderby('created_at', 'desc')->paginate(10);
         $isi_saran   = Saran::orderby('created_at', 'desc')->get();
 
         return view('saran.index', compact('data', 'title', 'isi_saran'));

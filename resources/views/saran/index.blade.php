@@ -33,7 +33,7 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Isi Saran</th>
+                                            <th>Kritik dan Saran</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -41,12 +41,24 @@
                                         <tr>
                                             <td>{{$e+1}}</td>
                                             <td>
-                                                <h4>{{ $dt->isi_saran }}</h4> <br>
+                                                {{ $dt->isi_saran }}
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="pull-left">
+                                    Showing
+                                    {{ $data->firstItem() }}
+                                    to
+                                    {{ $data->lastItem() }}
+                                    of
+                                    {{ $data->total() }}
+                                    entries
+                                </div>
+                                <div class="pull-right">
+                                    {{ $data->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>
