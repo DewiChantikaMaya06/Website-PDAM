@@ -15,7 +15,7 @@ class CreatePendaftaranTable extends Migration
     {
         Schema::create('pendaftaran', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama', 30);
+            $table->string('nama', 50);
             $table->string('no_ktp', 16);
             $table->string('alamat', 100);
             $table->string('rt', 5);

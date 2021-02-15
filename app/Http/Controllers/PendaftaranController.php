@@ -15,9 +15,11 @@ class PendaftaranController extends Controller
     public function index()
     {
         $title  =   'Data Pendaftaran Sambung Kilat';
-        $data   =   Pendaftaran::get();
+        $title2  =   'Data Pendaftaran Sambung Kilat Selesai';
+        $data   =   Pendaftaran::where('status','=','Belum verifikasi')->get();
+        $data2   =   Pendaftaran::where('status','=','Verifikasi')->get();
 
-        return view('pendaftaran.index', compact('data', 'title'));
+        return view('pendaftaran.index', compact('data', 'title','title2','data2'));
     }
 
     public function tambah()
@@ -42,7 +44,7 @@ class PendaftaranController extends Controller
     {
         // dd($request->all());
         $this->validate($request, [
-            'nama'  =>  'required|max:30',
+            'nama'  =>  'required|max:50',
             'no_ktp'    =>  'required|max:16',
             'alamat'  =>  'required|max:100',
             'rt'  =>  'required|max:5',
@@ -51,7 +53,7 @@ class PendaftaranController extends Controller
             'gambar_ktp'  =>  'required|mimes:jpg,png,jpeg,gif,svg',
         ], [
             'nama.required' =>  'Nama harus diisi',
-            'nama.max'  =>  'Maksimal 30 karakter',
+            'nama.max'  =>  'Maksimal 50 karakter',
             'no_ktp.required'   =>  'No. KTP harus diisi',
             'no_ktp.max'    =>  'Maksimal 16 karakter',
             'alamat.required'   =>  'Alamat harus diisi',
@@ -136,6 +138,8 @@ class PendaftaranController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Pendaftaran::find($id);
+        $data->delete();
+        return redirect('pendaftaran')->with('suksesHapus', 'isi kata sukses dihapus');
     }
 }

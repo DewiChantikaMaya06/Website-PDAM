@@ -46,8 +46,8 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Status Penanganan:</label>
                                         <select name="status" class="form-control" id="exampleFormControlSelect1" value="{{old('status')}}" style="width: 20%">
-                                            <option value="Selesai" {{(old('status') == 'Selesai') ? ' selected' : ''}}>Selesai</option>
                                             <option value="Belum" {{(old('status') == 'Belum') ? ' selected' : ''}}>Belum</option>
+                                            <option value="Selesai" {{(old('status') == 'Selesai') ? ' selected' : ''}}>Selesai</option>
                                         </select>
                                         @if($errors->has('status'))
                                         <span class="help-block">{{$errors->first('status')}}</span>

@@ -23,8 +23,9 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group {{$errors->has('nama') ? 'has-error' : ''}}">
-                                <label class="form-group" for="">Nama Lengkap :</label>
-                                <input name="nama" type="text" placeholder="nama lengkap anda" value="{{old('nama')}}">
+                                <label class="form-group" for="" >Nama Lengkap :</label>
+                                <br>
+                                <input name="nama" type="text" placeholder="Nama lengkap anda" value="{{old('nama')}}" rows="10">
                                 @if($errors->has('nama'))
                                 <span class="help-block text-danger">{{$errors->first('nama')}}</span>
                                 @endif
@@ -44,7 +45,7 @@
                                 <label class="form-group" for="">Nomer Handphone :</label>
                                 <input name="no_hp" type="number" placeholder="Nomer Handphone" value="{{old('no_hp')}}">
                                 @if($errors->has('no_hp'))
-                                <span class="help-block text-danger">{{$errors->first('no_hp')}}</span>
+                                    <span class="help-block text-danger">{{$errors->first('no_hp')}}</span>
                                 @endif
                             </div>
                         </div>
@@ -53,7 +54,7 @@
                                 <label class="form-group" for="">No. Pelanggan :</label>
                                 <input name="no_pelanggan" type="number" placeholder="Nomer Pelanggan" value="{{old('no_pelanggan')}}">
                                 @if($errors->has('no_pelanggan'))
-                                <span class="help-block text-danger">{{$errors->first('no_pelanggan')}}</span>
+                                    <span class="help-block text-danger">{{$errors->first('no_pelanggan')}}</span>
                                 @endif
                             </div>
                         </div>
