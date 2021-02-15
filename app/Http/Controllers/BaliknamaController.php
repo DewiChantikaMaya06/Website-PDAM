@@ -27,7 +27,6 @@ class BaliknamaController extends Controller
      */
     public function add()
     {
-        // $data   =   Baliknama::get();
         return view('guest.baliknama');
     }
 
@@ -61,16 +60,16 @@ class BaliknamaController extends Controller
             'gambar_rekening.mimes' => 'File Harus berupa gambar. Type jpg,png,jpeg,giv,svg',
         ]);
 
-        $data['nama_sebelumnya'] = $request->name;
-        $data['nama_pengaju'] = $request->name;
+        $data['nama_sebelumnya'] = $request->nama_sebelumnya;
+        $data['nama_pengaju'] = $request->nama_pengaju;
         $data['no_ktp'] = $request->no_ktp;
         $data['alamat'] = $request->alamat;
-        $data['gambar_ktp'] = $request->foto_ktp->store('baliknama');
-        $data['gambar_rekening'] = $request->foto_rek->store('baliknama');
+        $data['gambar_ktp'] = $request->gambar_ktp->store('ktp_baliknama');
+        $data['gambar_rekening'] = $request->gambar_rekening->store('rekening');
         $data['created_at'] = date('Y-m-d');
         $data['updated_at'] = date('Y-m-d');
 
-        Pengaduan::insert($data);
+        Baliknama::insert($data);
         return redirect('baliknama/add')->with('sukses', 'isi data sukses ditambah');
     }
 
@@ -84,7 +83,7 @@ class BaliknamaController extends Controller
     {
         $title = 'Detail Data Baliknama';
         $detail = Baliknama::find($id);
-        return view('baliknama.detail', compact('detail','title'));
+        return view('baliknama.detail', compact('detail', 'title'));
     }
 
     /**
@@ -110,15 +109,15 @@ class BaliknamaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'status'=>'required',
-        ],[
-            'status.required'=>'Status belum berubah',
+        $this->validate($request, [
+            'status' => 'required',
+        ], [
+            'status.required' => 'Status belum berubah',
         ]);
 
         $data['status'] = $request->status;
 
-        Pengaduan::where('id', $id)->update($data);
+        Baliknama::where('id', $id)->update($data);
         return redirect('baliknama')->with('suksesUpdate', 'isi data sukses diupdate');
     }
 

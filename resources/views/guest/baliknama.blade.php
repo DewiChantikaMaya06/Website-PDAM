@@ -18,13 +18,14 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
                 <form role="form" class="form" method='post' action='{{url('baliknama/add/')}}' enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group {{$errors->has('nama_sebelumnya') ? 'has-error' : ''}}">
                                 <label class="form-group" for="">Nama Sebelumnya :</label>
                                 <input name="nama_sebelumnya" type="text" placeholder="Isi dengan nama lengkap anda" value="{{old('nama_sebelumnya')}}">
                                 @if($errors->has('nama_sebelumnya'))
-                                    <span class="help-block text-danger">{{$errors->first('nama_sebelumnya')}}</span>
+                                <span class="help-block text-danger">{{$errors->first('nama_sebelumnya')}}</span>
                                 @endif
                             </div>
                         </div>
@@ -33,7 +34,7 @@
                                 <label class="form-group" for="">Nama Pengaju :</label>
                                 <input name="nama_pengaju" type="text" placeholder="Isi dengan nama lengkap anda" value="{{old('nama_pengaju')}}">
                                 @if($errors->has('nama_pengaju'))
-                                    <span class="help-block text-danger">{{$errors->first('nama_pengaju')}}</span>
+                                <span class="help-block text-danger">{{$errors->first('nama_pengaju')}}</span>
                                 @endif
                             </div>
                         </div>
@@ -42,7 +43,7 @@
                                 <label class="form-group" for="">No. KTP :</label>
                                 <input name="no_ktp" type="text" placeholder="Nomer KTP" value="{{old('no_ktp')}}">
                                 @if($errors->has('no_ktp'))
-                                    <span class="help-block text-danger">{{$errors->first('no_ktp')}}</span>
+                                <span class="help-block text-danger">{{$errors->first('no_ktp')}}</span>
                                 @endif
                             </div>
                         </div>
@@ -51,7 +52,7 @@
                                 <label class="form-group" for="">Alamat :</label>
                                 <input name="alamat" type="text" placeholder="Alamat Lengkap" value="{{old('alamat')}}">
                                 @if($errors->has('alamat'))
-                                    <span class="help-block text-danger">{{$errors->first('alamat')}}</span>
+                                <span class="help-block text-danger">{{$errors->first('alamat')}}</span>
                                 @endif
                             </div>
                         </div>
@@ -61,7 +62,7 @@
                                 <p>Foto KTP :</p>
                                 <input name="gambar_ktp" type="file" class="form-control-file" value="{{old('gambar_ktp')}}">
                                 @if($errors->has('gambar_ktp'))
-                                    <span class="help-block">{{$errors->first('gambar_ktp')}}</span>
+                                <span class="help-block">{{$errors->first('gambar_ktp')}}</span>
                                 @endif
                             </div>
                         </div>
@@ -71,7 +72,7 @@
                                 <p>Foto rekening Air :</p>
                                 <input name="gambar_rekening" type="file" class="form-control-file" value="{{old('gambar_rekening')}}">
                                 @if($errors->has('gambar_rekening'))
-                                    <span class="help-block">{{$errors->first('gambar_rekening')}}</span>
+                                <span class="help-block">{{$errors->first('gambar_rekening')}}</span>
                                 @endif
                             </div>
                         </div>
@@ -89,7 +90,7 @@
             </div>
             <div class="col-lg-6 col-md-12 ">
                 <div class="appointment-image">
-                    <img src="{{('guest/img/balik_nama.jpg')}}" alt="">
+                    <img src="{{asset('storage/balik_nama.jpg')}}" alt="">
                 </div>
             </div>
         </div>

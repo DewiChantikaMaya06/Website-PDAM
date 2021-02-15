@@ -102,13 +102,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pendaftaran/{id}', 'PendaftaranController@edit');
     Route::put('/pendaftaran/{id}', 'PendaftaranController@update');
     Route::get('/detail/pendaftaran/{id}', 'PendaftaranController@show');
+    Route::delete('/pendaftaran/delete/{id}', 'PendaftaranController@destroy');
 
     //Manage Data Balik nama
     Route::get('/baliknama', 'BaliknamaController@index');
     Route::get('/baliknama/{id}', 'BaliknamaController@edit');
     Route::put('/baliknama/{id}', 'BaliknamaController@update');
     Route::get('/detail/baliknama/{id}', 'BaliknamaController@show');
-
 });
 
 

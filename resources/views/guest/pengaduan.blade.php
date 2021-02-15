@@ -23,8 +23,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group {{$errors->has('nama') ? 'has-error' : ''}}">
-                                <label class="form-group" for="" >Nama Lengkap :</label>
-                                <br>
+                                <label class="form-group" for="">Nama Lengkap :</label><br>
                                 <input name="nama" type="text" placeholder="Nama lengkap anda" value="{{old('nama')}}" rows="10">
                                 @if($errors->has('nama'))
                                 <span class="help-block text-danger">{{$errors->first('nama')}}</span>
@@ -33,7 +32,7 @@
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group {{$errors->has('alamat') ? 'has-error' : ''}}">
-                                <label class="form-group" for="">Alamat Lengkap :</label>
+                                <label class="form-group" for="">Alamat Lengkap :</label><br>
                                 <input name="alamat" type="text" placeholder="Alamat Lengkap anda" value="{{old('alamat')}}">
                                 @if($errors->has('alamat'))
                                 <span class="help-block text-danger">{{$errors->first('alamat')}}</span>
@@ -42,19 +41,19 @@
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group {{$errors->has('no_hp') ? 'has-error' : ''}}">
-                                <label class="form-group" for="">Nomer Handphone :</label>
+                                <label class="form-group" for="">Nomer Handphone :</label><br>
                                 <input name="no_hp" type="number" placeholder="Nomer Handphone" value="{{old('no_hp')}}">
                                 @if($errors->has('no_hp'))
-                                    <span class="help-block text-danger">{{$errors->first('no_hp')}}</span>
+                                <span class="help-block text-danger">{{$errors->first('no_hp')}}</span>
                                 @endif
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group {{$errors->has('no_pelanggan') ? 'has-error' : ''}}">
-                                <label class="form-group" for="">No. Pelanggan :</label>
+                                <label class="form-group" for="">No. Pelanggan :</label><br>
                                 <input name="no_pelanggan" type="number" placeholder="Nomer Pelanggan" value="{{old('no_pelanggan')}}">
                                 @if($errors->has('no_pelanggan'))
-                                    <span class="help-block text-danger">{{$errors->first('no_pelanggan')}}</span>
+                                <span class="help-block text-danger">{{$errors->first('no_pelanggan')}}</span>
                                 @endif
                             </div>
                         </div>
