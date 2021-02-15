@@ -87,7 +87,7 @@ class BaliknamaController extends Controller
      */
     public function show($id)
     {
-        $title = 'Detail Data Baliknama';
+        $title = 'Detail Data Balik Nama';
         $detail = Baliknama::find($id);
         return view('baliknama.detail', compact('detail', 'title'));
     }
@@ -135,6 +135,8 @@ class BaliknamaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Baliknama::find($id);
+        $data->delete();
+        return redirect('baliknama')->with('suksesHapus', 'isi kata sukses dihapus');
     }
 }

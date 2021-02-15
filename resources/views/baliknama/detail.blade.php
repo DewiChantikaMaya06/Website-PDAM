@@ -17,11 +17,11 @@
                                     {{ method_field('put') }}
                                     <div class="form-group" style="float: right; margin-right:10%">
                                         <label for="exampleInputEmail1">Gambar KTP :</label>
-                                        <h4><img src="{{asset('storage/'.$detail->gambar_ktp)}}" height="325px"></h4>
+                                        <h4><img src="{{asset('storage/'.$detail->gambar_ktp)}}" height="220px"></h4>
                                     </div>
                                     <div class="form-group" style="float: margin-right:10%">
                                         <label for="exampleInputEmail1" >Gambar Rekening :</label>
-                                        <h4><img src="{{asset('storage/'.$detail->gambar_rekening)}}" height="325px"></h4>
+                                        <h4><img src="{{asset('storage/'.$detail->gambar_rekening)}}" height="220px"></h4>
                                     </div>
                                     <br>
                                     <div class="form-group">

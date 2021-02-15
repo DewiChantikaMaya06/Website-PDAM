@@ -18,7 +18,7 @@
         @endif
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
-                <form role="form" method='post' action='{{url('pengaduan/add/')}}'>
+                <form class="form" role="form" method='post' action='{{url('pengaduan/add/')}}'>
                     @csrf
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">

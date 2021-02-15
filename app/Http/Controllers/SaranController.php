@@ -14,7 +14,12 @@ class SaranController extends Controller
      */
     public function index()
     {
-        //
+        $title  = 'Data Saran dan Kritik';
+
+        $data   = Saran::orderby('created_at', 'desc')->get();
+        $isi_saran   = Saran::orderby('created_at', 'desc')->get();
+
+        return view('saran.index', compact('data', 'title', 'isi_saran'));
     }
 
     /**
@@ -43,8 +48,8 @@ class SaranController extends Controller
         ]);
 
         $data['isi_saran'] = $request->isi_saran;
-        $data['created_at'] = date('Y-m-d H:1:s');
-        $data['updated_at'] = date('Y-m-d H:1:s');
+        $data['created_at'] = date('Y-m-d H:i:s');
+        $data['updated_at'] = date('Y-m-d H:i:s');
 
         Saran::insert($data);
 

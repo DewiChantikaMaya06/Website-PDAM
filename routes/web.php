@@ -109,7 +109,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/baliknama/{id}', 'BaliknamaController@edit');
     Route::put('/baliknama/{id}', 'BaliknamaController@update');
     Route::get('/detail/baliknama/{id}', 'BaliknamaController@show');
-    Route::delete('/baliknama/delete/{id}', 'BalikanamaController@destroy');
+    Route::delete('/baliknama/delete/{id}', 'BaliknamaController@destroy');
+
+    //Manage Data Kritik dan Saran
+    Route::get('/saran', 'SaranController@index');
+    Route::get('/saran/{id}', 'SaranController@edit');
+    Route::put('/saran/{id}', 'SaranController@update');
+    Route::get('/detail/saran/{id}', 'SaranController@show');
 });
 
 
