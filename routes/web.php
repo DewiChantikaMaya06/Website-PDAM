@@ -31,10 +31,14 @@ Route::post('/pengaduan/add', 'PengaduanController@store');
 Route::get('/pendaftaran/tambah', 'PendaftaranController@tambah');
 Route::post('/pendaftaran/tambah', 'PendaftaranController@store');
 
+//Manage data kritik dan saran
+Route::post('/saran/add', 'SaranController@store');
+
 //Manage Data cek tagihan
 Route::post('/cek_tagihan', 'TagihanController@store');
 Route::get('/tagihan', 'TagihanController@index');
 Route::get('/tagihan/{id}', 'TagihanController@show');
+
 
 //Data Midleware
 Route::group(['middleware' => 'auth'], function () {

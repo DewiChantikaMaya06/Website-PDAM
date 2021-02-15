@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Saran;
 use Illuminate\Http\Request;
 
 class SaranController extends Controller
@@ -34,7 +35,20 @@ class SaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'isi_saran' => 'required|max:225',
+        ], [
+            'isi_saran.required' => 'Saran harus diisi',
+            'isi_saran.max' => 'Maksimal ada 225 huruf',
+        ]);
+
+        $data['isi_saran'] = $request->isi_saran;
+        $data['created_at'] = date('Y-m-d H:1:s');
+        $data['updated_at'] = date('Y-m-d H:1:s');
+
+        Saran::insert($data);
+
+        return redirect('/')->with('sukses', 'isi kata sukses ditambah');
     }
 
     /**

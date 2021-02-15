@@ -25,7 +25,7 @@
 											<li><a href="{{url('/')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Beranda</a></li>
 											<li><a href="{{url('/pendaftaran')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Pendaftaran</a></li>
 											<li><a href="{{url('/baliknama')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Balik Nama</a></li>
-											<li><a href="{{url('/pengaduan')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Pengaduan</a></li>	
+											<li><a href="{{url('/pengaduan')}}"><i class="fa fa-caret-right" aria-hidden="true"></i>Pengaduan</a></li>
 										</ul>
 									</div>
 								</div>
@@ -46,9 +46,22 @@
 							<div class="single-footer">
 								<h2>Kritik dan saran</h2>
 								<p>Kami menerima segala kritik dan saran untuk pelayanan yang lebih baik lagi</p>
-								<form action="" method="get" target="_blank" class="newsletter-inner">
-									<input name="address" type="text" placeholder="Kritik dan Saran">
+								@if(session('sukses'))
+								<div class="alert alert-primary alert-dismissible" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<i class="fa fa-check-circle"></i> Data berhasil di input...
+								</div>
+								@else
+								<p></p>
+								@endif
+								<form action="{{url('saran/add')}}" method="post" class="newsletter-inner {{$errors->has('isi_saran') ? 'has-error' : ''}}">
+									@method('post')
+									@csrf
+									<input name="isi_saran" type="text" placeholder="Kritik dan Saran">
 									<button class="button"><i class="icofont icofont-paper-plane"></i></button>
+									@if($errors->has('isi_saran'))
+									<span class="help-block">{{$errors->first('isi_saran')}}</span>
+									@endif
 								</form>
 							</div>
 						</div>
@@ -62,7 +75,7 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-12">
 							<div class="copyright-content">
-								<p>© Copyright 2021  |  Dibuat Oleh <a href="#" target="_blank">Tim IT PDAM</a> </p>
+								<p>© Copyright 2021 | Dibuat Oleh <a href="#" target="_blank">Tim IT PDAM</a> </p>
 							</div>
 						</div>
 					</div>
