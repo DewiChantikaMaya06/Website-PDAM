@@ -92,11 +92,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pengaduan', 'PengaduanController@index');
     Route::get('/pengaduan/{id}', 'PengaduanController@edit');
     Route::put('/pengaduan/{id}', 'PengaduanController@update');
-    Route::get('/detail/{id}', 'PengaduanController@show');
+    Route::get('/detail/pengaduan/{id}', 'PengaduanController@show');
 
     //Manage Data Pendaftaran 
     Route::get('/pendaftaran', 'PendaftaranController@index');
-    Route::get('/pendaftaran/{$id}', 'PendaftaranController@edit');
+    Route::get('/pendaftaran/{id}', 'PendaftaranController@edit');
+    Route::put('/pendaftaran/{id}', 'PendaftaranController@update');
+    Route::get('/detail/pendaftaran/{id}', 'PendaftaranController@show');
+
 });
 
 

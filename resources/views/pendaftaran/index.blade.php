@@ -59,14 +59,17 @@
                                                 <img src="{{asset('storage/'.$dt->gambar_ktp)}}" height="150px">
                                             </td>
                                             <td>
-                                                <h4>{{$dt->status}}</h4>
+                                                @if($dt->status != 'Verifikasi')
+                                                <button type="button" class="btn btn-danger">{{$dt->status}}</button>   
+                                                @elseif($dt->status != 'Belum verifikasi')
+                                                <button type="button" class="btn btn-success">{{$dt->status}}</button>
+                                                @endif
                                             </td>
                                             <td>
-                                                <a href='{{ url('detail/'.$dt->id)}}' class="btn btn-success btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>
+                                                <a href='{{ url('detail/pendaftaran/'.$dt->id)}}' class="btn btn-primary btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>
                                             </td>
                                             <td>
-                                                <a href='{{ url('pengaduan/'.$dt->id)}}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
-
+                                                <a href='{{ url('pendaftaran/'.$dt->id)}}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

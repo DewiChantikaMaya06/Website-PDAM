@@ -58,7 +58,7 @@
                                                 <h4>{{$dt->status}}</h4>
                                             </td>
                                             <td>
-                                                <a href='{{ url('detail/'.$dt->id)}}' class="btn btn-success btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>
+                                                <a href='{{ url('detail/pengaduan/'.$dt->id)}}' class="btn btn-success btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>
                                             </td>
                                             <td>
                                                 <a href='{{ url('pengaduan/'.$dt->id)}}' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
