@@ -15,8 +15,12 @@ class PengaduanController extends Controller
     public function index()
     {
         $title  = 'Data Pengaduan';
-        $data   = Pengaduan::orderby('created_at', 'asc')->get();
-        return view('pengaduan.index', compact('data', 'title'));
+        $title2  = 'Data Pengaduan Selesai';
+
+        $data   = Pengaduan::orderby('created_at', 'asc')->where('status', '=', 'Belum')->get();
+        $data_status   = Pengaduan::where('status', '=', 'Selesai')->get();
+
+        return view('pengaduan.index', compact('data', 'title', 'data_status', 'title2'));
     }
     /**
      * Show the form for creating a new resource.
@@ -26,7 +30,7 @@ class PengaduanController extends Controller
     public function add()
     {
         $data   =   Pengaduan::get();
-        return view('guest.pengaduan',compact('data'));
+        return view('guest.pengaduan', compact('data'));
     }
 
 
@@ -85,7 +89,7 @@ class PengaduanController extends Controller
     {
         $title = 'Detail Data Pengaduan';
         $detail = Pengaduan::find($id);
-        return view('pengaduan.detail', compact('detail','title'));
+        return view('pengaduan.detail', compact('detail', 'title'));
     }
 
     /**
@@ -111,10 +115,10 @@ class PengaduanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'status'=>'required',
-        ],[
-            'status.required'=>'Status belum berubah',
+        $this->validate($request, [
+            'status' => 'required',
+        ], [
+            'status.required' => 'Status belum berubah',
         ]);
 
         $data['status'] = $request->status;
