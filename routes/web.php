@@ -39,6 +39,9 @@ Route::post('/cek_tagihan', 'TagihanController@store');
 Route::get('/tagihan', 'TagihanController@index');
 Route::get('/tagihan/{id}', 'TagihanController@show');
 
+//Manage Data Baliknama
+Route::get('/baliknama/add', 'BaliknamaController@add');
+Route::post('/baliknama/add', 'BaliknamaController@store');
 
 //Data Midleware
 Route::group(['middleware' => 'auth'], function () {
@@ -100,16 +103,20 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/pendaftaran/{id}', 'PendaftaranController@update');
     Route::get('/detail/pendaftaran/{id}', 'PendaftaranController@show');
 
+    //Manage Data Balik nama
+    Route::get('/baliknama', 'BaliknamaController@index');
+    Route::get('/baliknama/{id}', 'BaliknamaController@edit');
+    Route::put('/baliknama/{id}', 'BaliknamaController@update');
+    Route::get('/detail/baliknama/{id}', 'BaliknamaController@show');
+
 });
-
-
 
 
 //Manage Template Guest
 
-Route::get('/baliknama', function () {
-    return view('guest.baliknama');
-});
+// Route::get('/baliknama/add', function () {
+//     return view('guest.baliknama');
+// });
 Route::get('/struktur', function () {
     return view('guest.struktur');
 });

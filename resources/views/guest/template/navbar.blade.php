@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-12">
                         <div class="logo">
-                            <a href="index.html"><img src="{{asset('storage/logo_pdam2.png')}}" alt="#"></a>
+                            <a href="{{url('/')}}"><img src="{{asset('storage/logo_pdam2.png')}}" alt="#"></a>
                         </div>
                         <div class="mobile-nav"></div>
                     </div>
@@ -30,7 +30,7 @@
                                         <ul class="dropdown">
                                             {{-- <li><a href="{{url('/tagihan')}}">CEK TAGIHAN</a></li> --}}
                                             <li><a href="{{url('/pendaftaran/tambah')}}">PENDAFTARAN BARU</a></li>
-                                            <li><a href="{{url('/baliknama')}}">PENGAJUAN BALIK NAMA</a></li>
+                                            <li><a href="{{url('/baliknama/add')}}">PENGAJUAN BALIK NAMA</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="{{url('/struktur')}}">STRUKTUR</a>

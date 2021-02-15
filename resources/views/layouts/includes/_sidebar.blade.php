@@ -13,7 +13,7 @@
 					<div id="subPages" class="collapse ">
 						<ul class="nav">
 							<li><a href="{{url('/pendaftaran')}}" class="">Daftar Pelanggan Baru</a></li>
-							<li><a href="#" class="">Daftar Balik Nama</a></li>
+							<li><a href="{{url('/baliknama')}}" class="">Daftar Balik Nama</a></li>
 						</ul>
 					</div>
 				</li>

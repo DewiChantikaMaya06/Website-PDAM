@@ -32,7 +32,6 @@
                                 <table class='table myTable'>
                                     <thead>
                                         <tr>
-                                            <th>Nama Sebelumnya</th>
                                             <th>Nama Pengaju</th>
                                             <th>No.KTP</th>
                                             <th>Alamat</th>
@@ -44,10 +43,7 @@
                                         @foreach($data as $e=>$dt)
                                         <tr>
                                             <td>
-                                                <h4><strong>{{ $dt->nama_sebelumnya }}</strong></h4><br>
-                                            </td>
-                                            <td>
-                                                <h4><strong>{{ $dt->nama_pengaju }}</strong></h4><br>
+                                                <h4><strong>{{ $dt->name }}</strong></h4><br>
                                             </td>
                                             <td>
                                                 <h4><strong>{{$dt->no_ktp}}</strong></h4>
@@ -56,10 +52,10 @@
                                                 <h4><strong>{{$dt->alamat}}</strong></h4>
                                             </td>
                                             <td>
-                                                <img src="{{asset('storage/'.$dt->gambar_ktp)}}" height="150px"><br>
+                                                <img src="{{asset('storage/'.$dt->foto_ktp)}}" height="150px"><br>
                                             </td>
                                             <td>
-                                                <img src="{{asset('storage/'.$dt->gambar_rekening)}}" height="150px"><br>
+                                                <img src="{{asset('storage/'.$dt->foto_rek)}}" height="150px"><br>
                                             </td>
                                             <td>
                                                 <a href='{{ url('detail/'.$dt->id)}}' class="btn btn-success btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>
