@@ -34,8 +34,6 @@
                                             <option value="C2" {{(old('kelompok') == 'C2') ? ' selected' : ''}}>C2 (Niaga Besar)</option>
                                             <option value="D1" {{(old('kelompok') == 'D1') ? ' selected' : ''}}>D1 (Industri Kecil)</option>
                                             <option value="D2" {{(old('kelompok') == 'D2') ? ' selected' : ''}}>D2 (Industri Besar)</option>
-                                            <option value="E1" {{(old('kelompok') == 'E1') ? ' selected' : ''}}>E1 (Non Komersial)</option>
-                                            <option value="E2" {{(old('kelompok') == 'E2') ? ' selected' : ''}}>E2 (Komersail)</option>
                                         </select>
                                         @if($errors->has('kelompok'))
                                         <span class="help-block">{{$errors->first('kelompok')}}</span>

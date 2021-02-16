@@ -55,7 +55,11 @@
                                                 <h4><strong>{{$dt->jenis}}</strong></h4>
                                             </td>
                                             <td>
-                                                <h4>{{$dt->status}}</h4>
+                                                @if($dt->status != 'Selesai')
+                                                <button type="button" class="btn btn-danger" disabled>{{$dt->status}}</button>
+                                                @elseif($dt->status != 'Belum')
+                                                <button type="button" class="btn btn-success" disabled>{{$dt->status}}</button>
+                                                @endif
                                             </td>
                                             <td>
                                                 <a href='{{ url('detail/pengaduan/'.$dt->id)}}' class="btn btn-success btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>

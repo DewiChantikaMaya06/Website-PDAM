@@ -116,6 +116,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/saran/{id}', 'SaranController@edit');
     Route::put('/saran/{id}', 'SaranController@update');
     Route::get('/detail/saran/{id}', 'SaranController@show');
+
+    //Manage Data Tagihan
+    Route::get('/tagihan/admin','TagihanController@indexAdmin');
+    Route::get('/tagihan/add','TagihanController@create');
+    Route::post('/tagihan/add','TagihanController@store');
 });
 
 

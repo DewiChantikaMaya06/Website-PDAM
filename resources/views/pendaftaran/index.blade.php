@@ -60,9 +60,9 @@
                                             </td>
                                             <td>
                                                 @if($dt->status != 'Verifikasi')
-                                                <button type="button" class="btn btn-danger">{{$dt->status}}</button>
+                                                <button type="button" class="btn btn-danger" disabled>{{$dt->status}}</button>
                                                 @elseif($dt->status != 'Belum verifikasi')
-                                                <button type="button" class="btn btn-success">{{$dt->status}}</button>
+                                                <button type="button" class="btn btn-success" disabled>{{$dt->status}}</button>
                                                 @endif
                                             </td>
                                             <td>
