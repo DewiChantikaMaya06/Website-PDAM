@@ -10,6 +10,9 @@
                     <div class="panel">
                         <div class="panel-heading">
                             <h4>{{ $title }}</h4>
+                            <div class="right">
+                                <a href="{{ url('pelanggan/add') }}" type="button" class="btn"><i class="lnr lnr-plus-circle"></i></a>
+                            </div>
                         </div>
                         @if(session('sukses'))
                         <div class="alert alert-success alert-dismissible" role="alert">

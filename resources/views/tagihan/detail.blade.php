@@ -12,7 +12,7 @@
                         </div>
                         <div class="box box-warning">
                             <div class="panel-body">
-                                <form role="form" method='post' action='{{url('tagihan/'.$detail->no_pelanggan)}}' enctype="multipart/form-data">
+                                <form role="form" method='post' action='{{url('pelanggan/'.$detail->no_pelanggan)}}' enctype="multipart/form-data">
                                     @csrf
                                     {{ method_field('put') }}
                                     <div class="form-group">

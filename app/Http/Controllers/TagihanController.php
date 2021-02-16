@@ -19,13 +19,6 @@ class TagihanController extends Controller
         return view('guest.tagihan', ['pelanggan' => $pelanggan, 'pencarian' => $pencarian]);
     }
 
-    public function indexAdmin()
-    {
-        $title  = "Data Tagihan";
-        $data   = Tagihan::orderby('no_pelanggan','asc')->get();
-        return view('tagihan.index', compact('title','data'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -33,8 +26,6 @@ class TagihanController extends Controller
      */
     public function create()
     {
-        $title  = "Tambah Data Tagihan";
-        return view('tagihan.create', compact('title'));
     }
 
     /**
@@ -51,51 +42,15 @@ class TagihanController extends Controller
         return view('guest.tagihan', ['pelanggan' => $pelanggan, 'pencarian' => $pencarian]);
     }
 
-    public function save(Request $request)
-    {
-        $this->validate($request, [
-            'nama' => 'required|max:50',
-            'alamat' => 'required',
-            'no_sambungan' => 'required|max:50',
-            'jumlah_rekening' => 'required',
-            'tagihan_air' => 'required',
-            'denda' => 'required',
-            'segel' => 'required',
-        ],[
-            'nama.required' => 'Nama harus diisi',
-            'nama.max'  =>  'Maksimal 50 karakter',
-            'alamat.required' => 'Alamat harus diisi',
-            'no_sambungan.required' => 'No. Sambungan harus diisi',
-            'no_sambungan.max' => 'Maksimal 50 karakter',
-            'jumlah_rekening.required' => 'Jumlah Rekening harus diisi',
-            'tagihan_air.required' => 'Tagihan Air harus diisi',
-            'denda.required' => 'Denda harus diisi',
-            'segel.required' => 'Segel harus diisi',
-        ]);
-
-        $data['no_pelanggan']  = rand(7);
-        $data['nama'] = $request->nama;
-        $data['alamat'] = $request->alamat;
-        $data['no_sambungan'] = $request->no_sambungan;
-        $data['jumlah_rekening'] = $request->jumlah_rekening;
-        $data['tagihan_air'] = $request->tagihan_air;
-        $data['denda']  = $request->denda;
-        $data['segel']  =   $request->segel;
-        $data['total_tagihan']  =  ($request->tagihan_air + $request->denda + $request->segel);
-
-    }
-
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($no_pelanggan)
+    public function show($id)
     { 
-        $title = 'Detail Tagihan';
-        $detail = Tagihan::find($no_pelanggan);
-        return view('tagihan.detail', compact('detail', 'title'));
+        //
     }
 
     /**
@@ -129,9 +84,6 @@ class TagihanController extends Controller
      */
     public function destroy($id)
     {
-        $data = Tagihan::find($no_pelanggan);
-        $data->delete();
-        return redirect('tagihan')->with('suksesHapus', 'isi kata sukses dihapus');
-
+        //
     }
 }

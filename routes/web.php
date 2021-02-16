@@ -118,9 +118,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/detail/saran/{id}', 'SaranController@show');
 
     //Manage Data Tagihan
-    Route::get('/tagihan/admin','TagihanController@indexAdmin');
-    Route::get('/tagihan/add','TagihanController@create');
-    Route::post('/tagihan/add','TagihanController@store');
+    Route::get('/pelanggan','PelangganController@index');
+    Route::get('/pelanggan/add','PelangganController@add');
+    Route::post('/pelanggan/add','PelangganController@store');
 });
 
 
