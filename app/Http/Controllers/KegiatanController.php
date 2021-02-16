@@ -30,6 +30,14 @@ class KegiatanController extends Controller
         return view('kegiatan.add', compact('title'));
     }
 
+    public function backup()
+    {
+        $title = 'Data Backup Kegiatan';
+        $data = Kegiatan::onlyTrashed()->paginate(10);
+        return view('kegiatan.backup', compact('data', 'title'));
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -130,4 +138,19 @@ class KegiatanController extends Controller
         $data->delete();
         return redirect('kegiatan')->with('suksesHapus', 'isi kata sukses dihapus');
     }
+
+    public function restore($id)
+    {
+        $data = Kegiatan::onlyTrashed()->where('id', $id);
+        $data->restore();
+        return redirect('kegiatan/backup')->with('suksesRestore', 'isi kata sukses direstore');
+    }
+
+    public function deletePermanen($id)
+    {
+        $data = Kegiatan::onlyTrashed()->where('id', $id);
+        $data->forceDelete();
+        return redirect('kegiatan/backup')->with('suksesDelete', 'isi kata sukses didelete');
+    }
+
 }

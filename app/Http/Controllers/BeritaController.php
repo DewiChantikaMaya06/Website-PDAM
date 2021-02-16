@@ -30,6 +30,14 @@ class BeritaController extends Controller
         return view('berita.add', compact('title'));
     }
 
+    public function backup()
+    {
+        $title = 'Data Backup Berita';
+        $data = Berita::onlyTrashed()->paginate(10);
+        return view('berita.backup', compact('data', 'title'));
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -140,4 +148,19 @@ class BeritaController extends Controller
         $data->delete();
         return redirect('berita')->with('suksesHapus', 'isi kata sukses dihapus');
     }
+
+    public function restore($id)
+    {
+        $data = Berita::onlyTrashed()->where('id', $id);
+        $data->restore();
+        return redirect('berita/backup')->with('suksesRestore', 'isi kata sukses direstore');
+    }
+
+    public function deletePermanen($id)
+    {
+        $data = Berita::onlyTrashed()->where('id', $id);
+        $data->forceDelete();
+        return redirect('berita/backup')->with('suksesDelete', 'isi kata sukses didelete');
+    }
+
 }

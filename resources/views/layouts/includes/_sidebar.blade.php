@@ -25,6 +25,9 @@
 					<div id="subPagesBackup" class="collapse">
 						<ul class="nav">
 							<li><a href="{{url('/tarif/backup')}}" class="">Tarif</a></li>
+							<li><a href="{{url('/kegiatan/backup')}}" class=""> Kegiatan</a></li>
+							<li><a href="{{url('/berita/backup')}}" class=""> Berita</a></li>
+							<li><a href="{{url('/baliknama/backup')}}" class=""> Daftar Baliknama</a></li>
 							<li><a href="{{url('/pendaftaran/backup')}}" class="">Pendaftaran Baru</a></li>
 						</ul>
 					</div>

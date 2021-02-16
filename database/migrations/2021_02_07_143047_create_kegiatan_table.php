@@ -19,6 +19,7 @@ class CreateKegiatanTable extends Migration
             $table->string('gambar_kegiatan');
             $table->text('deskripsi', 225);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

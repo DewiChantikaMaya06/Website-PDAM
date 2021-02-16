@@ -69,20 +69,27 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Manage Data Galeri Kegiatan
     Route::get('/kegiatan', 'KegiatanController@index');
+    Route::get('/kegiatan/backup', 'KegiatanController@backup');
     Route::get('/kegiatan/detail/{id}', 'KegiatanController@detail');
     Route::get('/kegiatan/add', 'KegiatanController@add');
     Route::post('/kegiatan/add', 'KegiatanController@store');
     Route::get('/kegiatan/{id}', 'KegiatanController@edit');
     Route::put('/kegiatan/{id}', 'KegiatanController@update');
     Route::delete('/kegiatan/delete/{id}', 'KegiatanController@destroy');
+    Route::get('/kegiatan/restore/{id}', 'KegiatanController@restore');
+    Route::get('/kegiatan/deletePermanen/{id}', 'KegiatanController@deletePermanen');
+
 
     //Manage Data Berita
     Route::get('/berita', 'BeritaController@index');
+    Route::get('/berita/backup', 'BeritaController@backup');
     Route::get('/berita/add', 'BeritaController@add');
     Route::post('/berita/add', 'BeritaController@store');
     Route::get('/berita/{id}', 'BeritaController@edit');
     Route::put('/berita/{id}', 'BeritaController@update');
     Route::delete('/berita/delete/{id}', 'BeritaController@destroy');
+    Route::get('/berita/restore/{id}', 'BeritaController@restore');
+    Route::get('/berita/deletePermanen/{id}', 'BeritaController@deletePermanen');
 
     //Manage Data info
     Route::get('/info', 'InfoController@index');
@@ -110,10 +117,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Manage Data Balik nama
     Route::get('/baliknama', 'BaliknamaController@index');
+    Route::get('/detail/baliknama/{id}', 'BaliknamaController@show');
+    Route::get('/baliknama/backup', 'BaliknamaController@backup');
     Route::get('/baliknama/{id}', 'BaliknamaController@edit');
     Route::put('/baliknama/{id}', 'BaliknamaController@update');
-    Route::get('/detail/baliknama/{id}', 'BaliknamaController@show');
     Route::delete('/baliknama/delete/{id}', 'BaliknamaController@destroy');
+    Route::get('/baliknama/restore/{id}', 'BaliknamaController@restore');
+    Route::get('/baliknama/deletePermanen/{id}', 'BaliknamaController@deletePermanen');
+
 
     //Manage Data Kritik dan Saran
     Route::get('/saran', 'SaranController@index');

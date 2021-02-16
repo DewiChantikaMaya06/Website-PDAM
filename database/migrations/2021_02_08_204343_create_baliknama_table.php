@@ -24,6 +24,7 @@ class CreateBaliknamaTable extends Migration
             $table->string('gambar_rekening');
             $table->enum('status',['Belum verifikasi','Verifikasi'])->default('Belum verifikasi')->nullable;
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

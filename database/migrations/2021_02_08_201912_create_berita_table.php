@@ -20,6 +20,7 @@ class CreateBeritaTable extends Migration
             $table->string('gambar_berita');
             $table->text('isi_berita', 5000);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

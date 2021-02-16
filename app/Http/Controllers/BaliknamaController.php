@@ -32,6 +32,13 @@ class BaliknamaController extends Controller
         return view('guest.baliknama');
     }
 
+    public function backup()
+    {
+        $title = 'Data Backup Baliknama';
+        $data = Baliknama::onlyTrashed()->paginate(10);
+        return view('baliknama.backup', compact('data', 'title'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -139,4 +146,19 @@ class BaliknamaController extends Controller
         $data->delete();
         return redirect('baliknama')->with('suksesHapus', 'isi kata sukses dihapus');
     }
+
+    public function restore($id)
+    {
+        $data = Baliknama::onlyTrashed()->where('id', $id);
+        $data->restore();
+        return redirect('baliknama/backup')->with('suksesRestore', 'isi kata sukses direstore');
+    }
+
+    public function deletePermanen($id)
+    {
+        $data = Baliknama::onlyTrashed()->where('id', $id);
+        $data->forceDelete();
+        return redirect('baliknama/backup')->with('suksesDelete', 'isi kata sukses didelete');
+    }
+
 }
