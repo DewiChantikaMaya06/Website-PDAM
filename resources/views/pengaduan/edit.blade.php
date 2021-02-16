@@ -55,9 +55,9 @@
                                     </div>
                                     <div class="box-footer" style="float: right">
                                         <button type="submit" class="btn btn-primary">Submit</button>
-                                        <a href="{{url('/pengaduan')}}"><button type="back" class="btn btn-danger">Kembali</button></a>
                                     </div>
                                 </form>
+                                <a href="{{url('/pengaduan')}}"><button type="back" class="btn btn-danger">Kembali</button></a>
                             </div>
                         </div>
                     </div>

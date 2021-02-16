@@ -59,7 +59,7 @@
                                             </td>
                                             <td>
                                                 @if($dt->status != 'Verifikasi')
-                                                <button type="button" class="btn btn-danger">{{$dt->status}}</button>   
+                                                <button type="button" class="btn btn-danger">{{$dt->status}}</button>
                                                 @elseif($dt->status != 'Belum verifikasi')
                                                 <button type="button" class="btn btn-success">{{$dt->status}}</button>
                                                 @endif
@@ -82,6 +82,18 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="pull-left">
+                                    Showing
+                                    {{ $data->firstItem() }}
+                                    to
+                                    {{ $data->lastItem() }}
+                                    of
+                                    {{ $data->total() }}
+                                    entries
+                                </div>
+                                <div class="pull-right">
+                                    {{ $data->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,7 +139,7 @@
                                             </td>
                                             <td>
                                                 @if($dt->status != 'Verifikasi')
-                                                <button type="button" class="btn btn-danger">{{$dt->status}}</button>   
+                                                <button type="button" class="btn btn-danger">{{$dt->status}}</button>
                                                 @elseif($dt->status != 'Belum verifikasi')
                                                 <button type="button" class="btn btn-success">{{$dt->status}}</button>
                                                 @endif
@@ -150,6 +162,18 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="pull-left">
+                                    Showing
+                                    {{ $data2->firstItem() }}
+                                    to
+                                    {{ $data2->lastItem() }}
+                                    of
+                                    {{ $data2->total() }}
+                                    entries
+                                </div>
+                                <div class="pull-right">
+                                    {{ $data2->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>

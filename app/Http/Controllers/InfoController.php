@@ -15,7 +15,7 @@ class InfoController extends Controller
     public function index()
     {
         $title = 'Data Info PDAM';
-        $data = Info::get();
+        $data = Info::paginate(10);
         $flag = false;
         return view('info.index', compact('data', 'title', 'flag'));
     }

@@ -15,7 +15,7 @@ class BeritaController extends Controller
     public function index()
     {
         $title = 'Data Berita PDAM';
-        $data = Berita::orderby('judul', 'asc')->get();
+        $data = Berita::orderby('judul', 'asc')->paginate(10);
         return view('berita.index', compact('data', 'title'));
     }
 

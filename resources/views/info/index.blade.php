@@ -55,6 +55,18 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="pull-left">
+                                    Showing
+                                    {{ $data->firstItem() }}
+                                    to
+                                    {{ $data->lastItem() }}
+                                    of
+                                    {{ $data->total() }}
+                                    entries
+                                </div>
+                                <div class="pull-right">
+                                    {{ $data->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>

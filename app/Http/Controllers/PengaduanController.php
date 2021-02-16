@@ -17,8 +17,8 @@ class PengaduanController extends Controller
         $title  = 'Data Pengaduan';
         $title2  = 'Data Pengaduan Selesai';
 
-        $data   = Pengaduan::orderby('created_at', 'asc')->where('status', '=', 'Belum')->get();
-        $data_status   = Pengaduan::where('status', '=', 'Selesai')->get();
+        $data   = Pengaduan::orderby('created_at', 'asc')->where('status', '=', 'Belum')->paginate(5);
+        $data_status   = Pengaduan::where('status', '=', 'Selesai')->paginate(5);
 
         return view('pengaduan.index', compact('data', 'title', 'data_status', 'title2'));
     }

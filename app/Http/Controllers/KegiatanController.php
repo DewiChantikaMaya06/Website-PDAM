@@ -15,7 +15,7 @@ class KegiatanController extends Controller
     public function index()
     {
         $title = 'Data Galeri kegiatan PDAM';
-        $data = Kegiatan::orderby('judul', 'asc')->get();
+        $data = Kegiatan::orderby('judul', 'asc')->paginate(10);
         return view('kegiatan.index', compact('data', 'title'));
     }
 

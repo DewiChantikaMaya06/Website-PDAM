@@ -16,10 +16,10 @@ class PendaftaranController extends Controller
     {
         $title  =   'Data Pendaftaran Sambung Kilat';
         $title2  =   'Data Pendaftaran Sambung Kilat Selesai';
-        $data   =   Pendaftaran::where('status','=','Belum verifikasi')->get();
-        $data2   =   Pendaftaran::where('status','=','Verifikasi')->get();
+        $data   =   Pendaftaran::where('status', '=', 'Belum verifikasi')->paginate(5);
+        $data2   =   Pendaftaran::where('status', '=', 'Verifikasi')->paginate(5);
 
-        return view('pendaftaran.index', compact('data', 'title','title2','data2'));
+        return view('pendaftaran.index', compact('data', 'title', 'title2', 'data2'));
     }
 
     public function tambah()
@@ -42,7 +42,6 @@ class PendaftaranController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $this->validate($request, [
             'nama'  =>  'required|max:50',
             'no_ktp'    =>  'required|max:16',

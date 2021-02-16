@@ -16,8 +16,8 @@ class BaliknamaController extends Controller
     {
         $title  = 'Data Balik Nama';
         $title2  = 'Data Balik Nama Selesai';
-        $data   = Baliknama::orderby('created_at', 'asc')->where('status','=','Belum verifikasi')->get();
-        $data2   = Baliknama::where('status','=','Verifikasi')->get();
+        $data   = Baliknama::orderby('created_at', 'asc')->where('status', '=', 'Belum verifikasi')->paginate(5);
+        $data2   = Baliknama::where('status', '=', 'Verifikasi')->paginate(5);
 
         return view('baliknama.index', compact('data', 'title', 'data2', 'title2'));
     }
@@ -58,7 +58,7 @@ class BaliknamaController extends Controller
             'alamat.required' => 'Alamat harus diisi',
             'alamat.max' => 'Maksimal 150 karakter',
             'no_hp.required'  =>  'No Handphone wajib diisi',
-            'no_hp.max' =>  'Maksimal 13 karakter',  
+            'no_hp.max' =>  'Maksimal 13 karakter',
             'gambar_ktp.required' => 'Gambar harus diisi',
             'gambar_ktp.mimes' => 'File Harus berupa gambar. Type jpg,png,jpeg,giv,svg',
             'gambar_rekening.required' => 'Gambar harus diisi',

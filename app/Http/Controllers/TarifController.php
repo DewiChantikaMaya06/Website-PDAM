@@ -22,7 +22,7 @@ class TarifController extends Controller
     public function backup()
     {
         $title = 'Data Backup Tarif';
-        $data = Tarif::onlyTrashed()->get();
+        $data = Tarif::onlyTrashed()->paginate(10);
         return view('tarif.backup', compact('data', 'title'));
     }
 
