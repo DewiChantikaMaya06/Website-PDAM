@@ -99,10 +99,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Manage Data Pendaftaran 
     Route::get('/pendaftaran', 'PendaftaranController@index');
+    Route::get('/detail/pendaftaran/{id}', 'PendaftaranController@show');
+    Route::get('/pendaftaran/backup', 'PendaftaranController@backup');
     Route::get('/pendaftaran/{id}', 'PendaftaranController@edit');
     Route::put('/pendaftaran/{id}', 'PendaftaranController@update');
-    Route::get('/detail/pendaftaran/{id}', 'PendaftaranController@show');
     Route::delete('/pendaftaran/delete/{id}', 'PendaftaranController@destroy');
+    Route::get('/pendaftaran/restore/{id}', 'PendaftaranController@restore');
+    Route::get('/pendaftaran/deletePermanen/{id}', 'PendaftaranController@deletePermanen');
+
 
     //Manage Data Balik nama
     Route::get('/baliknama', 'BaliknamaController@index');
@@ -121,6 +125,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pelanggan','PelangganController@index');
     Route::get('/pelanggan/add','PelangganController@add');
     Route::post('/pelanggan/add','PelangganController@store');
+    Route::get('/pelanggan/detail/{id}','PelangganController@show');
 });
 
 

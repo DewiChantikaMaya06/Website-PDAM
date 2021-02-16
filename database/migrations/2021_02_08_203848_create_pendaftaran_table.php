@@ -24,6 +24,7 @@ class CreatePendaftaranTable extends Migration
             $table->string('gambar_ktp');
             $table->enum('status',['Verifikasi','Belum verifikasi'])->default('Belum verifikasi')->nullable;
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

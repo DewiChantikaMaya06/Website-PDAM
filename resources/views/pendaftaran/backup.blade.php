@@ -10,9 +10,6 @@
                     <div class="panel">
                         <div class="panel-heading">
                             <h4>{{ $title }}</h4>
-                            <div class="right">
-                                <a href="{{ url('pelanggan/add') }}" type="button" class="btn"><i class="lnr lnr-plus-circle"></i></a>
-                            </div>
                         </div>
                         @if(session('sukses'))
                         <div class="alert alert-success alert-dismissible" role="alert">
@@ -30,7 +27,6 @@
                             <i class="fa fa-trash-o"></i> Data berhasil di Hapus.
                         </div>
                         @endif
-
                         <div class="panel-body">
                             <div class='table-responsive'>
                                 <table class='table myTable'>
@@ -39,9 +35,11 @@
                                             <th>No.</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
-                                            <th>No.Sambungan</th>
-                                            <th>Total Tagihan</th>
-                                            <th>Aksi</th>
+                                            <th>No.Handphone</th>
+                                            <th>Gambar KTP</th>
+                                            <th>Status</th>
+                                            <th>Pulihkan</th>
+                                            <th>Hapus Permanen</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -55,19 +53,30 @@
                                                 <h4><strong>{{$dt->alamat}}</strong></h4>
                                             </td>
                                             <td>
-                                                <h4><strong>{{$dt->no_sambungan}}</strong></h4>
+                                                <h4><strong>{{$dt->no_hp}}</strong></h4>
                                             </td>
                                             <td>
-                                                <h4><strong>{{$dt->total_tagihan}}</strong></h4>
+                                                <img src="{{asset('storage/'.$dt->gambar_ktp)}}" height="150px">
                                             </td>
                                             <td>
-                                                <a href='{{ url('pelanggan/detail/'.$dt->no_pelanggan)}}' class="btn btn-primary btn-edit" id="edit"><i class="fa fa-eye"></i></i></a>
-                                                <br>
-                                                <br>
-                                                <form method='post' action='{{url('pelanggan/delete/'.$dt->id)}}'>
+                                                @if($dt->status != 'Verifikasi')
+                                                <button type="button" class="btn btn-danger" >{{$dt->status}}</button>
+                                                @elseif($dt->status != 'Belum verifikasi')
+                                                <button type="button" class="btn btn-success" >{{$dt->status}}</button>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <form method='get' action='{{url('pendaftaran/restore/'.$dt->id)}}'>
+                                                    @method('restore')
                                                     @csrf
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>
+                                                    <button type="submit" class="btn btn-warning" onclick="return confirm('Data akan dipulihkan?') "><i class="lnr lnr-exit-up"></i></button>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <form method='get' action='{{url('pendaftaran/deletePermanen/'.$dt->id)}}'>
+                                                    @method('forceDelete')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin data akan dihapus permanen?') "><i class="fa fa-trash-o"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

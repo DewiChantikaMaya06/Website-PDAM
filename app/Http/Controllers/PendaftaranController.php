@@ -28,6 +28,14 @@ class PendaftaranController extends Controller
         return view('guest.pendaftaran');
     }
 
+    public function backup()
+    {
+        $title = 'Data Backup Pendaftaran';
+        $data = Pendaftaran::onlyTrashed()->paginate(10);
+        return view('pendaftaran.backup', compact('data', 'title'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -140,5 +148,19 @@ class PendaftaranController extends Controller
         $data = Pendaftaran::find($id);
         $data->delete();
         return redirect('pendaftaran')->with('suksesHapus', 'isi kata sukses dihapus');
+    }
+
+    public function restore($id)
+    {
+        $data = Pendaftaran::onlyTrashed()->where('id', $id);
+        $data->restore();
+        return redirect('pendaftaran/backup')->with('suksesRestore', 'isi kata sukses direstore');
+    }
+
+    public function deletePermanen($id)
+    {
+        $data = Pendaftaran::onlyTrashed()->where('id', $id);
+        $data->forceDelete();
+        return redirect('pendaftaran/backup')->with('suksesDelete', 'isi kata sukses didelete');
     }
 }

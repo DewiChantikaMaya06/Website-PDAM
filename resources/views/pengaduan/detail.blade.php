@@ -14,7 +14,6 @@
                             <div class="panel-body">
                                 <form role="form" method='post' action='{{url('pengaduan/'.$detail->id)}}' enctype="multipart/form-data">
                                     @csrf
-                                    {{ method_field('put') }}
                                     <div class="form-group">
                                         <label or="exampleInputEmail1" >Nama Lengkap :</label>
                                         <h4>{{$detail->nama}}</h4>
@@ -52,10 +51,10 @@
                                         <h4>{{$detail->status}}</h4>
                                         {{-- <input name="status" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="{{$detail->status}}" rows="10" disabled></input> --}}
                                     </div>
-                                    <div class="box-footer">
-                                        <button type="back" class="btn btn-primary" style="float: right"><a href="{{url('/pengaduan')}}" style="color: white">Kembali</a></button>
-                                    </div>
                                 </form>
+                                <div class="box-footer">
+                                    <button type="back" class="btn btn-primary" style="float: right"><a href="{{url('/pengaduan')}}" style="color: white">Kembali</a></button>
+                                </div>
                             </div>
                         </div>
                     </div>
