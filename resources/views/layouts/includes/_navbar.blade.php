@@ -1,18 +1,17 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.html"><img sizes="139x21" src="{{asset('admin/logo_pdam2new.png')}}" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href="{{url('/dashboard')}}"><img sizes="139x21" src="{{asset('admin/logo_pdam2new.png')}}" alt="Klorofil Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
 					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 				</div>
-				<form class="navbar-form navbar-left" method="GET" action="/siswa">
+				{{-- <form class="navbar-form navbar-left" method="GET" action="/siswa">
 					<div class="input-group">
 						<input name="cari" type="text" value="" class="form-control" placeholder="Search dashboard...">
 						<span class="input-group-btn"><button type="submit" class="btn btn-primary">Go</button></span>
 					</div>
-				</form>
-
+				</form> --}}
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">

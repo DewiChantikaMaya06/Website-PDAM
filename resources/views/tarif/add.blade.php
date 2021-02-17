@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="form-group {{$errors->has('pemeliharaan') ? 'has-error' : ''}}">
                                         <label for="exampleInputEmail1">Pemeliharaan</label>
-                                        <input name="pemeliharaan" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="pemeliharaan" value="{{old('pemeliharaan')}}">
+                                        <input name="pemeliharaan" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pemeliharaan" value="{{old('pemeliharaan')}}">
                                         @if($errors->has('pemeliharaan'))
                                         <span class="help-block">{{$errors->first('pemeliharaan')}}</span>
                                         @endif
