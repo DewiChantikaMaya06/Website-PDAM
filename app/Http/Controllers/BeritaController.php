@@ -15,7 +15,7 @@ class BeritaController extends Controller
     public function index()
     {
         $title = 'Data Berita PDAM';
-        $data = Berita::orderby('judul', 'asc')->paginate(10);
+        $data = Berita::orderby('created_at', 'asc')->paginate(10);
         return view('berita.index', compact('data', 'title'));
     }
 
@@ -128,7 +128,6 @@ class BeritaController extends Controller
         $data['sumber'] = $request->sumber;
         $data['gambar_berita'] = $request->gambar_berita->store('berita');
         $data['isi_berita'] = $request->isi_berita;
-        $data['created_at'] = date('Y-m-d H:1:s');
         $data['updated_at'] = date('Y-m-d H:1:s');
 
         Berita::where('id', $id)->update($data);
@@ -162,5 +161,4 @@ class BeritaController extends Controller
         $data->forceDelete();
         return redirect('berita/backup')->with('suksesDelete', 'isi kata sukses didelete');
     }
-
 }

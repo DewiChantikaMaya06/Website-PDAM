@@ -14,7 +14,11 @@
                                 <img src="{{asset('storage/'.$detail_berita->gambar_berita)}}" alt="#">
                             </div>
                             <!-- News Title -->
-                            <h1 class="news-title"><a href="#">{{$detail_berita->judul}}</a></h1>
+                            <div class="news-text">
+                                <blockquote class="overlay">
+                                    <p>{{$detail_berita->judul}}</p>
+                                </blockquote>
+                            </div>
                             <!-- Meta -->
                             <div class="meta">
                                 <div class="meta-left">
@@ -24,11 +28,8 @@
                             </div>
                             <!-- News Text -->
                             <div class="news-text">
-                                <blockquote class="overlay">
-                                    <p>{!!$detail_berita->isi_berita!!}</p>
-                                </blockquote>
+                                <p>{!!$detail_berita->isi_berita!!}</p>
                             </div>
-
                             <div class="blog-bottom">
                                 <!-- Social Share -->
                                 <ul class="social-share">
@@ -52,20 +53,32 @@
             <div class="col-lg-4 col-12">
                 <div class="main-sidebar">
                     <div class="single-widget recent-post">
-                        <h3 class="title">Berita Lainnya</h3>
+                        <h3 class="title">Berita Terbaru Lainnya</h3>
                         @foreach($data_berita as $dt)
                         <div class="single-post">
                             <div class="image">
-                                <img src="{{asset('storage/'.$dt->gambar_berita)}}" href="{{url('/detailberita'.$dt->id)}}">
+                                <img src="{{asset('storage/'.$dt->gambar_berita)}}">
                             </div>
                             <div class="content">
-                                <h5><a href="{{url('/detailberita'.$dt->id)}}">{{$dt->judul}}</a></h5>
+                                <h5><a href="{{url('/detailberita/'.$dt->id)}}">{{$dt->judul}}</a></h5>
                                 <ul class="comment">
                                     <li><i class="fa fa-calendar" aria-hidden="true"></i>{{$dt->created_at}}</li>
                                 </ul>
                             </div>
                         </div>
                         @endforeach
+                        <div class="pull-left">
+                            Showing
+                            {{ $data_berita->firstItem() }}
+                            to
+                            {{ $data_berita->lastItem() }}
+                            of
+                            {{ $data_berita->total() }}
+                            entries
+                        </div>
+                        <div class="pull-up">
+                            {{ $data_berita->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

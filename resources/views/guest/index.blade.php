@@ -16,7 +16,7 @@
                                 <div class="row">
                                     <div class="col-lg-16 col-md-16 col-16">
                                         <div class="form-group ">
-                                            <input name="no_pelanggan" type="number" placeholder="No.Pelanggan..." >
+                                            <input name="no_pelanggan" type="number" placeholder="No.Pelanggan...">
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
                 <div class="single-fun">
                     <i class="icofont icofont-home"></i>
                     <div class="content">
-                        <span class="counter">{{$dt->pegawai}}</span>
+                        <span class="counter">{{$dt->unit}}</span>
                         <p>UNIT</p>
                     </div>
                 </div>
