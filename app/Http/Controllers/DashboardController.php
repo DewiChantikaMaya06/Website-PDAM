@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $data=Info::find(1);
+        $data = Info::find(1);
         return view('dashboard.index', compact('data'));
     }
 }

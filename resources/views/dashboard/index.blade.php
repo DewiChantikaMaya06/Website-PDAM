@@ -17,7 +17,11 @@
                             <div class="metric">
                                 <span class="icon"><i class="lnr lnr-apartment"></i></span>
                                 <p>
+                                    @if($data != null)
                                     <span class="number">{{$data->unit}}</span>
+                                    @else
+                                    <span class="number">0</span>
+                                    @endif
                                     <span class="title">Units</span>
                                 </p>
                             </div>
@@ -26,7 +30,11 @@
                             <div class="metric">
                                 <span class="icon"><i class="fa fa-shopping-bag"></i></span>
                                 <p>
+                                    @if($data != null)
                                     <span class="number">{{$data->pegawai}}</span>
+                                    @else
+                                    <span class="number">0</span>
+                                    @endif
                                     <span class="title">Pegawai</span>
                                 </p>
                             </div>
@@ -35,7 +43,11 @@
                             <div class="metric">
                                 <span class="icon"><i class="fa fa-eye"></i></span>
                                 <p>
+                                    @if($data != null)
                                     <span class="number">{{$data->pengguna}}</span>
+                                    @else
+                                    <span class="number">0</span>
+                                    @endif
                                     <span class="title">Pengguna</span>
                                 </p>
                             </div>
