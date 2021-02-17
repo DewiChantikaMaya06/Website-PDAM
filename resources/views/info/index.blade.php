@@ -36,7 +36,7 @@
                                 <table class='table myTable'>
                                     <thead>
                                         <tr>
-                                            <th>unit</th>
+                                            <th>Unit</th>
                                             <th>Pegawai</th>
                                             <th>Pengguna</th>
                                             <th>Edit</th>
