@@ -9,16 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $data=Info::get();
+        $data=Info::find(1);
         return view('dashboard.index', compact('data'));
     }
-
-    // public functin store (Request $request)
-    // {
-    //     $data['unit'] = $request->unit;
-    //     $data['pegawai'] = $request->pegawai;
-    //     $data['pengguna'] = $request->pengguna;
-    //     $data['created_at'] = date('Y-m-d H:1:s');
-    //     $data['updated_at'] = date('Y-m-d H:1:s');
-    // }
 }

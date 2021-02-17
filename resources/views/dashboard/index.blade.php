@@ -17,7 +17,7 @@
                             <div class="metric">
                                 <span class="icon"><i class="lnr lnr-apartment"></i></span>
                                 <p>
-                                    <span class="number">11111</span>
+                                    <span class="number">{{$data->unit}}</span>
                                     <span class="title">Units</span>
                                 </p>
                             </div>
@@ -26,8 +26,8 @@
                             <div class="metric">
                                 <span class="icon"><i class="fa fa-shopping-bag"></i></span>
                                 <p>
-                                    <span class="number">203</span>
-                                    <span class="title">Sales</span>
+                                    <span class="number">{{$data->pegawai}}</span>
+                                    <span class="title">Pegawai</span>
                                 </p>
                             </div>
                         </div>
@@ -35,8 +35,8 @@
                             <div class="metric">
                                 <span class="icon"><i class="fa fa-eye"></i></span>
                                 <p>
-                                    <span class="number">274,678</span>
-                                    <span class="title">Visits</span>
+                                    <span class="number">{{$data->pengguna}}</span>
+                                    <span class="title">Pengguna</span>
                                 </p>
                             </div>
                         </div>
@@ -44,8 +44,8 @@
                             <div class="metric">
                                 <span class="icon"><i class="fa fa-bar-chart"></i></span>
                                 <p>
-                                    <span class="number">35%</span>
-                                    <span class="title">Conversions</span>
+                                    <span class="number">1991</span>
+                                    <span class="title">Tahun Berdiri</span>
                                 </p>
                             </div>
                         </div>
